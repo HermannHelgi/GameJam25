@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjdbevuwt1385"]
+[gd_scene load_steps=8 format=3 uid="uid://bjdbevuwt1385"]
 
 [ext_resource type="PackedScene" uid="uid://yxrpgd3tbthu" path="res://feature/enemyAi/yule_lad.tscn" id="1_ivr31"]
+[ext_resource type="PackedScene" uid="uid://8ro8xd3jhwmf" path="res://feature/enemyAi/YuleObjective.tscn" id="2_qawld"]
+[ext_resource type="Script" path="res://feature/Managers/GameManager.gd" id="2_tiovu"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_nxgsj"]
 vertices = PackedVector3Array(-9.5, 1, -9.5, -9.5, 1, 9.5, 9.5, 1, 9.5, 9.5, 1, -9.5)
@@ -14,13 +16,14 @@ albedo_color = Color(0.425133, 0.190732, 0.00731342, 1)
 radius = 0.25
 height = 0.5
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4sm6"]
-albedo_color = Color(0.204118, 0.365984, 0.879855, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxakl"]
 albedo_color = Color(0, 0.612657, 0.280074, 1)
 
 [node name="AIDemoScene" type="Node3D"]
+
+[node name="GameManager" type="Node3D" parent="." groups=["GameManager"]]
+script = ExtResource("2_tiovu")
+YuleObjective = ExtResource("2_qawld")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.43669, 0)
@@ -33,48 +36,61 @@ transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, -0.5, 0)
 use_collision = true
 material = SubResource("StandardMaterial3D_h5t0m")
 
-[node name="YuleLad" parent="NavigationRegion3D" node_paths=PackedStringArray("walkLocations", "objectiveLocations", "NavMesh") instance=ExtResource("1_ivr31")]
+[node name="YuleLad" parent="NavigationRegion3D" node_paths=PackedStringArray("NavMesh") instance=ExtResource("1_ivr31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01441, 0)
 Speed = 500.0
-walkLocations = [NodePath("../../MeshInstance3D"), NodePath("../../MeshInstance3D2"), NodePath("../../MeshInstance3D3")]
-objectiveLocations = [NodePath("../../MeshInstance3D4"), NodePath("../../MeshInstance3D5"), NodePath("../../MeshInstance3D6")]
 NavMesh = NodePath("..")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.20712, 1.07349, -7.74603)
-mesh = SubResource("CapsuleMesh_e5bff")
-skeleton = NodePath("../NavigationRegion3D")
-surface_material_override/0 = SubResource("StandardMaterial3D_d4sm6")
+[node name="YuleLad2" parent="NavigationRegion3D" node_paths=PackedStringArray("NavMesh") instance=ExtResource("1_ivr31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01441, 0)
+Speed = 500.0
+NavMesh = NodePath("..")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2758, 0.797386, -1.29989)
-mesh = SubResource("CapsuleMesh_e5bff")
-skeleton = NodePath("../NavigationRegion3D")
-surface_material_override/0 = SubResource("StandardMaterial3D_d4sm6")
+[node name="YuleLad3" parent="NavigationRegion3D" node_paths=PackedStringArray("NavMesh") instance=ExtResource("1_ivr31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01441, 0)
+Speed = 500.0
+NavMesh = NodePath("..")
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.05383, 0.797386, 0.633727)
-mesh = SubResource("CapsuleMesh_e5bff")
-skeleton = NodePath("../NavigationRegion3D")
-surface_material_override/0 = SubResource("StandardMaterial3D_d4sm6")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." groups=["PathNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6482, 0.85, 7.54961)
 mesh = SubResource("CapsuleMesh_e5bff")
 skeleton = NodePath("../NavigationRegion3D")
 surface_material_override/0 = SubResource("StandardMaterial3D_vxakl")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." groups=["PathNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.50576, 0.85, -6.89362)
 mesh = SubResource("CapsuleMesh_e5bff")
 skeleton = NodePath("../NavigationRegion3D")
 surface_material_override/0 = SubResource("StandardMaterial3D_vxakl")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." groups=["PathNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25012, 0.85, 6.39101)
+mesh = SubResource("CapsuleMesh_e5bff")
+skeleton = NodePath("../NavigationRegion3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_vxakl")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." groups=["PathNode"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.50512, 0.85, -7.57101)
 mesh = SubResource("CapsuleMesh_e5bff")
 skeleton = NodePath("../NavigationRegion3D")
 surface_material_override/0 = SubResource("StandardMaterial3D_vxakl")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0.00468445, 4.48639, 14.8265)
+
+[node name="Locations" type="Node3D" parent="."]
+
+[node name="Node3D" type="Node3D" parent="Locations" groups=["SpawnNode"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Node3D2" type="Node3D" parent="Locations" groups=["SpawnNode"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
+
+[node name="Node3D3" type="Node3D" parent="Locations" groups=["SpawnNode"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
+
+[node name="Node3D4" type="Node3D" parent="Locations" groups=["SpawnNode"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 0)
+
+[node name="Node3D5" type="Node3D" parent="Locations" groups=["SpawnNode"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5)

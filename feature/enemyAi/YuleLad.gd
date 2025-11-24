@@ -6,8 +6,6 @@ enum YuleState {IDLE, WALKING, DESTROYING}
 @export var Reach = 2.0
 @export var DistanceToObject = 1.0
 @export var DistanceToSlowDown = 3.0
-@export var walkLocations : Array[Node] # TEMP
-@export var objectiveLocations : Array[Node] # TEMP
 
 @export var MinIdleTime = 2.0
 @export var MaxIdleTime = 6.0
@@ -23,6 +21,7 @@ var target : Node = null
 var rng = RandomNumberGenerator.new()
 var timer = 0.0;
 var idle_stop_count = 0
+var GM
 
 @onready var nav_agent = $NavigationAgent3D
 
@@ -30,6 +29,10 @@ func _ready() -> void:
 	if (NavMesh == null):
 		printerr("NAV MESH IS MISSING ON YULE LAD")
 	
+	GM = get_tree().get_first_node_in_group("GameManager")
+	if (GM == null):
+		printerr("NO GAMEMANAGER FOUND IN SCENE.")
+		
 	_fetchRandomLoc(false);
 	timer = _randomTime()
 	idle_stop_count = _randomStop();
@@ -43,7 +46,7 @@ func _process(delta: float) -> void:
 				
 				current_state = YuleState.WALKING
 				idle_stop_count -= 1
-				if (idle_stop_count == 0 && objectiveLocations.size() != 0):
+				if (idle_stop_count == 0 && GM.AllItems.size() != 0):
 					_fetchRandomLoc(true)
 				else:
 					_fetchRandomLoc(false)
@@ -51,7 +54,7 @@ func _process(delta: float) -> void:
 	elif (current_state == YuleState.WALKING):
 		var distance = global_position.distance_to(target.global_position)
 		if (distance <= DistanceToObject):
-			if (idle_stop_count == 0 && objectiveLocations.size() != 0):
+			if (idle_stop_count == 0 && GM.AllItems.size() != 0):
 				current_state = YuleState.DESTROYING
 				timer = DestroyTime
 				print("DESTROY")
@@ -65,7 +68,7 @@ func _process(delta: float) -> void:
 			timer -= delta
 			if (timer < 0):
 				print("WALK FROM DESTRUCTION")
-				objectiveLocations.remove_at(objectiveLocations.find(target))
+				GM.AllItems.remove_at(GM.AllItems.find(target))
 				target.queue_free()
 				idle_stop_count = _randomStop();
 				current_state = YuleState.WALKING
@@ -78,6 +81,7 @@ func _physics_process(delta: float) -> void:
 		var distance = global_position.distance_to(target.global_position)
 		nav_agent.set_target_position(target.global_position)
 		var next_nav_point = nav_agent.get_next_path_position()
+		look_at(Vector3(next_nav_point.x, global_position.y, next_nav_point.z))
 		velocity = (next_nav_point - global_position).normalized() * Speed * delta 
 		if (distance <= DistanceToSlowDown):
 			velocity *= distance / DistanceToSlowDown
@@ -91,12 +95,11 @@ func _fetchRandomLoc(goForObjectiveItem: bool) -> void:
 	var old_target = target
 	if (goForObjectiveItem):
 		while (old_target == target):
-			target = objectiveLocations[rng.randi_range(0, objectiveLocations.size() - 1)];
+			target = GM.AllItems[rng.randi_range(0, GM.AllItems.size() - 1)];
 	else:
 		while (old_target == target):
-			target = walkLocations[rng.randi_range(0, walkLocations.size() - 1)];
+			target = GM.PathLocations[rng.randi_range(0, GM.PathLocations.size() - 1)];
 
 func _randomStop() -> int:
 	var thing = rng.randi_range(MinRandomIdleStops, MaxRandomIdleStops)
-	print(thing)
 	return thing
