@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://yxrpgd3tbthu"]
+
+[ext_resource type="Script" path="res://feature/enemyAi/YuleLad.gd" id="1_c0yye"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_k13r3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yg8tk"]
+albedo_color = Color(0.622148, 0.21128, 0.190705, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bf7ca"]
+
+[node name="YuleLad" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_c0yye")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_k13r3")
+surface_material_override/0 = SubResource("StandardMaterial3D_yg8tk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_bf7ca")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 2.0
