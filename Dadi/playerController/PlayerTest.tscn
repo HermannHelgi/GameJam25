@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1le2ne1a30ea"]
+
+[ext_resource type="Script" path="res://Dadi/playerController/PlayerController.gd" id="1_ld0y6"]
+[ext_resource type="Script" path="res://Dadi/playerController/head.gd" id="2_lvkh7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oexwc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_722m2"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Player" type="CharacterBody3D" parent="."]
+script = ExtResource("1_ld0y6")
+
+[node name="head" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.619101, 0)
+script = ExtResource("2_lvkh7")
+
+[node name="Camera3D" type="Camera3D" parent="Player/head"]
+
+[node name="holdposition" type="Node3D" parent="Player/head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="RayCast3D" type="RayCast3D" parent="Player/head"]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_oexwc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("CapsuleMesh_722m2")

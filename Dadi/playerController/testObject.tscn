@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://mg0qvpyakbdj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1b47f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nk2sh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_70ru7"]
+material = SubResource("StandardMaterial3D_nk2sh")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+mass = 0.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_1b47f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+layers = 3
+mesh = SubResource("BoxMesh_70ru7")
