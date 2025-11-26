@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtaonmpb83vf"]
+[gd_scene load_steps=7 format=3 uid="uid://dtaonmpb83vf"]
 
 [ext_resource type="PackedScene" uid="uid://c1le2ne1a30ea" path="res://Dadi/playerController/PlayerTest.tscn" id="1_bc2ts"]
 [ext_resource type="PackedScene" uid="uid://mg0qvpyakbdj" path="res://Dadi/playerController/testObject.tscn" id="2_eyxn3"]
@@ -8,6 +8,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_03vtf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6pc68"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sl4as"]
+albedo_color = Color(0.36643577, 0.8118986, 0.40948617, 1)
 
 [node name="TestScene" type="Node3D"]
 
@@ -30,3 +33,4 @@ shape = SubResource("BoxShape3D_03vtf")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
 mesh = SubResource("BoxMesh_6pc68")
+surface_material_override/0 = SubResource("StandardMaterial3D_sl4as")

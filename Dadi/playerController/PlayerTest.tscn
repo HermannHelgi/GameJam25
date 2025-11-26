@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c1le2ne1a30ea"]
 
-[ext_resource type="Script" path="res://Dadi/playerController/PlayerController.gd" id="1_ld0y6"]
-[ext_resource type="Script" path="res://Dadi/playerController/head.gd" id="2_lvkh7"]
+[ext_resource type="Script" uid="uid://p3po1jtg8lip" path="res://Dadi/playerController/PlayerController.gd" id="1_ld0y6"]
+[ext_resource type="Script" uid="uid://l6hvc3a7lwo1" path="res://Dadi/playerController/head.gd" id="2_lvkh7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oexwc"]
 
@@ -22,7 +22,10 @@ script = ExtResource("2_lvkh7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
 [node name="RayCast3D" type="RayCast3D" parent="Player/head"]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, -2, 0, 2, -8.742278e-08, 0, 0, -0.1600132)
 collision_mask = 2
+debug_shape_custom_color = Color(0.62716395, 0.0063544987, 0.09895905, 1)
+debug_shape_thickness = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CapsuleShape3D_oexwc")
