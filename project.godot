@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="GameJam25"
+run/main_scene="res://feature/enemyAi/AIDemoScene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalEnums="*res://feature/enemyAi/GlobalEnums.gd"
 
 [input]
 

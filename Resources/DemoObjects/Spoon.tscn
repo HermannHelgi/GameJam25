@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b60w77g4f1fyi"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fcvix"]
+radius = 0.25
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_601jb"]
+albedo_color = Color(0.000275308, 0.312933, 0.945575, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+mesh = SubResource("CapsuleMesh_fcvix")
+surface_material_override/0 = SubResource("StandardMaterial3D_601jb")

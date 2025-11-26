@@ -1,8 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjdbevuwt1385"]
+[gd_scene load_steps=12 format=3 uid="uid://bjdbevuwt1385"]
 
 [ext_resource type="PackedScene" uid="uid://yxrpgd3tbthu" path="res://feature/enemyAi/yule_lad.tscn" id="1_ivr31"]
-[ext_resource type="PackedScene" uid="uid://8ro8xd3jhwmf" path="res://feature/enemyAi/YuleObjective.tscn" id="2_qawld"]
 [ext_resource type="Script" path="res://feature/Managers/GameManager.gd" id="2_tiovu"]
+[ext_resource type="Script" path="res://Resources/YuleObjectiveResource.gd" id="3_wuiet"]
+[ext_resource type="Resource" uid="uid://cnj1e42d36y01" path="res://Resources/pan.tres" id="4_7r5iu"]
+[ext_resource type="PackedScene" uid="uid://e4dyo6j6k2hi" path="res://feature/enemyAi/spawn_location.tscn" id="4_a1ka3"]
+[ext_resource type="Resource" uid="uid://bw8wpx4ghhfoo" path="res://Resources/pot.tres" id="5_f52lf"]
+[ext_resource type="Resource" uid="uid://b7nqmuo8w0r21" path="res://Resources/spoon.tres" id="6_55oj4"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_nxgsj"]
 vertices = PackedVector3Array(-9.5, 1, -9.5, -9.5, 1, 9.5, 9.5, 1, 9.5, 9.5, 1, -9.5)
@@ -21,35 +25,25 @@ albedo_color = Color(0, 0.612657, 0.280074, 1)
 
 [node name="AIDemoScene" type="Node3D"]
 
-[node name="GameManager" type="Node3D" parent="." groups=["GameManager"]]
+[node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("YuleSpawnLocation") groups=["GameManager"]]
 script = ExtResource("2_tiovu")
-YuleObjective = ExtResource("2_qawld")
+level = 3
+StartingTimer = 3.0
+BetweenTimer = 5.0
+YuleLad = ExtResource("1_ivr31")
+YuleSpawnLocation = NodePath("../NavigationRegion3D")
+YuleObjectives = Array[ExtResource("3_wuiet")]([ExtResource("4_7r5iu"), ExtResource("5_f52lf"), ExtResource("6_55oj4")])
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.43669, 0)
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." groups=["NavMesh"]]
 navigation_mesh = SubResource("NavigationMesh_nxgsj")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, -0.5, 0)
 use_collision = true
 material = SubResource("StandardMaterial3D_h5t0m")
-
-[node name="YuleLad" parent="NavigationRegion3D" node_paths=PackedStringArray("NavMesh") instance=ExtResource("1_ivr31")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01441, 0)
-Speed = 500.0
-NavMesh = NodePath("..")
-
-[node name="YuleLad2" parent="NavigationRegion3D" node_paths=PackedStringArray("NavMesh") instance=ExtResource("1_ivr31")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01441, 0)
-Speed = 500.0
-NavMesh = NodePath("..")
-
-[node name="YuleLad3" parent="NavigationRegion3D" node_paths=PackedStringArray("NavMesh") instance=ExtResource("1_ivr31")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01441, 0)
-Speed = 500.0
-NavMesh = NodePath("..")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." groups=["PathNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6482, 0.85, 7.54961)
@@ -80,17 +74,38 @@ transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0.00468445
 
 [node name="Locations" type="Node3D" parent="."]
 
-[node name="Node3D" type="Node3D" parent="Locations" groups=["SpawnNode"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+[node name="SpawnLocation" parent="Locations" instance=ExtResource("4_a1ka3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
 
-[node name="Node3D2" type="Node3D" parent="Locations" groups=["SpawnNode"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
+[node name="SpawnLocation2" parent="Locations" instance=ExtResource("4_a1ka3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
 
-[node name="Node3D3" type="Node3D" parent="Locations" groups=["SpawnNode"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
+[node name="SpawnLocation3" parent="Locations" instance=ExtResource("4_a1ka3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
 
-[node name="Node3D4" type="Node3D" parent="Locations" groups=["SpawnNode"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 0)
+[node name="SpawnLocation4" parent="Locations" instance=ExtResource("4_a1ka3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)
 
-[node name="Node3D5" type="Node3D" parent="Locations" groups=["SpawnNode"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5)
+[node name="SpawnLocation5" parent="Locations" instance=ExtResource("4_a1ka3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
+
+[node name="SpawnLocation6" parent="Locations" instance=ExtResource("4_a1ka3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+
+[node name="SpawnLocation7" parent="Locations" instance=ExtResource("4_a1ka3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+
+[node name="SpawnLocation8" parent="Locations" instance=ExtResource("4_a1ka3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2)
+
+[node name="SpawnLocation9" parent="Locations" instance=ExtResource("4_a1ka3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
+
+[node name="SpawnLocation10" parent="Locations" instance=ExtResource("4_a1ka3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -1)
+
+[node name="SpawnLocation11" parent="Locations" instance=ExtResource("4_a1ka3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 2)
+
+[node name="SpawnLocation12" parent="Locations" instance=ExtResource("4_a1ka3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -2)

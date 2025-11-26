@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="YuleObjectiveResource" load_steps=3 format=3 uid="uid://b7nqmuo8w0r21"]
+
+[ext_resource type="Script" path="res://Resources/YuleObjectiveResource.gd" id="1_adfbn"]
+[ext_resource type="PackedScene" uid="uid://b60w77g4f1fyi" path="res://Resources/DemoObjects/Spoon.tscn" id="1_kgbmq"]
+
+[resource]
+script = ExtResource("1_adfbn")
+Type = 3
+Item = ExtResource("1_kgbmq")
+NameOfYuleLad = "Þvörusleikir"

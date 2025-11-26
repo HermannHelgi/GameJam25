@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="YuleObjectiveResource" load_steps=3 format=3 uid="uid://bw8wpx4ghhfoo"]
+
+[ext_resource type="PackedScene" uid="uid://8ro8xd3jhwmf" path="res://Resources/DemoObjects/Pot.tscn" id="1_7ia8e"]
+[ext_resource type="Script" path="res://Resources/YuleObjectiveResource.gd" id="1_jl4p0"]
+
+[resource]
+script = ExtResource("1_jl4p0")
+Type = 0
+Item = ExtResource("1_7ia8e")
+NameOfYuleLad = "Pottaskefill"
