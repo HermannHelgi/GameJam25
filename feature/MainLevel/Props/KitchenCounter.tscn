@@ -1,0 +1,39 @@
+[gd_scene load_steps=9 format=3 uid="uid://nk75su6ys20r"]
+
+[ext_resource type="Texture2D" uid="uid://cgxecj07b4brx" path="res://feature/MainLevel/Props/Textures/Stone_08-128x128.png" id="2_onnpd"]
+[ext_resource type="Texture2D" uid="uid://bt173pd4sdqhc" path="res://feature/MainLevel/Props/Textures/Wood_11-128x128.png" id="3_1ucc0"]
+[ext_resource type="Texture2D" uid="uid://dqve34llltde0" path="res://feature/MainLevel/Props/Textures/Metal_17-128x128.png" id="3_wu4md"]
+[ext_resource type="Texture2D" uid="uid://cysul1onla1jl" path="res://feature/MainLevel/Props/Textures/Wood_12-128x128.png" id="4_onnpd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mk6lj"]
+albedo_texture = ExtResource("2_onnpd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5gq6o"]
+albedo_texture = ExtResource("3_wu4md")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wu4md"]
+albedo_texture = ExtResource("3_1ucc0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvf6s"]
+albedo_texture = ExtResource("4_onnpd")
+
+[node name="KitchenCounter" type="Node3D"]
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1.0918572, 0, 0, 0, 0.029488742, 0, 0, 0, 1.0882043, 0.070421934, 0.500341, -0.005222172)
+material_override = SubResource("StandardMaterial3D_mk6lj")
+use_collision = true
+size = Vector3(1.0496826, 1, 0.9257965)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(0.07239936, 0, 0, 0, 0.046824086, 0, 0, 0, 0.069284014, 0.53398967, 0, -0.18005873)
+material_override = SubResource("StandardMaterial3D_5gq6o")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.13206722, 0, 0, 0, 0.82627666, 0, 0, 0, 0.6268033, 0.46595937, 0, 0)
+material_override = SubResource("StandardMaterial3D_wu4md")
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+material_override = SubResource("StandardMaterial3D_cvf6s")
+use_collision = true
