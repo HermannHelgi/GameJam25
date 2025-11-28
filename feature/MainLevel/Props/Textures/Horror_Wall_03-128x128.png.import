@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5u3dfcisekul"
-path.s3tc="res://.godot/imported/Cookware.png-76f7634ea0f7be4913de6d29cc476971.s3tc.ctex"
+uid="uid://bu4ciwuvbq4dy"
+path.s3tc="res://.godot/imported/Horror_Wall_03-128x128.png-22f1904a8d5a529f63c4be69451dca86.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://feature/MainLevel/Props/trailerparkprops/Textures/Cookware.png"
-dest_files=["res://.godot/imported/Cookware.png-76f7634ea0f7be4913de6d29cc476971.s3tc.ctex"]
+source_file="res://feature/MainLevel/Props/Textures/Horror_Wall_03-128x128.png"
+dest_files=["res://.godot/imported/Horror_Wall_03-128x128.png-22f1904a8d5a529f63c4be69451dca86.s3tc.ctex"]
 
 [params]
 

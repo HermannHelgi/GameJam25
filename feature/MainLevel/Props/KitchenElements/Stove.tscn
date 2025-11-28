@@ -97,7 +97,7 @@ mesh = SubResource("ArrayMesh_2dcmy")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.1808696, 0, 0, 0, 0.6752199, 0, 0.34102154, 0)
+transform = Transform3D(0.6811353, 0, 0, 0, 1.1808696, 0, 0, 0, 0.6752199, 0, 0.34102154, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.81635475, 0, 0.109436005, 0.019631574)

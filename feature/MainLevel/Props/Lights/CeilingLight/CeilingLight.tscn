@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://doqsghlay2tmk"]
+
+[ext_resource type="Texture2D" uid="uid://bu4ciwuvbq4dy" path="res://feature/MainLevel/Props/Textures/Horror_Wall_03-128x128.png" id="1_nw77x"]
+[ext_resource type="Texture2D" uid="uid://dqve34llltde0" path="res://feature/MainLevel/Props/Textures/Metal_17-128x128.png" id="2_0d162"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xtdw"]
+albedo_texture = ExtResource("1_nw77x")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0soyj"]
+albedo_texture = ExtResource("2_0d162")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y6taf"]
+albedo_color = Color(1.825, 0.979, 0.288, 1)
+emission_enabled = true
+emission = Color(0.77254903, 0.74509805, 0, 1)
+
+[node name="CeilingLight" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(0.52897894, 0, 0, 0, 0.20050934, 0, 0, 0, 0.5169511, 0.00340271, 0.58342904, 0)
+material_override = SubResource("StandardMaterial3D_7xtdw")
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="CSGSphere3D"]
+transform = Transform3D(0.83731866, 0, 0, 0, 0.5668064, 0, 0, 0, 0.7824218, 0, 0.24166203, 0)
+operation = 2
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.00450689, 0, 0, 0, 1, 0, 0, 0, 0.01827975, 0, 0.2703889, 0)
+material_override = SubResource("StandardMaterial3D_0soyj")
+size = Vector3(1, 0.5205078, 1)
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="."]
+transform = Transform3D(0.06484651, 0, 0, 0, 0.06692076, 0, 0, 0, 0.059295647, 0, 0.5804177, 0)
+material_override = SubResource("StandardMaterial3D_y6taf")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CSGSphere3D2"]
+transform = Transform3D(15.421031, 0, 0, 0, -7.3717706e-07, -14.943048, 0, 16.864647, -8.3197426e-07, 0, 0.23727417, 0)
+light_color = Color(1.8247963, 0.979316, 0.28755927, 1)
+light_energy = 2.979
+light_indirect_energy = 1.165
