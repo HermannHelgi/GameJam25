@@ -1,5 +1,9 @@
 # Godot 4+ specific ignores
 .godot/
+.nomedia
 /android/
-.tmp/
+*.tmp/
 .import
+.import/
+export.cfg
+export_presets.cfg
