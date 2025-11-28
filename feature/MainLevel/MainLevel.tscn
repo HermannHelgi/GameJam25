@@ -327,6 +327,18 @@ material_override = SubResource("StandardMaterial3D_kkp3g")
 operation = 2
 size = Vector3(1, 0.1328125, 0.37246704)
 
+[node name="CSGBox3D44" type="CSGBox3D" parent="."]
+transform = Transform3D(1.9106854e-14, 4.371139e-08, 10, 10, -4.371139e-08, 0, 4.371139e-07, 1, -4.371139e-07, -12.370612, 0.83966935, -4.065962)
+material_override = SubResource("StandardMaterial3D_kkp3g")
+use_collision = true
+size = Vector3(1.1533203, 0.1328125, 0.6533203)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="CSGBox3D44"]
+transform = Transform3D(2.4558133e-13, 4.371139e-08, 0.99999976, 1, -4.371151e-08, -1.546141e-11, 4.371139e-08, 0.99999976, -4.371139e-08, 0.09163673, 0, 0)
+material_override = SubResource("StandardMaterial3D_kkp3g")
+operation = 2
+size = Vector3(1, 0.1328125, 0.37246704)
+
 [node name="CSGBox3D20" type="CSGBox3D" parent="."]
 transform = Transform3D(1.9106854e-14, 4.371139e-08, 10, 10, -4.371139e-08, 0, 4.371139e-07, 1, -4.371139e-07, -6.7728558, 0.073067814, 14.15141)
 material_override = SubResource("StandardMaterial3D_kkp3g")
@@ -381,24 +393,6 @@ transform = Transform3D(1.5836697, 0, 0, 0, 1.4331161, 0, 0, 0, 1.3048302, -14.1
 
 [node name="KitchenCounter13" parent="." instance=ExtResource("3_av175")]
 transform = Transform3D(1.5836697, 0, 0, 0, 1.4331161, 0, 0, 0, 1.3048302, -14.167967, 0.8449795, -2.6362476)
-
-[node name="KitchenCounter11" parent="." instance=ExtResource("3_av175")]
-transform = Transform3D(1.5836697, 0, 0, 0, 1.4331161, 0, 0, 0, 1.3048302, -14.165117, 0.8525946, -3.9276385)
-
-[node name="KitchenCounter14" parent="." instance=ExtResource("3_av175")]
-transform = Transform3D(1.5836697, 0, 0, 0, 1.4331161, 0, 0, 0, 1.3048302, -14.167967, 0.8449795, -5.234343)
-
-[node name="KitchenCounter15" parent="." instance=ExtResource("3_av175")]
-transform = Transform3D(1.5836697, 0, 0, 0, 1.4331161, 0, 0, 0, 1.3048302, -14.167967, 0.8449795, -6.5470414)
-
-[node name="KitchenCounter16" parent="." instance=ExtResource("3_av175")]
-transform = Transform3D(-1.5836697, 0, -1.1407188e-07, 0, 1.4331161, 0, 1.384488e-07, 0, -1.3048302, -10.227948, 0.8449795, -6.18836)
-
-[node name="KitchenCounter18" parent="." instance=ExtResource("3_av175")]
-transform = Transform3D(-1.5836697, 0, -1.1407188e-07, 0, 1.4331161, 0, 1.384488e-07, 0, -1.3048302, -10.227948, 0.8449795, -4.875585)
-
-[node name="KitchenCounter17" parent="." instance=ExtResource("3_av175")]
-transform = Transform3D(-1.5836697, 0, -1.1407188e-07, 0, 1.4331161, 0, 1.384488e-07, 0, -1.3048302, -10.227948, 0.8449795, -7.5010586)
 
 [node name="Island" parent="." instance=ExtResource("4_av175")]
 transform = Transform3D(1.399977, 0, 0, 0, 1.0706998, 0, 0, 0, 1.2780846, -9.252413, 0.80991364, 0.9966216)
