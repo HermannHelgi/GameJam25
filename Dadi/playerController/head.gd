@@ -115,7 +115,12 @@ func _update_held_body_physics(delta:float) -> void:
 	var damping_force: Vector3 = -rb.linear_velocity * spring_damping
 
 	rb.apply_central_force(spring_force + damping_force)
-
+func open_door() -> void:
+	if holding:
+		return
+	
+	var target_door: Node3D
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 	#pass
