@@ -8,13 +8,16 @@ var held_object: Node3D = null
 var held_original_parent: Node = null
 var held_original_transform: Transform3D
 var held_was_frozen: bool = false
-var sensetivity = 0.2
+var sensetivity = 0.004
 const GRAB_ACTION := "grab"
 const GRAB_LAYER := 2
+var pitch: float = 0.0
 
 @onready var raycast:RayCast3D = $RayCast3D
 @onready var hold_position:Node3D = $holdposition
 
+#@onready var head = $head
+@onready var camera:Camera3D = $Camera3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -22,9 +25,16 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		get_parent().rotate_y(deg_to_rad(-event.relative.x * sensetivity))
-		rotate_x(deg_to_rad(-event.relative.y * sensetivity))
-		rotation.x * clamp(rotation.x, deg_to_rad(-90), deg_to_rad(90) )
+		#yaw left/right
+		get_parent().rotate_y(-event.relative.x * sensetivity)
+		
+		#rotate_x(-event.relative.y * sensetivity)
+		#pitch up/down
+		pitch -= event.relative.y * sensetivity
+		pitch = clamp(pitch, deg_to_rad(-60), deg_to_rad(60))
+		rotation.x = pitch
+		#rotation.x * clamp(rotation.x, deg_to_rad(-90), deg_to_rad(90))
+		#rotation.x = clamp(rotation.x, deg_to_rad(-40), deg_to_rad(60))
 		#Grab - drop item action
 	if event.is_action_pressed(GRAB_ACTION):
 		if holding:
@@ -115,12 +125,7 @@ func _update_held_body_physics(delta:float) -> void:
 	var damping_force: Vector3 = -rb.linear_velocity * spring_damping
 
 	rb.apply_central_force(spring_force + damping_force)
-func open_door() -> void:
-	if holding:
-		return
-	
-	var target_door: Node3D
-	
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 	#pass
