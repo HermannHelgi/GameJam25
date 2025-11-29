@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0pjqrvtsplh5"
-path.s3tc="res://.godot/imported/tf2_hd_mad_milk_1.png-8d6266de26fa982adb7ba9f061c75adb.s3tc.ctex"
+uid="uid://sg188ppf5ooc"
+path.s3tc="res://.godot/imported/toothpaste_brush.png-98d1e29e128096dd36367dc7c3113793.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Julia/itemModels/models/milk/tf2_hd_mad_milk_1.png"
-dest_files=["res://.godot/imported/tf2_hd_mad_milk_1.png-8d6266de26fa982adb7ba9f061c75adb.s3tc.ctex"]
+source_file="res://feature/MainLevel/Props/trailerparkprops/Textures/toothpaste_brush.png"
+dest_files=["res://.godot/imported/toothpaste_brush.png-98d1e29e128096dd36367dc7c3113793.s3tc.ctex"]
 
 [params]
 

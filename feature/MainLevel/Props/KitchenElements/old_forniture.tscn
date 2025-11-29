@@ -1,0 +1,55 @@
+[gd_scene load_steps=12 format=3 uid="uid://cmejd58fqve45"]
+
+[ext_resource type="PackedScene" uid="uid://dlohrwpq3l4y8" path="res://feature/MainLevel/Props/KitchenElements/source/OldForniture.fbx" id="1_jhcx3"]
+[ext_resource type="Texture2D" uid="uid://drooc75rah78t" path="res://feature/MainLevel/Props/KitchenElements/textures/OLD_FURNITURE__02_DIFF01.png" id="2_74q0h"]
+[ext_resource type="Texture2D" uid="uid://yrdqmjbqplxf" path="res://feature/MainLevel/Props/KitchenElements/textures/OLD_FURNITURE__01_DIFF01.png" id="3_pmu51"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j66be"]
+albedo_texture = ExtResource("2_74q0h")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1iv7j"]
+albedo_texture = ExtResource("2_74q0h")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f58bc"]
+albedo_texture = ExtResource("2_74q0h")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_upo2d"]
+albedo_texture = ExtResource("2_74q0h")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tod3"]
+albedo_texture = ExtResource("3_pmu51")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uy8eh"]
+albedo_texture = ExtResource("3_pmu51")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vsdgi"]
+albedo_texture = ExtResource("3_pmu51")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_08mmv"]
+albedo_texture = ExtResource("3_pmu51")
+
+[node name="OldForniture" instance=ExtResource("1_jhcx3")]
+
+[node name="Kitchen_Cabinet" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_j66be")
+
+[node name="small_Bookshelf" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_1iv7j")
+
+[node name="small_Dresser" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_f58bc")
+
+[node name="rustic_Wood_Table" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_upo2d")
+
+[node name="old_Bookcase" parent="." index="4"]
+material_override = SubResource("StandardMaterial3D_4tod3")
+
+[node name="antique_iron_stove_chimney" parent="." index="5"]
+material_override = SubResource("StandardMaterial3D_uy8eh")
+
+[node name="antique_iron_stove" parent="." index="6"]
+material_override = SubResource("StandardMaterial3D_vsdgi")
+
+[node name="old_Wardrobe" parent="." index="7"]
+material_override = SubResource("StandardMaterial3D_08mmv")

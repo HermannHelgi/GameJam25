@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0pjqrvtsplh5"
-path.s3tc="res://.godot/imported/tf2_hd_mad_milk_1.png-8d6266de26fa982adb7ba9f061c75adb.s3tc.ctex"
+uid="uid://b1o1jsqugncg8"
+path.s3tc="res://.godot/imported/Picture_frames.png-e7b16c621e6b411371f07944da49a05c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Julia/itemModels/models/milk/tf2_hd_mad_milk_1.png"
-dest_files=["res://.godot/imported/tf2_hd_mad_milk_1.png-8d6266de26fa982adb7ba9f061c75adb.s3tc.ctex"]
+source_file="res://feature/MainLevel/Props/trailerparkprops/Textures/Picture_frames.png"
+dest_files=["res://.godot/imported/Picture_frames.png-e7b16c621e6b411371f07944da49a05c.s3tc.ctex"]
 
 [params]
 

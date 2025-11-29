@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0pjqrvtsplh5"
-path.s3tc="res://.godot/imported/tf2_hd_mad_milk_1.png-8d6266de26fa982adb7ba9f061c75adb.s3tc.ctex"
+uid="uid://bu4ciwuvbq4dy"
+path.s3tc="res://.godot/imported/Horror_Wall_03-128x128.png-22f1904a8d5a529f63c4be69451dca86.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Julia/itemModels/models/milk/tf2_hd_mad_milk_1.png"
-dest_files=["res://.godot/imported/tf2_hd_mad_milk_1.png-8d6266de26fa982adb7ba9f061c75adb.s3tc.ctex"]
+source_file="res://feature/MainLevel/Props/Textures/Horror_Wall_03-128x128.png"
+dest_files=["res://.godot/imported/Horror_Wall_03-128x128.png-22f1904a8d5a529f63c4be69451dca86.s3tc.ctex"]
 
 [params]
 

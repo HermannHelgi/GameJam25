@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0pjqrvtsplh5"
-path.s3tc="res://.godot/imported/tf2_hd_mad_milk_1.png-8d6266de26fa982adb7ba9f061c75adb.s3tc.ctex"
+uid="uid://cw52mcvt31s18"
+path="res://.godot/imported/Soil.png-f5c0e930dc5e24011ed47fab51812268.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Julia/itemModels/models/milk/tf2_hd_mad_milk_1.png"
-dest_files=["res://.godot/imported/tf2_hd_mad_milk_1.png-8d6266de26fa982adb7ba9f061c75adb.s3tc.ctex"]
+source_file="res://feature/MainLevel/Props/trailerparkprops/Textures/Soil.png"
+dest_files=["res://.godot/imported/Soil.png-f5c0e930dc5e24011ed47fab51812268.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

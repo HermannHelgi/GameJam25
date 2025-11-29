@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0pjqrvtsplh5"
-path.s3tc="res://.godot/imported/tf2_hd_mad_milk_1.png-8d6266de26fa982adb7ba9f061c75adb.s3tc.ctex"
+uid="uid://pu7630wr2xmi"
+path.s3tc="res://.godot/imported/Casserole_01.png-cb34104ade8b033162bf046fb4f94a90.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Julia/itemModels/models/milk/tf2_hd_mad_milk_1.png"
-dest_files=["res://.godot/imported/tf2_hd_mad_milk_1.png-8d6266de26fa982adb7ba9f061c75adb.s3tc.ctex"]
+source_file="res://feature/MainLevel/Props/trailerparkprops/Textures/Casserole_01.png"
+dest_files=["res://.godot/imported/Casserole_01.png-cb34104ade8b033162bf046fb4f94a90.s3tc.ctex"]
 
 [params]
 

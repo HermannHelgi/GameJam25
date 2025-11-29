@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx3t7ghddi6ke"]
+
+[ext_resource type="PackedScene" uid="uid://1vmuonltd6nh" path="res://feature/MainLevel/Props/trailerparkprops/Trailer_Park_Props.fbx" id="1_0yv36"]
+
+[node name="Trailerparkprops" type="Node3D"]
+
+[node name="Trailer_Park_Props" parent="." instance=ExtResource("1_0yv36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6934729, 0, 0.87873316)
