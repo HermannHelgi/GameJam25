@@ -88,6 +88,8 @@ func _process(delta: float) -> void:
 				idle_stop_count = _randomStop();
 				current_state = GlobalEnums.YuleState.WALKING
 				_fetchRandomLoc(false)
+				GM.onStrikeGained()
+
 
 func _physics_process(_delta: float) -> void:
 	velocity = Vector3.ZERO
