@@ -49,7 +49,7 @@ func _process(delta: float) -> void:
 					_fetchRandomLoc(true)
 				else:
 					_fetchRandomLoc(false)
-				
+	
 	elif (current_state == GlobalEnums.YuleState.WALKING):
 		if (nav_agent.is_navigation_finished()):
 			var check = false
@@ -65,7 +65,7 @@ func _process(delta: float) -> void:
 					# No, annihilate
 					current_state = GlobalEnums.YuleState.DESTROYING
 					timer = DestroyTime
-					# print("DESTROY")
+					print("DESTROY")
 			else:
 				check = true
 			

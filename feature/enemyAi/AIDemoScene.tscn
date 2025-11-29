@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cay3puirkb0g"]
+[gd_scene load_steps=12 format=3 uid="uid://cay3puirkb0g"]
 
 [ext_resource type="PackedScene" uid="uid://yxrpgd3tbthu" path="res://feature/enemyAi/yule_lad.tscn" id="1_ivr31"]
 [ext_resource type="Script" uid="uid://gy1c8k2q20sk" path="res://feature/Managers/GameManager.gd" id="2_tiovu"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://e4dyo6j6k2hi" path="res://feature/enemyAi/spawn_location.tscn" id="4_a1ka3"]
 [ext_resource type="Resource" uid="uid://bw8wpx4ghhfoo" path="res://Resources/pot.tres" id="5_f52lf"]
 [ext_resource type="Resource" uid="uid://b7nqmuo8w0r21" path="res://Resources/spoon.tres" id="6_55oj4"]
-[ext_resource type="PackedScene" uid="uid://c1le2ne1a30ea" path="res://Dadi/playerController/PlayerTest.tscn" id="7_mr2xg"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_nxgsj"]
 vertices = PackedVector3Array(9.5, 1, -9.5, 2.25, 1, -9.5, 2, 1, -5.5, 9.5, 1, 9.5, -1.75, 1, -5.5, -2, 1, -9.5, -9.5, 1, -9.5, -9.5, 1, 9.5)
@@ -34,9 +33,6 @@ YuleLad = ExtResource("1_ivr31")
 YuleObjectiveAmount = 1
 YuleSpawnLocation = NodePath("../NavigationRegion3D")
 YuleObjectives = Array[ExtResource("3_wuiet")]([ExtResource("4_7r5iu"), ExtResource("5_f52lf"), ExtResource("6_55oj4")])
-
-[node name="Node3D" parent="." instance=ExtResource("7_mr2xg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2255497, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.43669, 0)

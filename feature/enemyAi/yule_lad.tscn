@@ -9,7 +9,7 @@ albedo_color = Color(0.622148, 0.21128, 0.190705, 1)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bf7ca"]
 
 [node name="YuleLad" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 collision_layer = 4
 collision_mask = 8
 script = ExtResource("1_c0yye")
