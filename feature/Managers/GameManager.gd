@@ -82,6 +82,7 @@ func _on_start_pressed() -> void:
 	MainMenu.set_visible(false)	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	PlayerNode.CameraScriptNode.isActive = true
+	starting = true
 
 
 func _on_quit() -> void:
