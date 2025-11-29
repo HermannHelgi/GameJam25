@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckc8d3bwiirob"]
-
-[ext_resource type="PackedScene" uid="uid://cjk7stxnd440x" path="res://Julia/itemModels/models/christmaslights/christmaslights2.glb" id="1_nkt3s"]
-
-[node name="Node3D" type="Node3D"]
-
-[node name="christmaslights2" parent="." instance=ExtResource("1_nkt3s")]

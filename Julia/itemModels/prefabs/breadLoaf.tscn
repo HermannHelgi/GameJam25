@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c65f8w8t520if"]
-
-[ext_resource type="PackedScene" uid="uid://ck7fnnmm1p36y" path="res://Julia/itemModels/models/bread/psx_low-poly_bread_loaf.glb" id="1_7exi7"]
-
-[node name="Node3D" type="Node3D"]
-
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_7exi7")]
