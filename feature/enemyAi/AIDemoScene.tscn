@@ -1,16 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjdbevuwt1385"]
+[gd_scene load_steps=13 format=3 uid="uid://cay3puirkb0g"]
 
 [ext_resource type="PackedScene" uid="uid://yxrpgd3tbthu" path="res://feature/enemyAi/yule_lad.tscn" id="1_ivr31"]
-[ext_resource type="Script" path="res://feature/Managers/GameManager.gd" id="2_tiovu"]
-[ext_resource type="Script" path="res://Resources/YuleObjectiveResource.gd" id="3_wuiet"]
+[ext_resource type="Script" uid="uid://gy1c8k2q20sk" path="res://feature/Managers/GameManager.gd" id="2_tiovu"]
+[ext_resource type="Script" uid="uid://1iqtrj8d41ny" path="res://Resources/YuleObjectiveResource.gd" id="3_wuiet"]
 [ext_resource type="Resource" uid="uid://cnj1e42d36y01" path="res://Resources/pan.tres" id="4_7r5iu"]
 [ext_resource type="PackedScene" uid="uid://e4dyo6j6k2hi" path="res://feature/enemyAi/spawn_location.tscn" id="4_a1ka3"]
 [ext_resource type="Resource" uid="uid://bw8wpx4ghhfoo" path="res://Resources/pot.tres" id="5_f52lf"]
 [ext_resource type="Resource" uid="uid://b7nqmuo8w0r21" path="res://Resources/spoon.tres" id="6_55oj4"]
+[ext_resource type="PackedScene" uid="uid://c1le2ne1a30ea" path="res://Dadi/playerController/PlayerTest.tscn" id="7_mr2xg"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_nxgsj"]
-vertices = PackedVector3Array(-9.5, 1, -9.5, -9.5, 1, 9.5, 9.5, 1, 9.5, 9.5, 1, -9.5)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+vertices = PackedVector3Array(9.5, 1, -9.5, 2.25, 1, -9.5, 2, 1, -5.5, 9.5, 1, 9.5, -1.75, 1, -5.5, -2, 1, -9.5, -9.5, 1, -9.5, -9.5, 1, 9.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(2, 3, 4), PackedInt32Array(4, 3, 7)]
 cell_height = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h5t0m"]
@@ -27,12 +28,15 @@ albedo_color = Color(0, 0.612657, 0.280074, 1)
 
 [node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("YuleSpawnLocation") groups=["GameManager"]]
 script = ExtResource("2_tiovu")
-level = 3
 StartingTimer = 3.0
 BetweenTimer = 5.0
 YuleLad = ExtResource("1_ivr31")
+YuleObjectiveAmount = 1
 YuleSpawnLocation = NodePath("../NavigationRegion3D")
 YuleObjectives = Array[ExtResource("3_wuiet")]([ExtResource("4_7r5iu"), ExtResource("5_f52lf"), ExtResource("6_55oj4")])
+
+[node name="Node3D" parent="." instance=ExtResource("7_mr2xg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2255497, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.43669, 0)
@@ -44,6 +48,17 @@ navigation_mesh = SubResource("NavigationMesh_nxgsj")
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, -0.5, 0)
 use_collision = true
 material = SubResource("StandardMaterial3D_h5t0m")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.3355138, -7.5119715)
+use_collision = true
+material = SubResource("StandardMaterial3D_h5t0m")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.439707, -7.573954)
+height = 10.0
+vertices = PackedVector3Array(1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+affect_navigation_mesh = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." groups=["PathNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6482, 0.85, 7.54961)
@@ -68,9 +83,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.50512, 0.85, -7.57101)
 mesh = SubResource("CapsuleMesh_e5bff")
 skeleton = NodePath("../NavigationRegion3D")
 surface_material_override/0 = SubResource("StandardMaterial3D_vxakl")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0.00468445, 4.48639, 14.8265)
 
 [node name="Locations" type="Node3D" parent="."]
 

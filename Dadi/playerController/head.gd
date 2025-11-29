@@ -15,9 +15,15 @@ const GRAB_LAYER := 2
 @onready var raycast:RayCast3D = $RayCast3D
 @onready var hold_position:Node3D = $holdposition
 
+var GM
+var rootScriptObject : PhysicsObject
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	GM = get_tree().get_first_node_in_group("GameManager")
+	if (GM == null):
+		printerr("NO GAMEMANAGER FOUND IN SCENE.")
 	
 
 func _input(event: InputEvent) -> void:
@@ -46,6 +52,9 @@ func try_grab_object() -> void:
 		var co := collider as CollisionShape3D
 		if (co.collision_layer & GRAB_LAYER) ==0:
 			return
+			
+	var node := collider
+	rootScriptObject = GM.get_script_owner(node);
 	var body := collider as Node3D
 	
 	#save original parent + transform to restore on drop
@@ -66,6 +75,7 @@ func try_grab_object() -> void:
 	#make it sit exacttly 
 	body.transform = Transform3D.IDENTITY
 	holding = true
+	rootScriptObject.IsHeld = true
 	
 func drop_object() -> void:
 	if held_object == null:
@@ -95,6 +105,7 @@ func drop_object() -> void:
 	# Clear state
 	held_object = null
 	held_original_parent = null
+	rootScriptObject.IsHeld = false
 	holding = false
 		
 func _physics_process(delta: float) -> void:

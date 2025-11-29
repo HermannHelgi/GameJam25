@@ -67,3 +67,10 @@ func _generateObjects() -> void:
 						EnumToObjectDict[potentialObjective.Type].append(newItem);
 					else:
 						EnumToObjectDict[potentialObjective.Type] = [newItem];
+
+func get_script_owner(node: Node) -> PhysicsObject:
+	while node:
+		if node is PhysicsObject:
+			return node
+		node = node.get_parent()
+	return null
