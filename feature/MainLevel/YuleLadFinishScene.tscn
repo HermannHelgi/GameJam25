@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://byaocivcykw4x"]
+[gd_scene load_steps=19 format=3 uid="uid://byaocivcykw4x"]
 
 [ext_resource type="Script" uid="uid://gy1c8k2q20sk" path="res://feature/Managers/GameManager.gd" id="1_oh3eu"]
 [ext_resource type="PackedScene" uid="uid://yxrpgd3tbthu" path="res://feature/enemyAi/yule_lad.tscn" id="2_o1k88"]
@@ -8,7 +8,8 @@
 [ext_resource type="Resource" uid="uid://b7nqmuo8w0r21" path="res://Resources/spoon.tres" id="6_k6srh"]
 [ext_resource type="PackedScene" uid="uid://d07n0wu8kgkfb" path="res://feature/MainLevel/MainLevel.tscn" id="7_6rknu"]
 [ext_resource type="PackedScene" uid="uid://c1le2ne1a30ea" path="res://Dadi/playerController/PlayerTest.tscn" id="8_o1k88"]
-[ext_resource type="Script" uid="uid://bofkgrsk5616g" path="res://feature/enemyAi/spawn_location.gd" id="9_bjg14"]
+[ext_resource type="Script" path="res://feature/enemyAi/spawn_location.gd" id="9_bjg14"]
+[ext_resource type="FontFile" uid="uid://c5joqn2djl5hb" path="res://feature/MainMenu/Amore Christmas.otf" id="10_mgm26"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_oh3eu"]
 vertices = PackedVector3Array(-6.1792183, 6.0730658, 2.5, -5.1792183, 6.0730658, -2, -6.1792183, 6.0730658, -2.5, -8.679218, 6.0730658, -3, -6.1792183, 6.0730658, -9, -5.1792183, 6.0730658, -10.5, -5.1792183, 6.0730658, -14.5, -14.679218, 6.0730658, -14.5, -15.179218, 6.0730658, -8.5, -10.679218, 6.0730658, -8.5, -6.1792183, 6.0730658, -7.5, -10.179218, 6.0730658, -7.5, -8.179218, 6.0730658, -4.5, -14.679218, 6.0730658, -5, -14.679218, 6.0730658, -3, -14.679218, 6.0730658, 24.5, -5.1792183, 6.0730658, 24.5, -14.179218, 1.0730658, -9, -6.1792183, 1.0730658, -9, -5.6792183, 1.0730658, -10.5, -14.179218, 1.0730658, -14.5, 14.320782, 1.0730658, -14.5, 14.320782, 1.0730658, -10.5, 18.820782, 1.0730658, -10, 24.320782, 1.0730658, -14.5, 18.820782, 1.0730658, 3.5, 24.320782, 1.0730658, 4.5, -5.1792183, 9.073066, -9.5, -5.1792183, 9.073066, -5.5, -4.1792183, 9.073066, -8.5, 0.3207817, 9.073066, -8, 0.3207817, 9.073066, -10, 4.3207817, 9.073066, -9.5, 4.3207817, 9.073066, -8.5, 16.320782, 9.073066, -8.5, 16.320782, 9.073066, -9.5, -14.179218, 1.0730658, -7.5, -14.179218, 1.0730658, -5, -10.179218, 1.0730658, -5, -10.179218, 1.0730658, -7.5, -7.6792183, 1.0730658, 4, -6.1792183, 1.0730658, 4.5, -5.6792183, 1.0730658, 2, -5.6792183, 1.0730658, -2, -8.179218, 1.0730658, -2.5, -1.1792183, 1.0730658, -5.5, -3.6792183, 1.0730658, -6, -3.6792183, 1.0730658, -2.5, -1.1792183, 1.0730658, -1, -8.179218, 1.0730658, -3, -6.1792183, 1.0730658, -7.5, -7.6792183, 1.0730658, -7.5, -3.6792183, 1.0730658, 2, -3.1792183, 1.0730658, 3.5, 1.3207817, 1.0730658, 3.5, 1.3207817, 1.0730658, -0.5, 7.8207817, 1.0730658, -6, 8.320782, 1.0730658, -6.5, 7.8207817, 1.0730658, -7.5, 2.3207817, 1.0730658, -6.5, 5.3207817, 1.0730658, -5.5, 7.8207817, 1.0730658, 0, 9.320782, 1.0730658, -0.5, 9.320782, 1.0730658, -1, 5.3207817, 1.0730658, -1, 16.320782, 1.0730658, 3.5, 12.820782, 1.0730658, 2, 8.320782, 1.0730658, 2, -0.6792183, 1.0730658, -7, -3.6792183, 1.0730658, -7.5, 2.3207817, 1.0730658, -1, 16.320782, 1.0730658, 0.5, 13.320782, 1.0730658, 0.5, 8.320782, 1.0730658, -5, 12.320782, 1.0730658, -5, 13.320782, 1.0730658, -6, 13.320782, 1.0730658, -7, 16.320782, 1.0730658, -7.5, 14.820782, 1.0730658, -7.5, 14.820782, 1.0730658, -5.5, 12.320782, 1.0730658, -1.5, 12.820782, 1.0730658, -0.5, 16.820782, 12.573066, -7, 17.320782, 12.573066, 1, 18.320782, 12.573066, -6.5, -0.17921829, 2.0730658, -6, -0.17921829, 2.0730658, -1.5, 1.3207817, 2.0730658, -1.5, 1.3207817, 2.0730658, -6, 6.3207817, 2.0730658, -5, 6.3207817, 2.0730658, -1.5, 7.3207817, 2.0730658, -1.5, 7.3207817, 2.0730658, -5, 9.320782, 1.5730658, -4.5, 9.320782, 1.5730658, -2, 11.320782, 1.5730658, -2, 11.320782, 1.5730658, -4.5, -14.179218, 2.5730658, -3, -14.179218, 2.5730658, 1, -13.179218, 2.5730658, 1, -13.179218, 2.5730658, -3, -11.179218, 1.0730658, -2, -12.179218, 1.0730658, -3, -11.179218, 1.0730658, 4, -9.679218, 1.0730658, 5, -7.6792183, 1.0730658, 5.5, -7.6792183, 1.0730658, 13.5, -6.1792183, 1.0730658, 13.5, -5.6792183, 1.0730658, 11, -12.679218, 1.0730658, 2, -12.179218, 1.0730658, 6, -10.179218, 2.0730658, -1.5, -10.179218, 2.0730658, 3.5, -8.679218, 2.0730658, 3.5, -8.679218, 2.0730658, -1.5, -14.179218, 2.5730658, 2, -14.179218, 2.5730658, 8, -13.179218, 2.5730658, 8, -13.179218, 2.5730658, 2, -5.1792183, 11.073066, 3, -5.1792183, 11.073066, 14, -4.1792183, 11.073066, 14, -4.1792183, 11.073066, 3, -1.1792183, 6.0730658, 6, -3.1792183, 6.0730658, 6, -3.1792183, 6.0730658, 14.5, 4.3207817, 6.0730658, 14.5, 5.3207817, 6.0730658, 15.5, 5.8207817, 6.0730658, 5, -0.6792183, 6.0730658, 4, 16.320782, 6.0730658, 5, 16.320782, 6.0730658, 4, 18.820782, 6.0730658, 4, 18.820782, 6.0730658, 5, 20.820782, 6.0730658, 4.5, -3.1792183, 1.0730658, 6, -3.6792183, 1.0730658, 10, -3.1792183, 1.0730658, 12.5, 3.8207817, 1.0730658, 12.5, 3.8207817, 1.0730658, 6, -11.179218, 2.5730658, 6.5, -11.179218, 2.5730658, 8, -10.179218, 2.5730658, 8, -10.179218, 2.5730658, 6.5, -9.679218, 1.0730658, 16.5, -10.179218, 1.0730658, 9.5, -14.179218, 1.0730658, 9.5, -14.179218, 1.0730658, 24.5, 3.8207817, 1.0730658, 15, -7.6792183, 1.0730658, 15, -8.179218, 1.0730658, 16.5, 4.8207817, 1.0730658, 24.5, 4.8207817, 1.0730658, 16.5)
@@ -26,15 +27,50 @@ albedo_color = Color(2.3343414e-06, 0.63711804, 0.13648644, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjg14"]
 albedo_color = Color(0.807538, 0, 0.043642923, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgm26"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c2tbu"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k6srh"]
+bg_color = Color(0.8819366, 0.8819366, 0.88193655, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mgm26"]
+
 [node name="YuleLadFinishScene" type="Node3D"]
 
-[node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("YuleSpawnLocation") groups=["GameManager"]]
+[node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("YuleSpawnLocation", "PlayerNode", "MainMenu") groups=["GameManager"]]
 script = ExtResource("1_oh3eu")
 StartingTimer = 3.0
 BetweenTimer = 5.0
 YuleLad = ExtResource("2_o1k88")
+YuleObjectiveAmount = 1
 YuleSpawnLocation = NodePath("../NavigationRegion3D")
 YuleObjectives = Array[ExtResource("3_bjg14")]([ExtResource("4_mgm26"), ExtResource("5_c2tbu"), ExtResource("6_k6srh")])
+PlayerNode = NodePath("../Node3D")
+MainMenu = NodePath("../MainMenu")
+
+[node name="Node3D" parent="." instance=ExtResource("8_o1k88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.933804, 1.8131257, -2.6552906)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." groups=["NavMesh"]]
 navigation_mesh = SubResource("NavigationMesh_oh3eu")
@@ -555,5 +591,97 @@ mesh = SubResource("CapsuleMesh_oh3eu")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_bjg14")
 
-[node name="Node3D" parent="." instance=ExtResource("8_o1k88")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5560114, 0)
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.5
+offset_top = -258.0
+offset_right = 280.5
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("10_mgm26")
+theme_override_font_sizes/font_size = 64
+text = "A Fyule Little Lads"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -398.0
+offset_top = 135.0
+offset_right = 398.0
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="Button" type="Button" parent="MainMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_mgm26")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mgm26")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c2tbu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k6srh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mgm26")
+text = "	START"
+
+[node name="Button2" type="Button" parent="MainMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_mgm26")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mgm26")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c2tbu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k6srh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mgm26")
+text = "QUIT"
+
+[connection signal="pressed" from="MainMenu/HBoxContainer/Button" to="GameManager" method="_on_start_pressed"]
+[connection signal="pressed" from="MainMenu/HBoxContainer/Button2" to="GameManager" method="_on_quit"]

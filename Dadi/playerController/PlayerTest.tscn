@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://l6hvc3a7lwo1" path="res://Dadi/playerController/head.gd" id="2_lvkh7"]
 [ext_resource type="Shader" uid="uid://bespngqwl5lj0" path="res://Dadi/shader/psx_camera_shader.gdshader" id="3_vej58"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_el46f"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vej58"]
 render_priority = 0
 shader = ExtResource("3_vej58")
 shader_parameter/enable_fog = true
@@ -21,7 +21,7 @@ shader_parameter/dither_strength = 0.3
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fpwub"]
 render_priority = 0
-next_pass = SubResource("ShaderMaterial_el46f")
+next_pass = SubResource("ShaderMaterial_vej58")
 shader = ExtResource("3_vej58")
 shader_parameter/enable_fog = false
 shader_parameter/fog_color = Color(0.9779369, 0.97793704, 0.9779369, 1)
@@ -33,44 +33,41 @@ shader_parameter/noise_time_fac = 0.10000000149012
 shader_parameter/enable_color_limitation = false
 shader_parameter/color_levels = 256
 shader_parameter/enable_dithering = true
-shader_parameter/dither_strength = 2.0
+shader_parameter/dither_strength = 1.0000000475
 
-[sub_resource type="BoxMesh" id="BoxMesh_pjdli"]
+[sub_resource type="BoxMesh" id="BoxMesh_el46f"]
 material = SubResource("ShaderMaterial_fpwub")
 size = Vector3(10, 10, 10)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oexwc"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fpwub"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_722m2"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pjdli"]
 
-[node name="Node3D" type="Node3D"]
-
-[node name="Player" type="CharacterBody3D" parent="."]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("CameraScriptNode")]
 script = ExtResource("1_ld0y6")
+CameraScriptNode = NodePath("head")
 
-[node name="head" type="Node3D" parent="Player"]
+[node name="head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.619101, 0)
 script = ExtResource("2_lvkh7")
-spring_stiffness = null
-spring_damping = null
 
-[node name="Camera3D" type="Camera3D" parent="Player/head"]
+[node name="Camera3D" type="Camera3D" parent="head"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/head/Camera3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="head/Camera3D"]
 visible = false
-mesh = SubResource("BoxMesh_pjdli")
+mesh = SubResource("BoxMesh_el46f")
 
-[node name="holdposition" type="Node3D" parent="Player/head"]
+[node name="holdposition" type="Node3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
-[node name="RayCast3D" type="RayCast3D" parent="Player/head"]
+[node name="RayCast3D" type="RayCast3D" parent="head"]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, -2, 0, 2, -8.742278e-08, 0, 0, -0.1600132)
 collision_mask = 2
 debug_shape_custom_color = Color(0.62716395, 0.0063544987, 0.09895905, 1)
 debug_shape_thickness = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-shape = SubResource("CapsuleShape3D_oexwc")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_fpwub")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-mesh = SubResource("CapsuleMesh_722m2")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_pjdli")

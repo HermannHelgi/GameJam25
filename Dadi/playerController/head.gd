@@ -22,32 +22,34 @@ var rootScriptObject : PhysicsObject
 #@onready var head = $head
 @onready var camera:Camera3D = $Camera3D
 
+var isActive: bool = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	GM = get_tree().get_first_node_in_group("GameManager")
 	if (GM == null):
 		printerr("NO GAMEMANAGER FOUND IN SCENE.")
 	
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		#yaw left/right
-		get_parent().rotate_y(-event.relative.x * sensetivity)
-		
-		#rotate_x(-event.relative.y * sensetivity)
-		#pitch up/down
-		pitch -= event.relative.y * sensetivity
-		pitch = clamp(pitch, deg_to_rad(-60), deg_to_rad(60))
-		rotation.x = pitch
-		#rotation.x * clamp(rotation.x, deg_to_rad(-90), deg_to_rad(90))
-		#rotation.x = clamp(rotation.x, deg_to_rad(-40), deg_to_rad(60))
-		#Grab - drop item action
-	#if event.is_action_pressed(GRAB_ACTION):
-		#if holding:
-			#drop_object()
-		#else:
-			#try_grab_object()
+	if (isActive):
+		if event is InputEventMouseMotion:
+			#yaw left/right
+			get_parent().rotate_y(-event.relative.x * sensetivity)
+			
+			#rotate_x(-event.relative.y * sensetivity)
+			#pitch up/down
+			pitch -= event.relative.y * sensetivity
+			pitch = clamp(pitch, deg_to_rad(-60), deg_to_rad(60))
+			rotation.x = pitch
+			#rotation.x * clamp(rotation.x, deg_to_rad(-90), deg_to_rad(90))
+			#rotation.x = clamp(rotation.x, deg_to_rad(-40), deg_to_rad(60))
+			#Grab - drop item action
+		#if event.is_action_pressed(GRAB_ACTION):
+			#if holding:
+				#drop_object()
+			#else:
+				#try_grab_object()
 
 func try_grab_object() -> void:
 	#Make sure raycast is hitting something
@@ -119,14 +121,15 @@ func drop_object() -> void:
 	holding = false
 		
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed(GRAB_ACTION) and not holding:
-		try_grab_object()
-		
-	if Input.is_action_just_released(GRAB_ACTION) and holding:
-		drop_object()
-		
-	if holding and held_object is RigidBody3D:
-		_update_held_body_physics(delta)
+	if (isActive):
+		if Input.is_action_just_pressed(GRAB_ACTION) and not holding:
+			try_grab_object()
+			
+		if Input.is_action_just_released(GRAB_ACTION) and holding:
+			drop_object()
+			
+		if holding and held_object is RigidBody3D:
+			_update_held_body_physics(delta)
 
 func _update_held_body_physics(delta:float) -> void:
 	var rb := held_object as RigidBody3D

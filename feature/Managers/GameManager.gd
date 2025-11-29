@@ -19,24 +19,32 @@ var SelectedYuleObjectives : Array[YuleObjectiveResource]
 var EnumToObjectDict = {}
 var AllYuleLads : Array[Node];
 
+@export var PlayerNode : Node
+@export var MainMenu : Node
+var starting = false;
+
 func _ready() -> void:
 	PathLocations = get_tree().get_nodes_in_group("PathNode")
 	ItemSpawnLocations = get_tree().get_nodes_in_group("SpawnNode")
 	_generateObjects()
 	timer = StartingTimer;
+	PlayerNode.CameraScriptNode.isActive = false
+	# 	GM = get_tree().get_first_node_in_group("GameManager")
+
 
 func _process(delta: float) -> void:
-	if (timer >= 0):
-		timer -= delta
-		if (timer <= 0 && AllYuleLads.size() != level):
-			var yuleSpawn = PathLocations[rng.randi_range(0, PathLocations.size() - 1)];
-			var newYuleLad = YuleLad.instantiate()
-			newYuleLad.global_position = yuleSpawn.global_position
-			YuleSpawnLocation.add_child(newYuleLad)
-			AllYuleLads.append(newYuleLad)
-			timer = BetweenTimer;
-			var obj = SelectedYuleObjectives.pop_at(rng.randi_range(0, SelectedYuleObjectives.size() - 1))
-			newYuleLad.ObjectiveType = obj.Type
+	if (starting):
+		if (timer >= 0):
+			timer -= delta
+			if (timer <= 0 && AllYuleLads.size() != level):
+				var yuleSpawn = PathLocations[rng.randi_range(0, PathLocations.size() - 1)];
+				var newYuleLad = YuleLad.instantiate()
+				newYuleLad.global_position = yuleSpawn.global_position
+				YuleSpawnLocation.add_child(newYuleLad)
+				AllYuleLads.append(newYuleLad)
+				timer = BetweenTimer;
+				var obj = SelectedYuleObjectives.pop_at(rng.randi_range(0, SelectedYuleObjectives.size() - 1))
+				newYuleLad.ObjectiveType = obj.Type
 
 func _generateObjects() -> void:
 	var count = 0
@@ -68,3 +76,13 @@ func get_script_owner(node: Node) -> PhysicsObject:
 			return node
 		node = node.get_parent()
 	return null
+
+
+func _on_start_pressed() -> void:
+	MainMenu.set_visible(false)	
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	PlayerNode.CameraScriptNode.isActive = true
+
+
+func _on_quit() -> void:
+	get_tree().quit()
