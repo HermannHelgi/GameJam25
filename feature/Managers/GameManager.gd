@@ -14,12 +14,6 @@ var rng = RandomNumberGenerator.new()
 
 var timer = 0.0;
 
-# List of tuples (ENUM, OBJECT) (ASSIGNED IN INSPECTOR)
-# TEMP array of enums chosen, placing ENUM to OBJECTS in dictionary
-# Dictionary of ENUM to OBJECT
-# Create YULE LAD, assign ENUM, remove enum from TEMP array
-# Some check for YULE LAD to know when to leave
-
 @export var YuleObjectives : Array[YuleObjectiveResource];
 var SelectedYuleObjectives : Array[YuleObjectiveResource]
 var EnumToObjectDict = {}
@@ -30,7 +24,7 @@ func _ready() -> void:
 	ItemSpawnLocations = get_tree().get_nodes_in_group("SpawnNode")
 	_generateObjects()
 	timer = StartingTimer;
-	
+
 func _process(delta: float) -> void:
 	if (timer >= 0):
 		timer -= delta
