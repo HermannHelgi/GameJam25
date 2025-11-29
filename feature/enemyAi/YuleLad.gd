@@ -41,7 +41,7 @@ func _process(delta: float) -> void:
 		if (timer >= 0):
 			timer -= delta
 			if (timer < 0):
-				# print("WALK")
+				print("WALK")
 				
 				current_state = GlobalEnums.YuleState.WALKING
 				idle_stop_count -= 1
@@ -57,7 +57,6 @@ func _process(delta: float) -> void:
 			if (idle_stop_count == 0 && GM.EnumToObjectDict[ObjectiveType].size() != 0):
 				# ...yes, is it being held or is it too far away?
 				var targetDistance = global_position.distance_to(GM.get_script_owner(target).MeshLocation.global_position)
-				print(targetDistance)
 				if (GM.get_script_owner(target).IsHeld || targetDistance > Reach):
 					# Yes, i'm going to go somewhere else then.
 					idle_stop_count = _randomStop();
@@ -73,7 +72,7 @@ func _process(delta: float) -> void:
 			if (check):
 				timer = _randomTime()
 				current_state = GlobalEnums.YuleState.IDLE	
-				# print("IDLE")
+				print("IDLE")
 	
 	elif (current_state == GlobalEnums.YuleState.DESTROYING):
 		if (timer >= 0):
@@ -83,7 +82,7 @@ func _process(delta: float) -> void:
 				current_state = GlobalEnums.YuleState.IDLE	
 			
 			if (timer < 0):
-				# print("WALK FROM DESTRUCTION")
+				print("WALK FROM DESTRUCTION")
 				GM.EnumToObjectDict[ObjectiveType].pop_at(0);
 				target.queue_free()
 				idle_stop_count = _randomStop();

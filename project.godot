@@ -11,17 +11,16 @@ config_version=5
 [application]
 
 config/name="GameJam25"
-run/main_scene="uid://d07n0wu8kgkfb"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
-
-[filesystem]
-
-import/blender/enabled=false
 
 [autoload]
 
 GlobalEnums="*res://feature/enemyAi/GlobalEnums.gd"
+
+[filesystem]
+
+import/blender/enabled=false
 
 [input]
 

@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://d07n0wu8kgkfb"]
+[gd_scene load_steps=16 format=3 uid="uid://d07n0wu8kgkfb"]
 
 [ext_resource type="Texture2D" uid="uid://gemih5m6oead" path="res://feature/MainLevel/Props/Textures/Wood_19-128x128.png" id="1_3q08c"]
 [ext_resource type="Texture2D" uid="uid://rxvqqdxf18mi" path="res://feature/MainLevel/Wood_Pattern_02_Brown_2.png" id="1_uhivl"]
-[ext_resource type="PackedScene" uid="uid://c1le2ne1a30ea" path="res://Dadi/playerController/PlayerTest.tscn" id="2_kkp3g"]
 [ext_resource type="PackedScene" uid="uid://nk75su6ys20r" path="res://feature/MainLevel/Props/KitchenCounter.tscn" id="3_av175"]
 [ext_resource type="PackedScene" uid="uid://bg8wr4pyga8or" path="res://feature/MainLevel/Props/Island.tscn" id="4_av175"]
 [ext_resource type="PackedScene" uid="uid://ghcai01cv1aw" path="res://feature/MainLevel/Props/KitchenElements/Stove.tscn" id="5_rxcrv"]
@@ -360,9 +359,6 @@ size = Vector3(1, 0.1328125, 1)
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -10, 5.0730677, -10)
 material_override = SubResource("StandardMaterial3D_kkp3g")
 size = Vector3(1, 0.1328125, 1)
-
-[node name="Node3D" parent="." instance=ExtResource("2_kkp3g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 
 [node name="KitchenCounter" parent="." instance=ExtResource("3_av175")]
 transform = Transform3D(1.5836697, 0, 0, 0, 1.4331161, 0, 0, 0, 1.3048302, -14.165117, 0.8525946, 2.9777627)
