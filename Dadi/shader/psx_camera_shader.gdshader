@@ -13,7 +13,7 @@ uniform float noise_time_fac : hint_range(0.1, 10) = 4;
 uniform bool enable_color_limitation = true;
 uniform int color_levels : hint_range(2, 256) = 32;
 uniform bool enable_dithering = true;
-uniform float dither_strength : hint_range(0.0, 1.0) = 0.3;
+uniform float dither_strength : hint_range(0.0, 2.0) = 0.3;
 
 float hashOld12(vec2 p){
 	return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453 + (TIME / noise_time_fac)) ;
