@@ -21,19 +21,21 @@ var AllYuleLads : Array[Node];
 
 @export var PlayerNode : Node
 @export var MainMenu : Node
-var starting = false;
+var isActive = true; # NEEDS TO BE TRUE TO START
+
+var strikes = 0;
+@export var maximumStrikes = 3;
 
 func _ready() -> void:
 	PathLocations = get_tree().get_nodes_in_group("PathNode")
 	ItemSpawnLocations = get_tree().get_nodes_in_group("SpawnNode")
 	_generateObjects()
 	timer = StartingTimer;
-	PlayerNode.CameraScriptNode.isActive = false
+	_freeze_game()
 	# 	GM = get_tree().get_first_node_in_group("GameManager")
 
-
 func _process(delta: float) -> void:
-	if (starting):
+	if (isActive):
 		if (timer >= 0):
 			timer -= delta
 			if (timer <= 0 && AllYuleLads.size() != level):
@@ -45,6 +47,9 @@ func _process(delta: float) -> void:
 				timer = BetweenTimer;
 				var obj = SelectedYuleObjectives.pop_at(rng.randi_range(0, SelectedYuleObjectives.size() - 1))
 				newYuleLad.ObjectiveType = obj.Type
+
+	if Input.is_action_just_pressed("Pause"):
+		_freeze_game()
 
 func _generateObjects() -> void:
 	var count = 0
@@ -78,11 +83,23 @@ func get_script_owner(node: Node) -> PhysicsObject:
 	return null
 
 
+func onStrikeGained() -> void:
+	strikes += 1
+	if (strikes == maximumStrikes):
+		get_tree().reload_current_scene()
+
+
 func _on_start_pressed() -> void:
-	MainMenu.set_visible(false)	
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	PlayerNode.CameraScriptNode.isActive = true
+	_freeze_game()
 
 
 func _on_quit() -> void:
 	get_tree().quit()
+
+
+func _freeze_game() -> void:
+	get_tree().paused = isActive
+	MainMenu.set_visible(isActive)	
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if isActive else Input.MOUSE_MODE_CAPTURED)
+	PlayerNode.CameraScriptNode.isActive = !isActive
+	isActive = !isActive
