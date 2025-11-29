@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dtv3ngo1u01xm"
+path.s3tc="res://.godot/imported/candles_Candles_with_UVs_lambert4SG_BaseColor.png-92a90e61c3643b9c9cf5b53fbc358e4a.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "4624c1dfa261b3133ad312a20e6b113e"
+}
+
+[deps]
+
+source_file="res://Julia/itemModels/models/candles/candles_Candles_with_UVs_lambert4SG_BaseColor.png"
+dest_files=["res://.godot/imported/candles_Candles_with_UVs_lambert4SG_BaseColor.png-92a90e61c3643b9c9cf5b53fbc358e4a.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cilpouysyp7qv"]
+[gd_scene load_steps=7 format=3 uid="uid://b771fo5vrrkkl"]
 
-[ext_resource type="PackedScene" uid="uid://c1le2ne1a30ea" path="res://Dadi/playerController/PlayerTest.tscn" id="1_bc2ts"]
-[ext_resource type="PackedScene" uid="uid://mg0qvpyakbdj" path="res://Dadi/playerController/testObject.tscn" id="2_eyxn3"]
+[ext_resource type="PackedScene" uid="uid://c1le2ne1a30ea" path="res://Dadi/playerController/PlayerTest.tscn" id="1_wr8a0"]
+[ext_resource type="PackedScene" uid="uid://mg0qvpyakbdj" path="res://Dadi/playerController/testObject.tscn" id="2_gtkoc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i1x8t"]
 
@@ -14,10 +14,10 @@ albedo_color = Color(0.36643577, 0.8118986, 0.40948617, 1)
 
 [node name="TestScene" type="Node3D"]
 
-[node name="Playercontroller" parent="." instance=ExtResource("1_bc2ts")]
+[node name="Playercontroller" parent="." instance=ExtResource("1_wr8a0")]
 
-[node name="object" parent="." instance=ExtResource("2_eyxn3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.140492, 0, -10.211087)
+[node name="object" parent="." instance=ExtResource("2_gtkoc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.140492, 0, -4.85306)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.9033, 0)

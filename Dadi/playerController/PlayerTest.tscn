@@ -1,7 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1le2ne1a30ea"]
+[gd_scene load_steps=9 format=3 uid="uid://c1le2ne1a30ea"]
 
 [ext_resource type="Script" uid="uid://p3po1jtg8lip" path="res://Dadi/playerController/PlayerController.gd" id="1_ld0y6"]
 [ext_resource type="Script" uid="uid://l6hvc3a7lwo1" path="res://Dadi/playerController/head.gd" id="2_lvkh7"]
+[ext_resource type="Shader" uid="uid://bespngqwl5lj0" path="res://Dadi/shader/psx_camera_shader.gdshader" id="3_vej58"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_el46f"]
+render_priority = 0
+shader = ExtResource("3_vej58")
+shader_parameter/enable_fog = true
+shader_parameter/fog_color = Color(0, 0, 0, 1)
+shader_parameter/noise_color = Color(0, 0, 0, 1)
+shader_parameter/fog_distance = 100.0
+shader_parameter/fog_fade_range = 50.0
+shader_parameter/enable_noise = true
+shader_parameter/noise_time_fac = 4.0
+shader_parameter/enable_color_limitation = true
+shader_parameter/color_levels = 32
+shader_parameter/enable_dithering = true
+shader_parameter/dither_strength = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fpwub"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_el46f")
+shader = ExtResource("3_vej58")
+shader_parameter/enable_fog = false
+shader_parameter/fog_color = Color(0.9779369, 0.97793704, 0.9779369, 1)
+shader_parameter/noise_color = Color(0, 0, 0, 1)
+shader_parameter/fog_distance = 1.0
+shader_parameter/fog_fade_range = 1.0
+shader_parameter/enable_noise = false
+shader_parameter/noise_time_fac = 0.10000000149012
+shader_parameter/enable_color_limitation = false
+shader_parameter/color_levels = 32
+shader_parameter/enable_dithering = true
+shader_parameter/dither_strength = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_pjdli"]
+material = SubResource("ShaderMaterial_fpwub")
+size = Vector3(10, 10, 10)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oexwc"]
 
@@ -19,6 +55,9 @@ spring_stiffness = null
 spring_damping = null
 
 [node name="Camera3D" type="Camera3D" parent="Player/head"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/head/Camera3D"]
+mesh = SubResource("BoxMesh_pjdli")
 
 [node name="holdposition" type="Node3D" parent="Player/head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
