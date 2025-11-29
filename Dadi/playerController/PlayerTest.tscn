@@ -31,9 +31,9 @@ shader_parameter/fog_fade_range = 1.0
 shader_parameter/enable_noise = false
 shader_parameter/noise_time_fac = 0.10000000149012
 shader_parameter/enable_color_limitation = false
-shader_parameter/color_levels = 32
+shader_parameter/color_levels = 256
 shader_parameter/enable_dithering = true
-shader_parameter/dither_strength = 1.0
+shader_parameter/dither_strength = 2.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_pjdli"]
 material = SubResource("ShaderMaterial_fpwub")
@@ -55,6 +55,7 @@ script = ExtResource("2_lvkh7")
 [node name="Camera3D" type="Camera3D" parent="Player/head"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/head/Camera3D"]
+visible = false
 mesh = SubResource("BoxMesh_pjdli")
 
 [node name="holdposition" type="Node3D" parent="Player/head"]
