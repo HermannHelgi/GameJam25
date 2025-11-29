@@ -36,11 +36,11 @@ func _input(event: InputEvent) -> void:
 		#rotation.x * clamp(rotation.x, deg_to_rad(-90), deg_to_rad(90))
 		#rotation.x = clamp(rotation.x, deg_to_rad(-40), deg_to_rad(60))
 		#Grab - drop item action
-	if event.is_action_pressed(GRAB_ACTION):
-		if holding:
-			drop_object()
-		else:
-			try_grab_object()
+	#if event.is_action_pressed(GRAB_ACTION):
+		#if holding:
+			#drop_object()
+		#else:
+			#try_grab_object()
 
 func try_grab_object() -> void:
 	#Make sure raycast is hitting something
@@ -57,7 +57,6 @@ func try_grab_object() -> void:
 		if (co.collision_layer & GRAB_LAYER) ==0:
 			return
 	var body := collider as Node3D
-	
 	#save original parent + transform to restore on drop
 	held_object = body
 	held_original_parent = body.get_parent()
@@ -108,6 +107,12 @@ func drop_object() -> void:
 	holding = false
 		
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed(GRAB_ACTION) and not holding:
+		try_grab_object()
+		
+	if Input.is_action_just_released(GRAB_ACTION) and holding:
+		drop_object()
+		
 	if holding and held_object is RigidBody3D:
 		_update_held_body_physics(delta)
 
