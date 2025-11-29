@@ -1,7 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://cccwl575s74lq"]
+[gd_scene load_steps=16 format=3 uid="uid://cccwl575s74lq"]
 
 [ext_resource type="PackedScene" uid="uid://c1le2ne1a30ea" path="res://Dadi/playerController/PlayerTest.tscn" id="1_218i2"]
 [ext_resource type="PackedScene" uid="uid://mg0qvpyakbdj" path="res://Dadi/playerController/testObject.tscn" id="2_au0yd"]
+[ext_resource type="PackedScene" uid="uid://duf6es12tabkv" path="res://Julia/itemModels/prefabs/blueLights.tscn" id="3_8upl0"]
+[ext_resource type="PackedScene" uid="uid://r3l716615kww" path="res://Julia/itemModels/prefabs/candles.tscn" id="3_kttkm"]
+[ext_resource type="PackedScene" uid="uid://l5u8c68810ni" path="res://Julia/itemModels/prefabs/greenLights.tscn" id="4_p6nk6"]
+[ext_resource type="PackedScene" uid="uid://gjg4iyxmwcq" path="res://Julia/itemModels/prefabs/redLights.tscn" id="5_rmsxl"]
+[ext_resource type="PackedScene" uid="uid://dotqejuoammd2" path="res://Julia/itemModels/prefabs/yellowLights.tscn" id="6_3pfjr"]
+[ext_resource type="PackedScene" uid="uid://ckc8d3bwiirob" path="res://Julia/itemModels/prefabs/colorfulLights.tscn" id="7_u4c76"]
+[ext_resource type="PackedScene" uid="uid://bxek46q3cw2wq" path="res://Julia/itemModels/prefabs/bowl.tscn" id="8_lyxj3"]
+[ext_resource type="PackedScene" uid="uid://c65f8w8t520if" path="res://Julia/itemModels/prefabs/breadLoaf.tscn" id="9_k7cqj"]
+[ext_resource type="PackedScene" uid="uid://j3uw4b8k3ak7" path="res://Julia/itemModels/prefabs/pot.tscn" id="11_plscv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i1x8t"]
 
@@ -10,7 +19,7 @@
 [sub_resource type="BoxMesh" id="BoxMesh_6pc68"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sl4as"]
-albedo_color = Color(0.366436, 0.811899, 0.409486, 1)
+albedo_color = Color(0.103744, 0.103744, 0.103744, 1)
 
 [node name="TestScene" type="Node3D"]
 
@@ -34,3 +43,53 @@ shape = SubResource("BoxShape3D_03vtf")
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
 mesh = SubResource("BoxMesh_6pc68")
 surface_material_override/0 = SubResource("StandardMaterial3D_sl4as")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.4, 1.177, -17.97)
+physics_material_override = SubResource("PhysicsMaterial_i1x8t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/StaticBody3D"]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+shape = SubResource("BoxShape3D_03vtf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/StaticBody3D"]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+mesh = SubResource("BoxMesh_6pc68")
+surface_material_override/0 = SubResource("StandardMaterial3D_sl4as")
+
+[node name="Node3D" parent="StaticBody3D/StaticBody3D" instance=ExtResource("3_8upl0")]
+transform = Transform3D(0.999848, 6.5007e-18, -0.0174524, 0.0174524, -4.37114e-08, 0.999848, -7.62869e-10, -1, -4.37047e-08, -3.31917, 0.618242, -2.88121)
+
+[node name="Node3D2" parent="StaticBody3D/StaticBody3D" instance=ExtResource("4_p6nk6")]
+transform = Transform3D(0.999848, 0, -0.0174524, 0.0174524, -4.37114e-08, 0.999848, -7.62869e-10, -1, -4.37047e-08, -2.584, 0.569173, -2.47573)
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="Node3D" parent="Lights" instance=ExtResource("5_rmsxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.231469, 2.10752, -17.47)
+
+[node name="Node3D2" parent="Lights" instance=ExtResource("6_3pfjr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80444, 1.68291, -17.47)
+
+[node name="Node3D3" parent="Lights" instance=ExtResource("7_u4c76")]
+transform = Transform3D(0.169664, 0.0103771, 1.13737, -0.0702058, 1.14786, -1.8164e-09, -1.13525, -0.0694347, 0.169981, -1.75259, 2.70304, -17.3923)
+
+[node name="Node3D4" parent="Lights" instance=ExtResource("7_u4c76")]
+transform = Transform3D(0.102536, 0.00627136, 0.687366, -0.0424287, 0.693704, -1.64751e-09, -0.686084, -0.0419627, 0.102728, 0.363239, 1.0153, -17.4098)
+
+[node name="Node3D5" parent="Lights" instance=ExtResource("7_u4c76")]
+transform = Transform3D(0.102536, 0.00627136, 0.687366, -0.0424287, 0.693704, -1.64751e-09, -0.686084, -0.0419627, 0.102728, -3.99956, 0.933738, -17.4464)
+
+[node name="Items" type="Node" parent="."]
+
+[node name="Bowl" parent="Items" instance=ExtResource("8_lyxj3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.41938, -1.42843, -16.3563)
+
+[node name="bread" parent="Items" instance=ExtResource("9_k7cqj")]
+transform = Transform3D(0.507538, 0, -0.861629, 0, 1, 0, 0.861629, 0, 0.507538, -6.05461, -0.854081, -14.4158)
+
+[node name="candles" parent="Items" instance=ExtResource("3_kttkm")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.29972, -1.44251, -14.7324)
+
+[node name="pot" parent="Items" instance=ExtResource("11_plscv")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.38065, -1.44251, -13.1651)

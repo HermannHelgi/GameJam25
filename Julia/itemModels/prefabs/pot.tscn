@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://j3uw4b8k3ak7"]
+
+[ext_resource type="PackedScene" uid="uid://df8r4ljlv6voq" path="res://Julia/itemModels/models/pot/cooking_pot_game-ready.glb" id="1_2cpp6"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_2cpp6")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
