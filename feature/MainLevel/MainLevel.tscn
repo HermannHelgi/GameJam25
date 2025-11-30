@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://gemih5m6oead" path="res://feature/MainLevel/Props/Textures/Wood_19-128x128.png" id="1_3q08c"]
 [ext_resource type="Texture2D" uid="uid://rxvqqdxf18mi" path="res://feature/MainLevel/Wood_Pattern_02_Brown_2.png" id="1_uhivl"]
-[ext_resource type="PackedScene" uid="uid://c1le2ne1a30ea" path="res://Dadi/playerController/PlayerTest.tscn" id="2_kkp3g"]
 [ext_resource type="PackedScene" uid="uid://nk75su6ys20r" path="res://feature/MainLevel/Props/KitchenCounter.tscn" id="3_av175"]
 [ext_resource type="PackedScene" uid="uid://bg8wr4pyga8or" path="res://feature/MainLevel/Props/Island.tscn" id="4_av175"]
 [ext_resource type="PackedScene" uid="uid://ghcai01cv1aw" path="res://feature/MainLevel/Props/KitchenElements/Stove.tscn" id="5_rxcrv"]

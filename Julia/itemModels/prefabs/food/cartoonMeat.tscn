@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bug4gtecc5bnk"]
+
+[ext_resource type="PackedScene" uid="uid://x16thibvga2d" path="res://Julia/itemModels/models/meat/meat.glb" id="1_4evaj"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_4evaj")]

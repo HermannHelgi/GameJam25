@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv1b7v3c1clbc"]
+
+[ext_resource type="PackedScene" uid="uid://dkt5d5a1qk03c" path="res://Julia/itemModels/models/meat/dried_meat.glb" id="1_adiq1"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_adiq1")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

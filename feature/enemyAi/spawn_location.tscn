@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://e4dyo6j6k2hi"]
+
+[ext_resource type="Script" path="res://feature/enemyAi/spawn_location.gd" id="1_s8717"]
+
+[node name="SpawnLocation" type="Node3D" groups=["SpawnNode"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_s8717")

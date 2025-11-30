@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://yxrpgd3tbthu"]
 
-[ext_resource type="Script" path="res://feature/enemyAi/YuleLad.gd" id="1_c0yye"]
+[ext_resource type="Script" uid="uid://c78s6hdm0076s" path="res://feature/enemyAi/YuleLad.gd" id="1_c0yye"]
 [ext_resource type="ArrayMesh" uid="uid://cs4muo3texymj" path="res://feature/enemyAi/13184_PudgyGnome_v1_NEW.obj" id="2_mvrur"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yg8tk"]
@@ -9,9 +9,11 @@ albedo_color = Color(0.622148, 0.21128, 0.190705, 1)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bf7ca"]
 
 [node name="YuleLad" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 collision_layer = 4
+collision_mask = 8
 script = ExtResource("1_c0yye")
+Speed = 5.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.1, 8.74228e-09, 0, 3.82137e-16, 4.37114e-09, 0.1, 8.74228e-09, 0.1, -4.37114e-09, 0, -1, 0)
@@ -22,4 +24,3 @@ surface_material_override/0 = SubResource("StandardMaterial3D_yg8tk")
 shape = SubResource("CapsuleShape3D_bf7ca")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_desired_distance = 2.0

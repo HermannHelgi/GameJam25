@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://mg0qvpyakbdj"]
+[gd_scene load_steps=5 format=3 uid="uid://mg0qvpyakbdj"]
+
+[ext_resource type="Script" uid="uid://6v3jdrnd6xr4" path="res://Resources/DemoObjects/PhysicsObject.gd" id="1_agbcq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1b47f"]
 
@@ -8,7 +10,9 @@ albedo_color = Color(0.78673357, 0.5684669, 0.96354836, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_70ru7"]
 material = SubResource("StandardMaterial3D_nk2sh")
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("MeshLocation")]
+script = ExtResource("1_agbcq")
+MeshLocation = NodePath("RigidBody3D/MeshInstance3D")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
