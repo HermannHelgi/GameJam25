@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=4 uid="uid://b2mx0yt008p4b"]
+
+[ext_resource type="PackedScene" uid="uid://dae7ehjseh58r" path="res://feature/MainLevel/Props/FirePlace/Asset/FirePlace/fireplace_low_poly.glb" id="1_akxlu"]
+[ext_resource type="Texture2D" uid="uid://cernixkvkgxm4" path="res://feature/MainLevel/Props/FirePlace/Asset/FirePlace/Horror_Brick_11-128x128.png" id="1_hufnn"]
+[ext_resource type="Texture2D" uid="uid://3yi6otwoujyb" path="res://feature/MainLevel/Props/FirePlace/Asset/Logs/podvarak_firewood_0.png" id="3_oo6em"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pnbb0"]
+albedo_texture = ExtResource("1_hufnn")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lftgm"]
+size = Vector3(0.6685028, 0.51361084, 0.24487305)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s566f"]
+resource_name = "firewood"
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("3_oo6em")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_isp03"]
+_surfaces = [{
+"aabb": AABB(-1.4901161e-08, -0.2, -0.0104221655, 0.10000002, 0.4, 0.1215493),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAAGAAIAAgAGAAMAAAAHAAYABwADAAYAAAACAAUAAgADAAUABAAHAAAAAAAFAAQABwABAAMAAQAFAAMABAABAAcAAQAEAAUA"),
+"lods": [0.042391814, PackedByteArray("AAABAAIAAQADAAIABAABAAAAAgADAAUAAQAFAAMAAQAEAAUAAAACAAUAAAAFAAQA")],
+"name": "firewood",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAH4iAAAAAAAA//8AAP////8AAAAAAAD//+7KAAAAAAAAHQwAAAAA//9/NwAABLX///unAAAEtQAAi7oAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2fp0e"]
+resource_name = "Sketchfab_Scene_wood_piece_3_004_firewood_0"
+_surfaces = [{
+"aabb": AABB(-1.4901161e-08, -0.2, -0.0104221655, 0.10000002, 0.4, 0.1215493),
+"attribute_data": PackedByteArray("27zKkH/VypDbvGVQf9VlUKTtx6Wk+5OrcfPHl5n601bN5qBOmeygXBRjtuyIWbnKgVrb7FhilsqjUKHsiFm5ypBTlsqBWtvsLcllUC3JypCk+/ufZfKgTg=="),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAASAAIAAAATABIAEwADABIAEwABAAMABAAUAAYABAAFABQABwAIAAkABwAVAAgACgALAAwACgANAAsADgAPABAADgARAA8A"),
+"lods": [0.042391814, PackedByteArray("AAABAAIAAQADAAIABAAFAAYABwAIAAkACgALAAwACgANAAsADgAPABAADgARAA8A")],
+"material": SubResource("StandardMaterial3D_s566f"),
+"name": "firewood",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 22,
+"vertex_data": PackedByteArray("//8AAH4iQQAAAAAA//9vAP////8AAEQAAAD//+7KJAAAAAAAHQxcMgAAAAD//zIy//8AAH4igjL/////AACSPgAA///uymw+AAD//383cz3//wAAfiIwAAAA//9/Ny8AAAAAAB0MMAD/////AAAvAAAAAAD//6gAAAD//383qAAAAP//7sqoAAAAAAAdDKgABLX///unXgAEtQAAi7p4AAS1AACLulcyBLX///undT/ps26ATpIeguqza4BKki+CUiWkynQl58oyJWXKWe60XK7tXlsy6mZU+f4tevf+K3r6/i569/4rekT/XMBE/1zARP9cwET/XMCtpEyBYqREgVYlrMr28+9n")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_isp03")
+
+[node name="FirePlace" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.30606243, 0, 0, 0, 1, -0.0015370846, 0.6405079, -0.0011444092)
+material_override = SubResource("StandardMaterial3D_pnbb0")
+use_collision = true
+size = Vector3(0.43200684, 0.9715576, 0.13699341)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.30606243, 0, 0, 0, 1, -0.0015370846, 0.9051832, -0.0011444092)
+material_override = SubResource("StandardMaterial3D_pnbb0")
+use_collision = true
+size = Vector3(0.43200684, 0.9715576, 0.13699341)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.30606243, 0, 0, 0, 1, -0.0015370846, 1.1698585, -0.0011444092)
+material_override = SubResource("StandardMaterial3D_pnbb0")
+use_collision = true
+size = Vector3(0.43200684, 0.9715576, 0.13699341)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.30606243, 0, 0, 0, 1, -0.0015370846, 1.4592485, -0.0011444092)
+material_override = SubResource("StandardMaterial3D_pnbb0")
+use_collision = true
+size = Vector3(0.43200684, 1.0805054, 0.13699341)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_akxlu")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17285508, 0)
+light_color = Color(1, 0.5176471, 0, 1)
+light_energy = 1.155
+light_size = 0.262
+light_specular = 0.189
+omni_range = 1.6830728
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0014266968, 0.26498413, 0.017700195)
+shape = SubResource("BoxShape3D_lftgm")
+
+[node name="wood_piece_3_004" type="Node3D" parent="."]
+transform = Transform3D(0, -0.32457936, -0.07704437, 0, -0.08697078, 0.28753352, -0.37110844, 0, 0, -0.05546459, 0.086142406, 0)
+
+[node name="wood_piece_3_004_firewood_0" type="MeshInstance3D" parent="wood_piece_3_004"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.06466219)
+mesh = SubResource("ArrayMesh_2fp0e")
+skeleton = NodePath("")
+
+[node name="wood_piece_3_004_firewood_1" type="MeshInstance3D" parent="wood_piece_3_004"]
+transform = Transform3D(0.9738056, 0.22738221, 3.7252903e-09, -0.21963435, 0.94062394, -0.25881904, -0.05885085, 0.25203943, 0.9659258, -2.4088542e-10, -0.24630617, -0.17939782)
+mesh = SubResource("ArrayMesh_2fp0e")
+skeleton = NodePath("")
+
+[node name="wood_piece_3_004_firewood_2" type="MeshInstance3D" parent="wood_piece_3_004"]
+transform = Transform3D(-2.906415e-08, 0.19934192, -0.64908284, -0.22436304, 0.8246283, 0.14639565, 0.83733416, 0.22095847, 0.039226577, -0.009830971, -0.06520146, -0.14714853)
+mesh = SubResource("ArrayMesh_2fp0e")
+skeleton = NodePath("")
+
+[node name="wood_piece_3_004_firewood_3" type="MeshInstance3D" parent="wood_piece_3_004"]
+transform = Transform3D(0.5304584, 0.20754294, 0.26774544, -0.1594015, 0.43331248, -0.22226709, -0.42270115, 0.09704789, 0.41981792, -0.08513837, -0.26358667, -0.16420187)
+mesh = SubResource("ArrayMesh_2fp0e")
+skeleton = NodePath("")
+
+[node name="wood_piece_3_005" type="Node3D" parent="."]
+transform = Transform3D(0, -0.51373345, 0, 0.48526245, 0, 0, 0, 0, 0.3784633, 0.035323977, 0.056278504, 0)
