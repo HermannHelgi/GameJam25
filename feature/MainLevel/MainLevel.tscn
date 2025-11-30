@@ -443,9 +443,6 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, -11.
 [node name="CeilingLight3" parent="." instance=ExtResource("7_s82up")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, -11.943686, 5.140853, -5.23114)
 
-[node name="Node3D" parent="." instance=ExtResource("2_kkp3g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.612741, 1.190155, 8.881784e-16)
-visible = false
 
 [node name="Armchair_08" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 8.332836, 0.9824586, 0)
