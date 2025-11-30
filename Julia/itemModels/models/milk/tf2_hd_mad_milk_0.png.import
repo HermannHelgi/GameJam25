@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cglold4drcuo5"
+uid="uid://c2nd1otn470fg"
 path.s3tc="res://.godot/imported/tf2_hd_mad_milk_0.png-c87f8452b366b72335acde5b3755dac8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "009ce586ef1b0f6367cb8fd0c0c8e999"
 }
 
 [deps]

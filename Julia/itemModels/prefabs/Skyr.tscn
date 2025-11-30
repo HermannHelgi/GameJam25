@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkp3x6rih86x5"]
+
+[ext_resource type="PackedScene" uid="uid://dgyit2uv67x1o" path="res://Julia/itemModels/models/skyr/barrelofSkyr.glb" id="1_ph4fm"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="barrelofSkyr" parent="." instance=ExtResource("1_ph4fm")]

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="YuleObjectiveResource" load_steps=3 format=3 uid="uid://cwxbtqcekm275"]
+
+[ext_resource type="Script" uid="uid://1iqtrj8d41ny" path="res://Resources/YuleObjectiveResource.gd" id="1_igaca"]
+[ext_resource type="PackedScene" uid="uid://r3l716615kww" path="res://Julia/itemModels/prefabs/candles.tscn" id="1_qauwf"]
+
+[resource]
+resource_name = "Candles"
+script = ExtResource("1_igaca")
+Type = 4
+Item = ExtResource("1_qauwf")
+NameOfYuleLad = "Kertasníkir"
+metadata/_custom_type_script = "uid://1iqtrj8d41ny"

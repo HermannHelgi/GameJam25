@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="YuleObjectiveResource" load_steps=3 format=3 uid="uid://bw8wpx4ghhfoo"]
 
-[ext_resource type="PackedScene" uid="uid://mg0qvpyakbdj" path="res://Dadi/playerController/testObject.tscn" id="1_gmchr"]
+[ext_resource type="PackedScene" uid="uid://j3uw4b8k3ak7" path="res://Julia/itemModels/prefabs/kitchen/pot.tscn" id="1_gmchr"]
 [ext_resource type="Script" uid="uid://1iqtrj8d41ny" path="res://Resources/YuleObjectiveResource.gd" id="1_jl4p0"]
 
 [resource]
+resource_name = "Pot"
 script = ExtResource("1_jl4p0")
 Item = ExtResource("1_gmchr")
 NameOfYuleLad = "Pottaskefill"

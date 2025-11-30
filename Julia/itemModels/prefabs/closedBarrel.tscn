@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://covcyl0lmi8nc"]
+
+[ext_resource type="PackedScene" uid="uid://wm61mq7x2dhi" path="res://Julia/itemModels/models/skyr/barrel.glb" id="1_b5tws"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_b5tws")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

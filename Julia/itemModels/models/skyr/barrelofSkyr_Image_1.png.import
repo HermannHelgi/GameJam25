@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6gmvqf0tj18o"
-path.s3tc="res://.godot/imported/window__wodden_med_2.png-d9addaf5e4154574431c819bc00a7fc8.s3tc.ctex"
+uid="uid://bqqy2salg7kie"
+path.s3tc="res://.godot/imported/barrelofSkyr_Image_1.png-be2ce2f2348f40dc8f22cec9275d509d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "d8c59beaa485f7c9306d6c87839962f3"
+}
 
 [deps]
 
-source_file="res://Julia/itemModels/models/window/window__wodden_med_2.png"
-dest_files=["res://.godot/imported/window__wodden_med_2.png-d9addaf5e4154574431c819bc00a7fc8.s3tc.ctex"]
+source_file="res://Julia/itemModels/models/skyr/barrelofSkyr_Image_1.png"
+dest_files=["res://.godot/imported/barrelofSkyr_Image_1.png-be2ce2f2348f40dc8f22cec9275d509d.s3tc.ctex"]
 
 [params]
 
@@ -26,8 +29,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=8
+roughness/src_normal="res://Julia/itemModels/models/skyr/barrelofSkyr_Image_2.jpg"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

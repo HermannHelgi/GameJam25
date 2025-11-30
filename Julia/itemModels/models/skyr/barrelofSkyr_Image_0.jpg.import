@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6gmvqf0tj18o"
-path.s3tc="res://.godot/imported/window__wodden_med_2.png-d9addaf5e4154574431c819bc00a7fc8.s3tc.ctex"
+uid="uid://bfhpfsc1djwin"
+path.s3tc="res://.godot/imported/barrelofSkyr_Image_0.jpg-1df33bcb59e56240e297cdefc2d041a4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "d4d1424c596e9928ffca2d8a78e89954"
+}
 
 [deps]
 
-source_file="res://Julia/itemModels/models/window/window__wodden_med_2.png"
-dest_files=["res://.godot/imported/window__wodden_med_2.png-d9addaf5e4154574431c819bc00a7fc8.s3tc.ctex"]
+source_file="res://Julia/itemModels/models/skyr/barrelofSkyr_Image_0.jpg"
+dest_files=["res://.godot/imported/barrelofSkyr_Image_0.jpg-1df33bcb59e56240e297cdefc2d041a4.s3tc.ctex"]
 
 [params]
 

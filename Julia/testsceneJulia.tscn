@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cccwl575s74lq"]
+[gd_scene load_steps=20 format=3 uid="uid://cccwl575s74lq"]
 
 [ext_resource type="PackedScene" uid="uid://c1le2ne1a30ea" path="res://Dadi/playerController/PlayerTest.tscn" id="1_218i2"]
 [ext_resource type="PackedScene" uid="uid://mg0qvpyakbdj" path="res://Dadi/playerController/testObject.tscn" id="2_au0yd"]
@@ -9,10 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://gjg4iyxmwcq" path="res://Julia/itemModels/prefabs/lightsPrefabs/redLights.tscn" id="5_rmsxl"]
 [ext_resource type="PackedScene" uid="uid://dotqejuoammd2" path="res://Julia/itemModels/prefabs/lightsPrefabs/yellowLights.tscn" id="6_3pfjr"]
 [ext_resource type="PackedScene" uid="uid://bwf0h3y1btfb1" path="res://Julia/itemModels/prefabs/animals/orangeKitty.tscn" id="6_7yret"]
+[ext_resource type="PackedScene" uid="uid://4yraktpu0q5u" path="res://Julia/itemModels/prefabs/food/milk.tscn" id="7_7yret"]
 [ext_resource type="PackedScene" uid="uid://ckc8d3bwiirob" path="res://Julia/itemModels/prefabs/lightsPrefabs/colorfulLights.tscn" id="7_u4c76"]
-[ext_resource type="PackedScene" uid="uid://bxek46q3cw2wq" path="res://Julia/itemModels/prefabs/bowl.tscn" id="8_lyxj3"]
+[ext_resource type="PackedScene" uid="uid://bxek46q3cw2wq" path="res://Julia/itemModels/prefabs/kitchen/bowl.tscn" id="8_lyxj3"]
 [ext_resource type="PackedScene" uid="uid://c65f8w8t520if" path="res://Julia/itemModels/prefabs/food/breadLoaf.tscn" id="9_k7cqj"]
-[ext_resource type="PackedScene" uid="uid://j3uw4b8k3ak7" path="res://Julia/itemModels/prefabs/pot.tscn" id="11_plscv"]
+[ext_resource type="PackedScene" uid="uid://j3uw4b8k3ak7" path="res://Julia/itemModels/prefabs/kitchen/pot.tscn" id="11_plscv"]
+[ext_resource type="PackedScene" uid="uid://dkp3x6rih86x5" path="res://Julia/itemModels/prefabs/Skyr.tscn" id="15_r78yn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i1x8t"]
 
@@ -71,6 +73,9 @@ transform = Transform3D(0.999848, 0, -0.0174524, 0.0174524, -4.37114e-08, 0.9998
 [node name="orangekitty" parent="StaticBody3D" instance=ExtResource("6_7yret")]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 5.269434, 2.0096097, -6.571192)
 
+[node name="Sketchfab_Scene" parent="StaticBody3D" instance=ExtResource("7_7yret")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -7.09444, 1.1402707, -5.4924755)
+
 [node name="Lights" type="Node" parent="."]
 
 [node name="Node3D" parent="Lights" instance=ExtResource("5_rmsxl")]
@@ -101,3 +106,6 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -10.259743, -1.44251, -
 
 [node name="pot" parent="Items" instance=ExtResource("11_plscv")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3.38065, -1.4371321, -10.426239)
+
+[node name="Node3D" parent="." instance=ExtResource("15_r78yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.928065, -1.4170412, -2.8590405)

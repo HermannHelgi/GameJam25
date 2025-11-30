@@ -1,7 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://ia65ouwtyck2"]
 
-[ext_resource type="PackedScene" uid="uid://bb0e80efl7lgo" path="res://Julia/itemModels/models/milk/tf2_hd_mad_milk.glb" id="1_dk1yi"]
+[ext_resource type="PackedScene" uid="uid://be4ocuvph3e07" path="res://Julia/itemModels/models/meat/sausage.glb" id="1_dk1yi"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_dk1yi")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

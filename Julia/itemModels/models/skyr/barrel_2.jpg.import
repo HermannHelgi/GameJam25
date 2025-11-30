@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6gmvqf0tj18o"
-path.s3tc="res://.godot/imported/window__wodden_med_2.png-d9addaf5e4154574431c819bc00a7fc8.s3tc.ctex"
+uid="uid://cyt5r6ey4cyli"
+path.s3tc="res://.godot/imported/barrel_2.jpg-74ebd9ffb8aacb8fc6ef296933a920c0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "1556994db0f14c377186b8e67b1634b5"
+}
 
 [deps]
 
-source_file="res://Julia/itemModels/models/window/window__wodden_med_2.png"
-dest_files=["res://.godot/imported/window__wodden_med_2.png-d9addaf5e4154574431c819bc00a7fc8.s3tc.ctex"]
+source_file="res://Julia/itemModels/models/skyr/barrel_2.jpg"
+dest_files=["res://.godot/imported/barrel_2.jpg-74ebd9ffb8aacb8fc6ef296933a920c0.s3tc.ctex"]
 
 [params]
 
@@ -22,12 +25,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://Julia/itemModels/models/skyr/barrel_2.jpg"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

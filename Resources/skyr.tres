@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="YuleObjectiveResource" load_steps=3 format=3 uid="uid://dyawpwgibj2wg"]
+
+[ext_resource type="Script" uid="uid://1iqtrj8d41ny" path="res://Resources/YuleObjectiveResource.gd" id="1_oa5ti"]
+[ext_resource type="PackedScene" uid="uid://dkp3x6rih86x5" path="res://Julia/itemModels/prefabs/Skyr.tscn" id="1_wyfk6"]
+
+[resource]
+resource_name = "Skyr"
+script = ExtResource("1_oa5ti")
+Type = 9
+Item = ExtResource("1_wyfk6")
+NameOfYuleLad = "Skyrgámur"
+metadata/_custom_type_script = "uid://1iqtrj8d41ny"

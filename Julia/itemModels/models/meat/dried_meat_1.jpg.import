@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbbhkwqar12d1"
+uid="uid://daalayxw7fr78"
 path.s3tc="res://.godot/imported/dried_meat_1.jpg-ce5bbe9932530e552ee96b5ebb883323.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "cfe1a3e044553a1d5da36ca8bb8113c4"
 }
 
 [deps]
