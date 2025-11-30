@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=4 uid="uid://bccoxih8vsxj8"]
+[gd_scene load_steps=24 format=4 uid="uid://bccoxih8vsxj8"]
 
+[ext_resource type="Script" uid="uid://deaflowmhni65" path="res://Dadi/door/new_door.gd" id="1_hrey7"]
 [ext_resource type="Texture2D" uid="uid://bfgswmwav7mi3" path="res://Dadi/door/low_poly_psx_hinged_door_0.png" id="1_taac8"]
 [ext_resource type="Texture2D" uid="uid://0naielb15ed8" path="res://Dadi/door/low_poly_psx_hinged_door_1.png" id="2_hrey7"]
 
@@ -242,32 +243,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_d0h7e")
 
-[sub_resource type="Animation" id="Animation_taac8"]
-resource_name = "open_door"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode/Cylinder:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-51.16233, 70.662506, -4.684075)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode/Cylinder:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.96666664),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 1.5358897, 0)]
-}
+[sub_resource type="BoxShape3D" id="BoxShape3D_taac8"]
+size = Vector3(80.002075, 35.973022, 28.166718)
 
 [sub_resource type="Animation" id="Animation_hrey7"]
 length = 0.001
@@ -296,6 +273,33 @@ tracks/1/keys = {
 "values": [Vector3(-1.5707964, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_taac8"]
+resource_name = "open_door"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode/Cylinder:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-51.16233, 70.662506, -4.684075)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode/Cylinder:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5707964, 0, 0), Vector3(-1.5707964, 1.5358897, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hrey7"]
 _data = {
 &"RESET": SubResource("Animation_hrey7"),
@@ -303,6 +307,7 @@ _data = {
 }
 
 [node name="NewDoor" type="Node3D"]
+script = ExtResource("1_hrey7")
 
 [node name="Sketchfab_Scene" type="Node3D" parent="."]
 
@@ -363,7 +368,16 @@ skeleton = NodePath("")
 mesh = SubResource("ArrayMesh_bh882")
 skeleton = NodePath("")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sketchfab_Scene/Sketchfab_model"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene/Sketchfab_model/a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode/Cylinder"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/Sketchfab_model/a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode/Cylinder/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -4.2632564e-14, 0, 0, 0.99999976, 39.975777, -1.9710124, -10.121567)
+shape = SubResource("BoxShape3D_taac8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sketchfab_Scene/Sketchfab_model")
 libraries = {
 &"": SubResource("AnimationLibrary_hrey7")
 }
