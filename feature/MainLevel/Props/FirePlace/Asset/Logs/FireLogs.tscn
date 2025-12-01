@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://mhh4h1b52r6u"]
+
+[ext_resource type="PackedScene" uid="uid://bme0xnvc3wmpp" path="res://feature/MainLevel/Props/FirePlace/Asset/Logs/podvarak_firewood.glb" id="1_e6i8f"]
+
+[node name="FireLogs" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_e6i8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036878467, 0, -0.05544448)

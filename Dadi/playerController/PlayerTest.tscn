@@ -39,7 +39,7 @@ shader_parameter/dither_strength = 1.0000000475
 material = SubResource("ShaderMaterial_fpwub")
 size = Vector3(10, 10, 10)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fpwub"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_vej58"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_pjdli"]
 
@@ -66,8 +66,12 @@ collision_mask = 2
 debug_shape_custom_color = Color(0.62716395, 0.0063544987, 0.09895905, 1)
 debug_shape_thickness = 4
 
+[node name="AudioListener3D" type="AudioListener3D" parent="head"]
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_fpwub")
+transform = Transform3D(0.674, 0, 0, 0, 3, 0, 0, 0, 0.8, 0, 0, 0)
+shape = SubResource("BoxShape3D_vej58")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.5607922, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_pjdli")

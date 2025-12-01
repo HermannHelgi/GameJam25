@@ -9,4 +9,6 @@ script = ExtResource("1_oa5ti")
 Type = 9
 Item = ExtResource("1_wyfk6")
 NameOfYuleLad = "Skyrgámur"
+NameOfItem = "skyr"
+NameOfItemEN = "yogurt"
 metadata/_custom_type_script = "uid://1iqtrj8d41ny"

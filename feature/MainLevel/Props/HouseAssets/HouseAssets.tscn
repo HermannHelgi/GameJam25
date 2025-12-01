@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdxfvj1bxao35"]
+
+[ext_resource type="PackedScene" uid="uid://ficj5et8ejmi" path="res://feature/MainLevel/Props/HouseAssets/AssetPack/objects_interiorvillage_alpha.glb" id="1_hea4j"]
+
+[node name="HouseAssets" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_hea4j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032031536, 0.0070343018, -0.017058372)

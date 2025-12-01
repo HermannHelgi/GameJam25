@@ -8,3 +8,5 @@ script = ExtResource("1_adfbn")
 Type = 3
 Item = ExtResource("1_d158r")
 NameOfYuleLad = "Þvörusleikir"
+NameOfItem = "þvörur"
+NameOfItemEN = "spoons"
