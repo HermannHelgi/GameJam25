@@ -8,8 +8,10 @@ class_name Door
 
 func open_door() -> void:
 	animator.play("open_door")
+	isOpen = true
 	
 func close_door() -> void:
 	animator.play_backwards("open_door")
+	isOpen = false
 	
 		
