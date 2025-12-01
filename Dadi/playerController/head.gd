@@ -14,6 +14,8 @@ const GRAB_LAYER := 2
 var pitch: float = 0.0
 const DOOR_LAYER := 3
 const INTERACT_ACTION := "Interact"
+var radio: Radio = null
+var door: Door = null
 
 @onready var raycast:RayCast3D = $RayCast3D
 @onready var hold_position:Node3D = $holdposition
@@ -55,20 +57,23 @@ func _input(event: InputEvent) -> void:
 				return
 
 			var node : Node = collider
-			while node and not (node is Door):
+			while node:
+				if node is Radio and radio == null:
+					radio = node
+				if node is Door and door == null:
+					door = node
 				node = node.get_parent()
-		
-			if node is Door and !node.isOpen:
-				node.open_door()
-				node.isOpen = true
-			else:
-				node.close_door()
-				node.isOpen = false
-		#if event.is_action_pressed(GRAB_ACTION):
-			#if holding:
-				#drop_object()
-			#else:
-				#try_grab_object()
+			if radio:
+				radio.play_music()
+				radio = null
+			elif door:
+				if !door.isOpen:
+					door.open_door()
+					door = null
+				else:
+					door.close_door()
+					door = null
+				
 
 
 	

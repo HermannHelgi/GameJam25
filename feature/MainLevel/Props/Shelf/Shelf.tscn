@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://diu5i16gawyey"]
+
+[ext_resource type="Texture2D" uid="uid://dx1365slipndk" path="res://feature/MainLevel/Horror_Wall_06-128x128.png" id="1_htga6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_63prg"]
+albedo_texture = ExtResource("1_htga6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_68uel"]
+albedo_texture = ExtResource("1_htga6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pikvc"]
+albedo_texture = ExtResource("1_htga6")
+
+[node name="Shelf" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.033316933, 0, 0, 0, 0.18556553, 0, 0.17184764, 0)
+material_override = SubResource("StandardMaterial3D_63prg")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.030924318, 0, 0, 0, 0.028510753, 0.07335186, 0, -0.017238177, 0.12131891, -0.36755484, 0.13328233, 0.002800731)
+material_override = SubResource("StandardMaterial3D_68uel")
+size = Vector3(1, 1, 1.017334)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.030924318, 0, 0, 0, 0.028510753, 0.07335186, 0, -0.017238177, 0.12131891, 0.3468299, 0.13328233, 0.002800731)
+material_override = SubResource("StandardMaterial3D_pikvc")
+size = Vector3(1, 1, 1.017334)
