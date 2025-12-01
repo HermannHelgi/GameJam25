@@ -22,8 +22,9 @@ func play_music() -> void:
 	
 			
 	else:
-		print("playing song 1 ")
-		currentSong = songs[0]
+		currentSong = null
+	if currentSong == null:
+		audioEmitter.stop()
 	audioEmitter.stream = currentSong
 	audioEmitter.play()
 	
