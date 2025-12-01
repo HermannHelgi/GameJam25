@@ -48,14 +48,22 @@ func _input(event: InputEvent) -> void:
 			#rotation.x = clamp(rotation.x, deg_to_rad(-40), deg_to_rad(60))
 			#Grab - drop item action
 		if event.is_action_pressed(INTERACT_ACTION):
-			var hit = raycast.get_collider()
-				
-			if hit is Door:
-				var door := hit as Door
-				if (door.isOpen) :
-					door.open_door()
-				else:
-					door.close_door()
+			if not raycast.is_colliding():
+				return
+			var collider := raycast.get_collider()
+			if collider == null:
+				return
+
+			var node : Node = collider
+			while node and not (node is Door):
+				node = node.get_parent()
+		
+			if node is Door and !node.isOpen:
+				node.open_door()
+				node.isOpen = true
+			else:
+				node.close_door()
+				node.isOpen = false
 		#if event.is_action_pressed(GRAB_ACTION):
 			#if holding:
 				#drop_object()
