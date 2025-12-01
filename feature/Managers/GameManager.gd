@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var level = 1;
+@export var SpawnableYuleLads = 0;
 @export var StartingTimer = 30.0;
 @export var BetweenTimer = 15.0;
 
@@ -26,6 +26,11 @@ var isActive = true; # NEEDS TO BE TRUE TO START
 var strikes = 0;
 @export var maximumStrikes = 3;
 
+@export var infoLabel : Array[Node]
+
+var AmountOfFreeYuleLads = 0;
+@export var NextScene : PackedScene
+
 func _ready() -> void:
 	PathLocations = get_tree().get_nodes_in_group("PathNode")
 	ItemSpawnLocations = get_tree().get_nodes_in_group("SpawnNode")
@@ -38,7 +43,7 @@ func _process(delta: float) -> void:
 	if (isActive):
 		if (timer >= 0):
 			timer -= delta
-			if (timer <= 0 && AllYuleLads.size() != level):
+			if (timer <= 0 && AllYuleLads.size() != SpawnableYuleLads):
 				var yuleSpawn = PathLocations[rng.randi_range(0, PathLocations.size() - 1)];
 				var newYuleLad = YuleLad.instantiate()
 				newYuleLad.global_position = yuleSpawn.global_position
@@ -50,10 +55,13 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("Pause"):
 		_freeze_game()
+	
+	if (SpawnableYuleLads == AmountOfFreeYuleLads):
+		get_tree().change_scene_to_packed(NextScene)
 
 func _generateObjects() -> void:
 	var count = 0
-	while (count != level):
+	while (count != SpawnableYuleLads):
 		var potentialObjective = YuleObjectives[rng.randi_range(0, YuleObjectives.size() - 1)]
 		if (SelectedYuleObjectives.find(potentialObjective) == -1):
 			SelectedYuleObjectives.append(potentialObjective)
@@ -87,6 +95,8 @@ func onStrikeGained() -> void:
 	strikes += 1
 	if (strikes == maximumStrikes):
 		get_tree().reload_current_scene()
+	
+	infoLabel[maximumStrikes - strikes].queue_free()
 
 
 func _on_start_pressed() -> void:

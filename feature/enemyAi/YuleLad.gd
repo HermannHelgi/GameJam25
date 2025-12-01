@@ -25,6 +25,9 @@ var GM
 
 @onready var nav_agent = $NavigationAgent3D
 
+@export var MaxStrikes = 3;
+var current_strikes = 0;
+
 func _ready() -> void:
 	NavMesh = get_tree().get_nodes_in_group("NavMesh")[0];
 
@@ -61,6 +64,7 @@ func _process(delta: float) -> void:
 					# Yes, i'm going to go somewhere else then.
 					idle_stop_count = _randomStop();
 					check = true
+					current_strikes += 1;
 				else:
 					# No, annihilate
 					current_state = GlobalEnums.YuleState.DESTROYING
@@ -68,6 +72,10 @@ func _process(delta: float) -> void:
 					print("DESTROY")
 			else:
 				check = true
+			
+			if (current_strikes >= MaxStrikes):
+				GM.AmountOfFreeYuleLads += 1
+				self.queue_free()
 			
 			if (check):
 				timer = _randomTime()
