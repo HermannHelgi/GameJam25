@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=4 uid="uid://6dayytej0ovm"]
+
+[ext_resource type="Texture2D" uid="uid://dpc8bsae48h5" path="res://Julia/itemModels/models/kitchenStuffPack/food_equipment__Image_5.jpg" id="1_g4vfo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_616k5"]
+resource_name = "TiinsTiinsTiinsr44555_4"
+cull_mode = 2
+albedo_texture = ExtResource("1_g4vfo")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jtcvq"]
+_surfaces = [{
+"aabb": AABB(0.2410851, 0.031651437, -0.47389948, 0.14731266, 0.21455097, 0.07873607),
+"format": 34896613377,
+"index_count": 129,
+"index_data": PackedByteArray("BgAPAAkADQAPAAYACQAPABAADQARAA8ADwARABIADwASABAAEwARAA0AEQAOABIAEQATAA4AEAASABQAFAASAA4AFQAOABMAEwANABUAFAAVAA0AFQAWAA4AFAAOABYAFAAWABUAFwAUAA0AEAAUABcAFwANAAYACQAQAAwADAAQABcACgAJAAwACgAMAAsACAALAAwACwAKAAgACAAMABcABwAJAAoACAAHAAoABgAJAAcACAAXAAEABwAIAAEABgAHAAUABwABAAUAAgAXAAYAFwACAAEAAgAGAAMAAQAEAAUABAADAAUAAAABAAIAAQAAAAQAAAACAAMAAAADAAQA"),
+"lods": [0.20953764, PackedByteArray("AAABAAIAAAACAAMAAAADAAQAAQAAAAQABAADAAUAAQAEAAUAAgAGAAMABwABAAUABgAHAAUABwAIAAEACAACAAEABgAJAAcACAAHAAoABwAJAAoACwAKAAgACgAMAAsACAALAAwACgAJAAwACAAMAAIADQAJAAYAAgANAAYACQAOAAwADAAOAAIACQANAA4AAgAOAA0ADgAOAA0A")],
+"name": "TiinsTiinsTiinsr44555_4",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("dPn//35DAAD414j7AlQAAIve3epyNwAAi97d6ozIAAB0+f//wsQAAPjXiPv8qwAAHeUy2h3lAAAGKIj7/KsAAAYoiPsCVAAAcyHd6ozIAACKBv7/gLwAAIoG/v88OwAAcyHd6nI3AAD//1Uh//8AAPUIAAD1CAAA4Roy2h3lAADhGjLa4RoAAAAAVSH//wAAAABVIQAAAAD1CAAACfcAAP//VSEAAAAACfcAAAn3AAAJ9wAA9QgAAB3lMtrhGgAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uq50s"]
+resource_name = "food_equipment__blend_free_low_poly_Object_7"
+_surfaces = [{
+"aabb": AABB(0.2410851, 0.031651437, -0.47389948, 0.14731266, 0.21455097, 0.07873607),
+"attribute_data": PackedByteArray("SNy90KjRnM6+06vGSNy90L7Tq8ao0ZzO0pmczjKPvdC8l6vG0pmczryXq8Yyj73QqK5ww9i7cMNSvsG58arBuaiuUPbYu1D2j7///y6s///c/ZXMKPxkkDnW28z//zfTENSN01bHWZSwkmSQWKGYzGSUlcxUx2XFCsnezDWfOtM1y4/Tc6yB0wDC5MljwYHTf6rkyQzAgdN/quTJHKuB0wDC5MkMozbFsZIzxa+SiZQQo4aUD6NhkFbHNpDr11uU7Nc5kCf8iZQq/DPF79dixf6YA666iZKQ/piSkLqJA64="),
+"format": 34896613399,
+"index_count": 129,
+"index_data": PackedByteArray("HQApABsAHQAbAB8AHQAfACAAGwApACoAGwAqABwAKQArACoAKQAsACsALAAaACsALAAtABoAGQAsACkALQAsABkAGQApAB0ALQAZAC4ALwAuABkALwAwAC4ALwAVADAALwAxABUAMgAxAC8AMwAvABkAMgAvADMAMwAZAB0AFAAyADMAFwAUADMAFwAzABgAMwAWABgAFgAzAB0AFgAdAB4AAAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAOAAwADQAMABAADQAQABEAEAASABEAEAATABIANAA1ADYANAA3ADUAIQAiACMAIQAkACIAJQAmACcAJQAoACYA"),
+"lods": [0.20953764, PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADwAOAAwADQAMABAADQAQABEAEAASABEAEAATABIAFAAVABYAFwAUABYAFwAWABgAFgAVABkAFQAaABkAGwAZABoAGwAaABwAFgAZAB0AGQAbAB0AFgAdAB4AHQAbAB8AHQAfACAAIQAiACMAIQAkACIAJQAmACcAJQAoACYA")],
+"material": SubResource("StandardMaterial3D_616k5"),
+"name": "TiinsTiinsTiinsr44555_4",
+"primitive": 3,
+"uv_scale": Vector4(2.4272165, 2.3548048, 0, 0),
+"vertex_count": 56,
+"vertex_data": PackedByteArray("dPn//35Dc+H414j7AlTN1Yve3epyN6VadPn//8LEr1CL3t3qjMh7OfjXiPv8q9xRBiiI+wJUIuSKBv7/PDucNHMh3epyN9PqBiiI+/yrNlNzId3qjMgpXYoG/v+AvIC2BiiI+wJUnhIGKIj7/Ks7MIoG/v+AvLivigb+/zw7DNP414j7AlSmIPjXiPv8q0E6dPn//8LEbhR0+f//fkNtCnMh3epyN4cY9QgAAPUIVhSL3t3qcjdzWQYoiPsCVD8E+NeI+wJU7gT//1Uh//8zX/UIAAD1CNUjcyHd6ozIvWBzId3qcjcOHR3lMtod5R5fi97d6ozI+T8GKIj7/Kv7U/jXiPv8q0JTdPn//35DkvWL3t3qjMif5XT5///CxJHri97d6nI3EfeKBv7/gLxGUHMh3epyNw8digb+/zw78ixzId3qjMgaWuEaMtod5Rdf4Roy2uEatB8AAFUhAADHIAAAVSH//zFf9QgAAAn3JFYJ9wAACfc6Vv//VSEAAL8gCfcAAPUI5RwAAFUhAAC2IOEaMtrhGhUcHeUy2uEaEB4J9wAACfcb4PUIAAD1CCjc9QgAAAn3KLUJ9wAA9Qg5787K8mSX9ItkeGMRGsSv41wZxsB1hM92myznf42ULQCoterNrA7oDFeuzzvSvk7uo5650bBIpAuf5UpQ7Nw/fttCrhC2V6Hypzqm94qdxgmUtHii4lCv0fWDdLIiXlxyARB9cM7ReUYIskmo3Lanhsp7mZXcpa02IQ7Avxxf7BFzp/E3lp7GCZTQr4KVO6b3iv0EXtflSlDshJmP3Nw/fts0kvy/6aAu0seV/uDbemr8K3dJ+pM3J83FTGRIH3+fAz5ztiuehOv+dXiV49aWMgZbEr7Zrkmh3OA1I+Z6Hn/A")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_jtcvq")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Object_18" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27549413, -2.9802322e-08, 0.46118596)
+mesh = SubResource("ArrayMesh_uq50s")
+skeleton = NodePath("")

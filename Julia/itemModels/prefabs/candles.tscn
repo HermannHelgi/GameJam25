@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://r3l716615kww"]
+[gd_scene load_steps=3 format=3 uid="uid://r3l716615kww"]
 
 [ext_resource type="PackedScene" uid="uid://c1s1vm4fucq2d" path="res://Julia/itemModels/models/candles/candles.glb" id="1_8jtbu"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_sjb5t"]
+size = Vector3(1, 4.522461, 1)
+
 [node name="Node3D" type="Node3D"]
 
-[node name="candles" parent="." instance=ExtResource("1_8jtbu")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="candles" parent="RigidBody3D" instance=ExtResource("1_8jtbu")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.6481892, -0.00016880035, -0.02551657)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(4.9091506, 0, 0, 0, 0.91131806, 0, 0, 0, 2.3152733, 0, 1.9762313, 0)
+shape = SubResource("BoxShape3D_sjb5t")
