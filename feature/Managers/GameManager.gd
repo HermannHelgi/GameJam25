@@ -21,6 +21,7 @@ var AllYuleLads : Array[Node];
 
 @export var PlayerNode : Node
 @export var MainMenu : Node
+@export var UI : Node
 var isActive = true; # NEEDS TO BE TRUE TO START
 
 var strikes = 0;
@@ -28,8 +29,22 @@ var strikes = 0;
 
 @export var infoLabel : Array[Node]
 
+@export var UITimer : Label
+@export var TimerControlNode : Node
+@export var ControlsNode : Node
+
+@export var PopupNode : Node
+@export var NameLabel : Label
+@export var HideSubtitle : Label
+
+var nameTimer = -1;
+@export var DisplayTimeName = 0;
+
 var AmountOfFreeYuleLads = 0;
 @export var NextScene : PackedScene
+
+var controlTimer = 90
+
 
 func _ready() -> void:
 	PathLocations = get_tree().get_nodes_in_group("PathNode")
@@ -43,6 +58,7 @@ func _process(delta: float) -> void:
 	if (isActive):
 		if (timer >= 0):
 			timer -= delta
+			UITimer.text = str(int(timer)) + " seconds"
 			if (timer <= 0 && AllYuleLads.size() != SpawnableYuleLads):
 				var yuleSpawn = PathLocations[rng.randi_range(0, PathLocations.size() - 1)];
 				var newYuleLad = YuleLad.instantiate()
@@ -52,6 +68,20 @@ func _process(delta: float) -> void:
 				timer = BetweenTimer;
 				var obj = SelectedYuleObjectives.pop_at(rng.randi_range(0, SelectedYuleObjectives.size() - 1))
 				newYuleLad.ObjectiveType = obj.Type
+				displayNewYuleLad(obj.NameOfYuleLad, obj.NameOfItem, obj.NameOfItemEN);
+				
+				if (AllYuleLads.size() == SpawnableYuleLads):
+					TimerControlNode.visible = false
+		
+		if (controlTimer >= 0):
+			controlTimer -= delta
+			if (controlTimer <= 0):
+				ControlsNode.visible = false
+		
+		if (nameTimer >= 0):
+			nameTimer -= delta
+			if (nameTimer <= 0):
+				PopupNode.visible = false
 
 	if Input.is_action_just_pressed("Pause"):
 		_freeze_game()
@@ -110,6 +140,13 @@ func _on_quit() -> void:
 func _freeze_game() -> void:
 	get_tree().paused = isActive
 	MainMenu.set_visible(isActive)	
+	UI.set_visible(!isActive)	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if isActive else Input.MOUSE_MODE_CAPTURED)
 	PlayerNode.CameraScriptNode.isActive = !isActive
 	isActive = !isActive
+
+func displayNewYuleLad(name: String, objectName : String, objectNameEN : String) -> void:
+	NameLabel.text = name.to_upper()
+	HideSubtitle.text = "is coming!\nHide all your " + objectName + "!\n(That means " + objectNameEN + "!)"
+	nameTimer = DisplayTimeName
+	PopupNode.visible = true

@@ -8,3 +8,5 @@ resource_name = "Pot"
 script = ExtResource("1_jl4p0")
 Item = ExtResource("1_gmchr")
 NameOfYuleLad = "Pottaskefill"
+NameOfItem = "pottar"
+NameOfItemEN = "pots"
