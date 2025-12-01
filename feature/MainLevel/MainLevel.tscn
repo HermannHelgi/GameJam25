@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://d07n0wu8kgkfb"]
+[gd_scene load_steps=33 format=4 uid="uid://d07n0wu8kgkfb"]
 
 [ext_resource type="Texture2D" uid="uid://gemih5m6oead" path="res://feature/MainLevel/Props/Textures/Wood_19-128x128.png" id="1_3q08c"]
 [ext_resource type="Texture2D" uid="uid://rxvqqdxf18mi" path="res://feature/MainLevel/Wood_Pattern_02_Brown_2.png" id="1_uhivl"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://osd7kxu4qlx7" path="res://feature/MainLevel/Props/DinningTable/DinningTable.tscn" id="12_cyuwg"]
 [ext_resource type="PackedScene" uid="uid://dmk4wcjc2202p" path="res://feature/MainLevel/Props/DinningTable/Chair.tscn" id="13_6yykd"]
 [ext_resource type="PackedScene" uid="uid://diu5i16gawyey" path="res://feature/MainLevel/Props/Shelf/Shelf.tscn" id="13_b8alq"]
-[ext_resource type="PackedScene" uid="uid://c1le2ne1a30ea" path="res://Dadi/playerController/PlayerTest.tscn" id="14_b8alq"]
 [ext_resource type="PackedScene" uid="uid://70a6qk876alu" path="res://feature/MainLevel/Props/HouseAssets/Props/Bed.tscn" id="15_dyrox"]
 [ext_resource type="PackedScene" uid="uid://b8kevqxly724s" path="res://feature/MainLevel/Props/HouseAssets/Props/NightStand.tscn" id="16_4ifqw"]
 [ext_resource type="PackedScene" uid="uid://c60eecukqcpfo" path="res://feature/MainLevel/Props/LargeShelfs/LargeShelf.tscn" id="17_w0vou"]
@@ -568,9 +567,6 @@ transform = Transform3D(-1.01910246e-07, 0, -5.228564, 0, 3.8331695, 0, 2.331434
 
 [node name="Shelf8" parent="." instance=ExtResource("13_b8alq")]
 transform = Transform3D(-1.01910246e-07, 0, -5.228564, 0, 3.8331695, 0, 2.3314347, 0, -2.2854778e-07, -9.947134, 3.580737, 7.535821)
-
-[node name="Player" parent="." instance=ExtResource("14_b8alq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22153392, 1.6537876, 0.20658523)
 
 [node name="Bed" parent="." instance=ExtResource("15_dyrox")]
 transform = Transform3D(-6.903621e-08, 0, -1.3713721, 0, 1.2301241, 0, 1.5793644, 0, -5.9944576e-08, 2.4476929, 0.66692615, 9.466188)
