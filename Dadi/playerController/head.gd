@@ -16,6 +16,7 @@ const DOOR_LAYER := 3
 const INTERACT_ACTION := "Interact"
 var radio: Radio = null
 var door: Door = null
+var cat : Cat = null
 
 @onready var raycast:RayCast3D = $RayCast3D
 @onready var hold_position:Node3D = $holdposition
@@ -62,11 +63,17 @@ func _input(event: InputEvent) -> void:
 					radio = node
 				if node is Door and door == null:
 					door = node
+				if node is Cat and cat == null:
+					cat = node
+					
 				
 				node = node.get_parent()
 			if radio:
 				radio.play_music()
 				radio = null
+			elif cat:
+				cat.play_random_purr()
+				cat.recentlyPetted = true
 			elif door:
 				if !door.isOpen:
 					door.open_door()
