@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://5icjhl8ff2h5"]
+[gd_scene load_steps=9 format=4 uid="uid://5icjhl8ff2h5"]
 
+[ext_resource type="Script" uid="uid://6v3jdrnd6xr4" path="res://Resources/DemoObjects/PhysicsObject.gd" id="1_6kxw7"]
 [ext_resource type="Texture2D" uid="uid://dcsswacyxpt4e" path="res://Julia/itemModels/models/spoon/spoon2_Image_0.png" id="1_gunws"]
 [ext_resource type="Texture2D" uid="uid://cb8yq03gsoghv" path="res://Julia/itemModels/models/spoon/spoon2_Image_1.png" id="2_6kxw7"]
 [ext_resource type="Texture2D" uid="uid://inyhdbojowdh" path="res://Julia/itemModels/models/spoon/spoon2_Image_2.png" id="3_gulku"]
@@ -52,15 +53,22 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6jhir")
 
-[node name="spoon2" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_gulku"]
+size = Vector3(0.5619507, 1, 1.65271)
 
-[node name="Sketchfab_model" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -3.5762787e-07, 0.99999994, 0, -0.99999994, -3.5762787e-07, 0, 0, 0)
+[node name="Spoon" type="Node3D" node_paths=PackedStringArray("MeshLocation")]
+script = ExtResource("1_6kxw7")
+MeshLocation = NodePath("RigidBody3D/Object_2_003")
 
-[node name="ba84b867273a4d24876aab539e3288a1_obj_cleaner_materialmerger_gle" type="Node3D" parent="Sketchfab_model"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.305, 0)
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
-[node name="Object_2_003" type="MeshInstance3D" parent="Sketchfab_model/ba84b867273a4d24876aab539e3288a1_obj_cleaner_materialmerger_gle"]
-transform = Transform3D(0.9985508, 0, 0.053817395, 0, 1, 0, -0.053817395, 0, 0.9985508, 2.66097, -7.5128236, -4.537775)
+[node name="Object_2_003" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(0.05957984, 0.006540839, 0.0019118392, 0.0065476266, -0.059641667, -1.1796e-09, 0.0027148875, 0.0002980495, -0.041956462, 0.10390614, 0.979923, 0.8253566)
 mesh = SubResource("ArrayMesh_wnrip")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(0.476, 0, 0, 0, 0.1, 0, 0, 0, 0.6366398, 0.003527876, 0.06063813, 0.067231834)
+shape = SubResource("BoxShape3D_gulku")
