@@ -74,6 +74,7 @@ func _input(event: InputEvent) -> void:
 			elif cat:
 				cat.play_random_purr()
 				cat.recentlyPetted = true
+				cat = null
 			elif door:
 				if !door.isOpen:
 					door.open_door()
