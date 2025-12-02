@@ -17,7 +17,7 @@ shader_parameter/noise_time_fac = 4.0
 shader_parameter/enable_color_limitation = false
 shader_parameter/color_levels = 32
 shader_parameter/enable_dithering = true
-shader_parameter/dither_strength = 1.5000000712500001
+shader_parameter/dither_strength = 1.50000007125
 
 [sub_resource type="QuadMesh" id="QuadMesh_el46f"]
 material = SubResource("ShaderMaterial_vej58")
@@ -51,6 +51,7 @@ script = ExtResource("2_lvkh7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026454687, -0.27625334)
+visible = false
 mesh = SubResource("QuadMesh_el46f")
 
 [node name="holdposition" type="Node3D" parent="head"]
