@@ -72,8 +72,7 @@ func _input(event: InputEvent) -> void:
 				radio.play_music()
 				radio = null
 			elif cat:
-				cat.play_random_purr()
-				cat.recentlyPetted = true
+				cat.pet()
 				cat = null
 			elif door:
 				if !door.isOpen:

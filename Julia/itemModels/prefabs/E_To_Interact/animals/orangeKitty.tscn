@@ -1541,8 +1541,9 @@ libraries = {
 speed_scale = 0.8
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.9955587, 0.09414316, 0, -0.09414316, -0.9955587, 0, 0, 0)
-emission_angle_degrees = 72.2
+transform = Transform3D(0.56790125, -0.03148207, -0.8224944, -0.8230968, -0.021721266, -0.5674858, -1.4362923e-09, 0.9992683, -0.038248327, 0, 0, 0)
+emission_angle_enabled = true
+emission_angle_degrees = 42.2
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 7
