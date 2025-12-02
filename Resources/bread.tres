@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="YuleObjectiveResource" load_steps=3 format=3 uid="uid://dqb164ll0r500"]
 
-[ext_resource type="PackedScene" uid="uid://c65f8w8t520if" path="res://Julia/itemModels/prefabs/food/breadLoaf.tscn" id="1_jntf1"]
+[ext_resource type="PackedScene" uid="uid://c65f8w8t520if" path="res://Julia/itemModels/prefabs/delete/delete_bread.tscn" id="1_jntf1"]
 [ext_resource type="Script" uid="uid://1iqtrj8d41ny" path="res://Resources/YuleObjectiveResource.gd" id="1_y0hml"]
 
 [resource]

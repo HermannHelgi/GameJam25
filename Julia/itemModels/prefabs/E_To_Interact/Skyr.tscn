@@ -1,7 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkp3x6rih86x5"]
+[gd_scene load_steps=3 format=3 uid="uid://dkp3x6rih86x5"]
 
 [ext_resource type="PackedScene" uid="uid://dgyit2uv67x1o" path="res://Julia/itemModels/models/skyr/barrelofSkyr.glb" id="1_ph4fm"]
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_d8cc2"]
+height = 2.6732178
+radius = 0.94921875
+
+[node name="Skyr" type="Node3D"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 
 [node name="barrelofSkyr" parent="." instance=ExtResource("1_ph4fm")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028602242, 1.3361685, 0.067993164)
+shape = SubResource("CylinderShape3D_d8cc2")

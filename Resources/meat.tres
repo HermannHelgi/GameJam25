@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="YuleObjectiveResource" load_steps=3 format=3 uid="uid://vy223jij10mk"]
 
 [ext_resource type="Script" uid="uid://1iqtrj8d41ny" path="res://Resources/YuleObjectiveResource.gd" id="1_hone1"]
-[ext_resource type="PackedScene" uid="uid://cv1b7v3c1clbc" path="res://Julia/itemModels/prefabs/food/metaslab.tscn" id="1_hostv"]
+[ext_resource type="PackedScene" uid="uid://cv1b7v3c1clbc" path="res://Julia/itemModels/prefabs/delete/delete_meat.tscn" id="1_hostv"]
 
 [resource]
 resource_name = "Meat"
