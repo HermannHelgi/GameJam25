@@ -24,8 +24,10 @@ func changeAnimation() -> void:
 	var currentAnimation = animation.current_animation
 	if (currentAnimation == "Sit"):
 		animation.play("Lay")
-	else:
+		currentAnimation = "Lay"
+	elif (playSoundTimer > 20 )and recentlyChangedAnimation:
 		animation.play("Sit")
+		recentlyChangedAnimation = false
 
 func play_random_purr() -> void:
 	if(!recentlyPetted) :
@@ -38,18 +40,19 @@ func play_random_meow() -> void:
 	audioPlayer.play()
 	
 func _process(delta: float) -> void:
+	
 	if(recentlyPetted):
 		playSoundTimer = 0.0
 		recentlyPettedTimer += delta
 		if (recentlyPettedTimer > 5):
 			recentlyPetted = false
 			playSoundTimer = recentlyPettedTimer
-	elif(playSoundTimer > 55.0):
+	elif(playSoundTimer > 45.0):
 		playSoundTimer += delta
 	else:
 		play_random_meow()
 	var playerDistance = check_player_distance()
-	if(playerDistance > 3.0 ) and (playSoundTimer > 10.0):
+	if(playerDistance > 5.0 ) and playSoundTimer > 45:
 		changeAnimation()
 		
 	

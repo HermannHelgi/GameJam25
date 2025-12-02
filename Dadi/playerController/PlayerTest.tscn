@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://bespngqwl5lj0" path="res://Dadi/shader/psx_camera_shader.gdshader" id="3_vej58"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vej58"]
-render_priority = 0
+render_priority = -1
 shader = ExtResource("3_vej58")
 shader_parameter/enable_fog = false
 shader_parameter/fog_color = Color(0, 0, 0, 1)
