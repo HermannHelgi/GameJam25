@@ -45,6 +45,7 @@ var AmountOfFreeYuleLads = 0;
 
 var controlTimer = 90
 
+#@export var menuMusic : AudioStreamPlayer2D 
 
 func _ready() -> void:
 	PathLocations = get_tree().get_nodes_in_group("PathNode")
@@ -52,6 +53,7 @@ func _ready() -> void:
 	_generateObjects()
 	timer = StartingTimer;
 	_freeze_game()
+
 	# 	GM = get_tree().get_first_node_in_group("GameManager")
 
 func _process(delta: float) -> void:
@@ -130,6 +132,8 @@ func onStrikeGained() -> void:
 
 
 func _on_start_pressed() -> void:
+	var bus = AudioServer.get_bus_index("MenuMusic")
+	AudioServer.set_bus_mute(bus, true)
 	_freeze_game()
 
 
@@ -139,6 +143,8 @@ func _on_quit() -> void:
 
 func _freeze_game() -> void:
 	get_tree().paused = isActive
+	var bus = AudioServer.get_bus_index("MenuMusic")
+	AudioServer.set_bus_mute(bus, false)
 	MainMenu.set_visible(isActive)	
 	UI.set_visible(!isActive)	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if isActive else Input.MOUSE_MODE_CAPTURED)

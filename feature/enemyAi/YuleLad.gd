@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+@onready var audioManager : Node3D = $AudioManager
 @export var Speed = 4.0
 @export var Reach = 2.0
 @export var DistanceToObject = 1.0
@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 			timer -= delta
 			if (timer < 0):
 				print("WALK")
-				
+				audioManager.play_walking_sound()
 				current_state = GlobalEnums.YuleState.WALKING
 				idle_stop_count -= 1
 				if (idle_stop_count == 0 && GM.EnumToObjectDict[ObjectiveType].size() != 0):
@@ -69,7 +69,9 @@ func _process(delta: float) -> void:
 					# No, annihilate
 					current_state = GlobalEnums.YuleState.DESTROYING
 					timer = DestroyTime
+					
 					print("DESTROY")
+					audioManager.play_destroying_sound()
 			else:
 				check = true
 			
@@ -81,16 +83,19 @@ func _process(delta: float) -> void:
 				timer = _randomTime()
 				current_state = GlobalEnums.YuleState.IDLE	
 				print("IDLE")
+				audioManager.play_laughing_sound()
 	
 	elif (current_state == GlobalEnums.YuleState.DESTROYING):
 		if (timer >= 0):
 			timer -= delta
 			if (GM.get_script_owner(target).IsHeld):
 				idle_stop_count = _randomStop();
+				audioManager.play_loosingItem_sound()
 				current_state = GlobalEnums.YuleState.IDLE	
-			
+				
 			if (timer < 0):
 				print("WALK FROM DESTRUCTION")
+				audioManager.play_laughing_sound()
 				GM.EnumToObjectDict[ObjectiveType].pop_at(0);
 				target.queue_free()
 				idle_stop_count = _randomStop();

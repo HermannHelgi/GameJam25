@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 GlobalEnums="*res://feature/enemyAi/GlobalEnums.gd"
 
+[display]
+
+window/size/mode=2
+
 [filesystem]
 
 import/blender/enabled=false

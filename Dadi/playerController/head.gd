@@ -62,6 +62,7 @@ func _input(event: InputEvent) -> void:
 					radio = node
 				if node is Door and door == null:
 					door = node
+				
 				node = node.get_parent()
 			if radio:
 				radio.play_music()
