@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d3gyme0ut3wbh"
+path="res://.godot/imported/destroying item.wav-d909ef26ea84acc60f4f692a02fdc842.sample"
+
+[deps]
+
+source_file="res://Dadi/sounds/YuleLads/destroying item.wav"
+dest_files=["res://.godot/imported/destroying item.wav-d909ef26ea84acc60f4f692a02fdc842.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

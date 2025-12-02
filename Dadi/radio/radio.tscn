@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://c3uvv2fpc2f6u"]
+[gd_scene load_steps=10 format=4 uid="uid://c3uvv2fpc2f6u"]
 
+[ext_resource type="Script" uid="uid://6v3jdrnd6xr4" path="res://Resources/DemoObjects/PhysicsObject.gd" id="1_fjtt2"]
 [ext_resource type="Texture2D" uid="uid://qj1thc0y4r5" path="res://Dadi/radio/sony_radio_photoscan_lowpoly_0.png" id="1_yfden"]
 [ext_resource type="AudioStream" uid="uid://dk0huylcpdjr7" path="res://Dadi/radio/songs/eg-sa-mmmu-kyssa-jolasvein-radio.wav" id="2_w8jj4"]
 [ext_resource type="Script" uid="uid://i4n06ucf2wwn" path="res://Dadi/radio/radio.gd" id="2_y2x2i"]
@@ -49,11 +50,12 @@ shadow_mesh = SubResource("ArrayMesh_jplb7")
 size = Vector3(2.7336426, 1, 1.654541)
 
 [node name="Radio" type="Node3D"]
-script = ExtResource("2_y2x2i")
-songs = Array[AudioStreamWAV]([ExtResource("2_w8jj4"), ExtResource("3_fjtt2")])
+script = ExtResource("1_fjtt2")
 
 [node name="Sketchfab_model2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 80.163025, 0, 0)
+script = ExtResource("2_y2x2i")
+songs = Array[AudioStreamWAV]([ExtResource("2_w8jj4"), ExtResource("3_fjtt2")])
 
 [node name="SonyRadio_obj_cleaner_materialmerger_gles" type="Node3D" parent="Sketchfab_model2"]
 
