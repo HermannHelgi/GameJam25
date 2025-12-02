@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1le2ne1a30ea"]
+[gd_scene load_steps=11 format=3 uid="uid://c1le2ne1a30ea"]
 
 [ext_resource type="Script" uid="uid://p3po1jtg8lip" path="res://Dadi/playerController/PlayerController.gd" id="1_ld0y6"]
 [ext_resource type="Script" uid="uid://l6hvc3a7lwo1" path="res://Dadi/playerController/head.gd" id="2_lvkh7"]
@@ -39,11 +39,21 @@ shader_parameter/dither_strength = 1.0000000475
 material = SubResource("ShaderMaterial_fpwub")
 size = Vector3(10, 10, 10)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vej58"]
+transparency = 1
+no_depth_test = true
+albedo_color = Color(1, 1, 0.2627451, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_el46f"]
+material = SubResource("StandardMaterial3D_vej58")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_vej58"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_pjdli"]
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("CameraScriptNode")]
+axis_lock_linear_y = true
+axis_lock_angular_y = true
 script = ExtResource("1_ld0y6")
 CameraScriptNode = NodePath("head")
 
@@ -60,8 +70,13 @@ mesh = SubResource("BoxMesh_el46f")
 [node name="holdposition" type="Node3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="head/holdposition"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0, 0)
+mesh = SubResource("SphereMesh_el46f")
+
 [node name="RayCast3D" type="RayCast3D" parent="head"]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, -2, 0, 2, -8.742278e-08, 0, 0, -0.1600132)
+target_position = Vector3(0, -1.7, 0)
 collision_mask = 2
 debug_shape_custom_color = Color(0.62716395, 0.0063544987, 0.09895905, 1)
 debug_shape_thickness = 4

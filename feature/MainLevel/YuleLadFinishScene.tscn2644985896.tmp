@@ -1,18 +1,16 @@
-[gd_scene load_steps=22 format=3 uid="uid://byaocivcykw4x"]
+[gd_scene load_steps=20 format=3 uid="uid://byaocivcykw4x"]
 
-[ext_resource type="PackedScene" uid="uid://bbes37m77upxu" path="res://Dadi/background/psx_style_mountain_backgroud.glb" id="1_6rknu"]
 [ext_resource type="Script" uid="uid://gy1c8k2q20sk" path="res://feature/Managers/GameManager.gd" id="1_oh3eu"]
 [ext_resource type="PackedScene" uid="uid://yxrpgd3tbthu" path="res://feature/enemyAi/yule_lad.tscn" id="2_o1k88"]
 [ext_resource type="Script" uid="uid://1iqtrj8d41ny" path="res://Resources/YuleObjectiveResource.gd" id="3_bjg14"]
 [ext_resource type="Resource" uid="uid://cnj1e42d36y01" path="res://Resources/pan.tres" id="4_mgm26"]
-[ext_resource type="Resource" uid="uid://cf4h3i5wksm8w" path="res://Resources/sausages.tres" id="6_k6srh"]
+[ext_resource type="Resource" uid="uid://bw8wpx4ghhfoo" path="res://Resources/pot.tres" id="5_c2tbu"]
+[ext_resource type="Resource" uid="uid://b7nqmuo8w0r21" path="res://Resources/spoon.tres" id="6_k6srh"]
 [ext_resource type="PackedScene" uid="uid://d07n0wu8kgkfb" path="res://feature/MainLevel/MainLevel.tscn" id="7_6rknu"]
 [ext_resource type="PackedScene" uid="uid://c1le2ne1a30ea" path="res://Dadi/playerController/PlayerTest.tscn" id="8_o1k88"]
 [ext_resource type="Script" path="res://feature/enemyAi/spawn_location.gd" id="9_bjg14"]
 [ext_resource type="Texture2D" uid="uid://bmri2401s5xcq" path="res://feature/MainMenu/heart.png" id="10_c2tbu"]
 [ext_resource type="FontFile" uid="uid://c5joqn2djl5hb" path="res://feature/MainMenu/Amore Christmas.otf" id="10_mgm26"]
-[ext_resource type="PackedScene" uid="uid://c3uvv2fpc2f6u" path="res://Dadi/radio/radio.tscn" id="12_6rknu"]
-[ext_resource type="AudioStream" uid="uid://opl7g8ieojc" path="res://Dadi/sounds/vince-guaraldi-trio-christmas-time-is-here-instrumental.org.wav" id="12_k6srh"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_k6srh"]
 vertices = PackedVector3Array(-8.679218, 6.0730658, -4.799999, -8.379218, 6.0730658, -3.8999996, -6.2792177, 6.0730658, -3.8999996, -6.2792177, 6.0730658, -7.4999995, -10.479218, 6.0730658, -7.4999995, -14.679218, 6.0730658, -4.799999, -10.779219, 6.0730658, -8.7, -14.679218, 6.0730658, -14.4, -5.9792175, 6.0730658, -9.9, -5.079218, 6.0730658, -10.2, -5.079218, 6.0730658, -14.4, -6.2792177, 6.0730658, -9, -5.6792183, 1.0730658, -10.2, -3.2792177, 1.0730658, -10.2, -3.2792177, 1.0730658, -14.4, -14.079218, 1.0730658, -9, -6.2792177, 1.0730658, -9, -14.079218, 1.0730658, -14.4, 16.820782, 1.0730658, -10.5, 17.120785, 1.0730658, -14.4, 21.020782, 1.0730658, 3.3000011, 21.320782, 1.0730658, 4.5, 24.320782, 1.0730658, 4.5, 24.320782, 1.0730658, -14.4, 18.920784, 1.0730658, -10.2, 18.920784, 1.0730658, 3.3000011, 9.920782, 9.073066, -8.1, 11.120783, 9.073066, -8.1, 11.420782, 9.073066, -8.7, 9.620783, 9.073066, -9, -2.079218, 1.0730658, -6.8999996, -1.1792183, 1.0730658, -7.2, -1.1792183, 1.0730658, -7.7999997, -3.579218, 1.0730658, -7.7999997, -2.9792175, 1.0730658, -5.3999996, -2.079218, 1.0730658, -5.7, -3.579218, 1.0730658, 2.1000004, -3.2792177, 1.0730658, 3.3000011, 0.02078247, 1.0730658, 3.3000011, 0.02078247, 1.0730658, 9.536743e-07, -1.7792177, 1.0730658, -0.5999994, -2.079218, 1.0730658, -1.7999992, -2.9792175, 1.0730658, -2.0999994, -3.579218, 1.0730658, -2.3999996, -5.6792183, 1.0730658, -2.0999994, -7.4792175, 1.0730658, -1.7999992, -5.6792183, 1.0730658, 2.1000004, -7.4792175, 1.0730658, 2.1000004, 1.2207832, 1.0730658, -7.7999997, 1.5207825, 1.0730658, -5.7, 2.420782, 1.0730658, -5.3999996, 6.0207825, 1.0730658, -5.7, 8.420782, 1.0730658, -6.5999994, 8.120783, 1.0730658, -7.7999997, 0.62078285, 1.0730658, 9.536743e-07, 8.420782, 1.0730658, 0.9000006, 8.120783, 1.0730658, -1.1999998, 6.0207825, 1.0730658, -1.499999, 12.920782, 1.0730658, -6, 12.920782, 1.0730658, -6.5999994, 14.720783, 1.0730658, -4.5, 13.220783, 1.0730658, -5.3999996, 12.920782, 1.0730658, 0.9000006, 16.220783, 1.0730658, -4.799999, 16.220783, 1.0730658, 3.3000011, 2.420782, 1.0730658, -2.3999996, -1.1792183, 1.0730658, 12.300001, 2.420782, 1.0730658, 12.300001, -0.27921677, 1.0730658, 11.700001, -1.4792175, 1.0730658, 11.400002, -6.2792177, 1.0730658, -2.3999996, -7.7792177, 1.0730658, -2.3999996, -6.2792177, 1.0730658, -7.2, -7.4792175, 1.0730658, -7.2, -7.7792177, 1.0730658, -3.2999992, -11.679218, 1.0730658, -4.5, -11.079218, 1.0730658, -4.799999, -11.079218, 1.0730658, -6.5999994, -13.479218, 1.0730658, -6.5999994, -13.479218, 1.0730658, -4.799999, -12.279219, 1.0730658, -4.5, -11.079218, 1.0730658, -2.0999994, -11.379218, 1.0730658, -3.2999992, -5.6792183, 1.0730658, 10.800001, -3.579218, 1.0730658, 9.6, -5.9792175, 1.0730658, 9.300001, -11.679218, 1.0730658, 5.4000015, -11.079218, 1.0730658, 3.9000015, -0.27921677, 1.0730658, 7.5, 2.420782, 1.0730658, 7.200001, 2.420782, 1.0730658, 6.6000004, -3.2792177, 1.0730658, 6.6000004, -7.7792177, 1.0730658, 4.200001, -7.7792177, 1.0730658, 5.1000004, -7.4792175, 1.0730658, 13.200001, -5.9792175, 1.0730658, 13.200001, -12.279219, 1.0730658, 8.1, -0.87921715, 2.0730658, -1.7999992, 0.3207817, 2.0730658, -1.499999, 0.3207817, 2.0730658, -6, -0.87921715, 2.0730658, -6, 9.920782, 1.5730658, -4.799999, 9.920782, 1.5730658, -2.3999996, 12.020782, 1.5730658, -2.3999996, 12.020782, 1.5730658, -4.799999, -8.679218, 6.0730658, -3.2999992, -6.2792177, 6.0730658, -2.3999996, -5.9792175, 6.0730658, 2.4000015, -14.679218, 6.0730658, -3.2999992, -14.679218, 6.0730658, 24.300003, -5.379218, 6.0730658, 24.300003, -5.079218, 6.0730658, -2.0999994, -9.879218, 2.0730658, -1.1999998, -9.879218, 2.0730658, 3, -8.679218, 2.0730658, 3, -8.679218, 2.0730658, -1.1999998, -0.87921715, 6.0730658, 5.700001, -3.2792177, 6.0730658, 5.700001, -3.2792177, 6.0730658, 14.400002, 4.5207825, 6.0730658, 14.400002, 5.120783, 6.0730658, 15.6, 5.420782, 6.0730658, 4.800001, 16.220783, 6.0730658, 4.800001, 16.220783, 6.0730658, 4.200001, -0.5792179, 6.0730658, 4.200001, 18.920784, 6.0730658, 4.200001, 18.920784, 6.0730658, 4.800001, 20.120785, 6.0730658, 4.800001, 20.120785, 6.0730658, 4.200001, 0.9207821, 2.0730658, 8.400002, 0.9207821, 2.0730658, 10.500002, 3.3207817, 2.0730658, 10.500002, 3.3207817, 2.0730658, 8.400002, -9.279218, 1.0730658, 24.300003, -9.579218, 1.0730658, 16.800001, -10.179218, 1.0730658, 16.500002, -10.179218, 1.0730658, 9.6, -14.079218, 1.0730658, 9.6, -14.079218, 1.0730658, 24.300003, -6.2792177, 1.0730658, 15.000002, -7.4792175, 1.0730658, 15.300001, -7.7792177, 1.0730658, 16.800001, 4.5207825, 1.0730658, 24.300003, 4.5207825, 1.0730658, 16.800001, 3.6207829, 1.0730658, 16.500002, 3.6207829, 1.0730658, 15.000002)
@@ -61,18 +59,15 @@ shadow_offset = Vector2(0, 4)
 
 [node name="YuleLadFinishScene" type="Node3D"]
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_6rknu")]
-transform = Transform3D(2.24, 0, 0, 0, 2.24, 0, 0, 0, 2.24, -109.85501, -18.354858, -15.47155)
-
 [node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("YuleSpawnLocation", "PlayerNode", "MainMenu", "UI", "infoLabel", "UITimer", "TimerControlNode", "ControlsNode", "PopupNode", "NameLabel", "HideSubtitle") groups=["GameManager"]]
 process_mode = 3
 script = ExtResource("1_oh3eu")
-SpawnableYuleLads = 2
+SpawnableYuleLads = 3
 StartingTimer = 5.0
 BetweenTimer = 10.0
 YuleLad = ExtResource("2_o1k88")
 YuleSpawnLocation = NodePath("../NavigationRegion3D")
-YuleObjectives = Array[ExtResource("3_bjg14")]([ExtResource("4_mgm26"), ExtResource("6_k6srh")])
+YuleObjectives = Array[ExtResource("3_bjg14")]([ExtResource("4_mgm26"), ExtResource("6_k6srh"), ExtResource("5_c2tbu")])
 PlayerNode = NodePath("../Node3D")
 MainMenu = NodePath("../MainMenu")
 UI = NodePath("../UI")
@@ -1103,14 +1098,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_m4vv8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hkmik")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qn5me")
 text = "QUIT"
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainMenu"]
-stream = ExtResource("12_k6srh")
-autoplay = true
-bus = &"MenuMusic"
-
-[node name="Radio" parent="." instance=ExtResource("12_6rknu")]
-transform = Transform3D(-0.4998705, 0, 0.011378573, 0, 0.5, 0, -0.011378573, 0, -0.4998705, -3.4747725, 1.3978416, 13.290945)
 
 [connection signal="pressed" from="MainMenu/Panel/VBoxContainer/Button" to="GameManager" method="_on_start_pressed"]
 [connection signal="pressed" from="MainMenu/Panel/VBoxContainer/Button2" to="GameManager" method="_on_quit"]

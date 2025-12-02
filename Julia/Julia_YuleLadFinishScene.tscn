@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://bw8wpx4ghhfoo" path="res://Resources/pot.tres" id="6_f7bj8"]
 [ext_resource type="PackedScene" uid="uid://c1le2ne1a30ea" path="res://Dadi/playerController/PlayerTest.tscn" id="7_136xc"]
 [ext_resource type="PackedScene" uid="uid://d07n0wu8kgkfb" path="res://feature/MainLevel/MainLevel.tscn" id="8_kbmy4"]
-[ext_resource type="Script" uid="uid://bofkgrsk5616g" path="res://feature/enemyAi/spawn_location.gd" id="9_8lfal"]
+[ext_resource type="Script" path="res://feature/enemyAi/spawn_location.gd" id="9_8lfal"]
 [ext_resource type="Texture2D" uid="uid://bmri2401s5xcq" path="res://feature/MainMenu/heart.png" id="10_y30cf"]
 [ext_resource type="FontFile" uid="uid://c5joqn2djl5hb" path="res://feature/MainMenu/Amore Christmas.otf" id="11_wklpr"]
 [ext_resource type="PackedScene" uid="uid://r3l716615kww" path="res://Julia/itemModels/prefabs/has_collisions/candles.tscn" id="12_mcj8g"]

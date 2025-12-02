@@ -1,6 +1,5 @@
-[gd_scene load_steps=22 format=3 uid="uid://byaocivcykw4x"]
+[gd_scene load_steps=20 format=3 uid="uid://byaocivcykw4x"]
 
-[ext_resource type="PackedScene" uid="uid://bbes37m77upxu" path="res://Dadi/background/psx_style_mountain_backgroud.glb" id="1_6rknu"]
 [ext_resource type="Script" uid="uid://gy1c8k2q20sk" path="res://feature/Managers/GameManager.gd" id="1_oh3eu"]
 [ext_resource type="PackedScene" uid="uid://yxrpgd3tbthu" path="res://feature/enemyAi/yule_lad.tscn" id="2_o1k88"]
 [ext_resource type="Script" uid="uid://1iqtrj8d41ny" path="res://Resources/YuleObjectiveResource.gd" id="3_bjg14"]
@@ -11,7 +10,6 @@
 [ext_resource type="Script" path="res://feature/enemyAi/spawn_location.gd" id="9_bjg14"]
 [ext_resource type="Texture2D" uid="uid://bmri2401s5xcq" path="res://feature/MainMenu/heart.png" id="10_c2tbu"]
 [ext_resource type="FontFile" uid="uid://c5joqn2djl5hb" path="res://feature/MainMenu/Amore Christmas.otf" id="10_mgm26"]
-[ext_resource type="PackedScene" uid="uid://c3uvv2fpc2f6u" path="res://Dadi/radio/radio.tscn" id="12_6rknu"]
 [ext_resource type="AudioStream" uid="uid://opl7g8ieojc" path="res://Dadi/sounds/vince-guaraldi-trio-christmas-time-is-here-instrumental.org.wav" id="12_k6srh"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_k6srh"]
@@ -60,9 +58,6 @@ shadow_offset = Vector2(0, 4)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qn5me"]
 
 [node name="YuleLadFinishScene" type="Node3D"]
-
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_6rknu")]
-transform = Transform3D(2.24, 0, 0, 0, 2.24, 0, 0, 0, 2.24, -109.85501, -18.354858, -15.47155)
 
 [node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("YuleSpawnLocation", "PlayerNode", "MainMenu", "UI", "infoLabel", "UITimer", "TimerControlNode", "ControlsNode", "PopupNode", "NameLabel", "HideSubtitle") groups=["GameManager"]]
 process_mode = 3
@@ -1108,9 +1103,6 @@ text = "QUIT"
 stream = ExtResource("12_k6srh")
 autoplay = true
 bus = &"MenuMusic"
-
-[node name="Radio" parent="." instance=ExtResource("12_6rknu")]
-transform = Transform3D(-0.4998705, 0, 0.011378573, 0, 0.5, 0, -0.011378573, 0, -0.4998705, -3.4747725, 1.3978416, 13.290945)
 
 [connection signal="pressed" from="MainMenu/Panel/VBoxContainer/Button" to="GameManager" method="_on_start_pressed"]
 [connection signal="pressed" from="MainMenu/Panel/VBoxContainer/Button2" to="GameManager" method="_on_quit"]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="YuleObjectiveResource" load_steps=3 format=3 uid="uid://cf4h3i5wksm8w"]
 
-[ext_resource type="PackedScene" uid="uid://ia65ouwtyck2" path="res://Julia/itemModels/prefabs/delete/sausages.tscn" id="1_jx5oy"]
+[ext_resource type="PackedScene" uid="uid://jhifsurwgyfh" path="res://Julia/itemModels/prefabs/has_collisions/food/sausage.tscn" id="1_jx5oy"]
 [ext_resource type="Script" uid="uid://1iqtrj8d41ny" path="res://Resources/YuleObjectiveResource.gd" id="1_qpvfq"]
 
 [resource]

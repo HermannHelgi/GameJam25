@@ -19,21 +19,10 @@ albedo_color = Color(0.622148, 0.21128, 0.190705, 1)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bf7ca"]
 
 [node name="YuleLad" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 collision_layer = 4
 collision_mask = 8
 script = ExtResource("1_c0yye")
 Speed = 5.0
-Reach = null
-DistanceToObject = null
-DistanceToSlowDown = null
-MinIdleTime = null
-MaxIdleTime = null
-MinRandomIdleStops = null
-MaxRandomIdleStops = null
-DestroyTime = null
-DistanceMinimumForNextNode = null
-MaxStrikes = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.1, 8.74228e-09, 0, 3.82137e-16, 4.37114e-09, 0.1, 8.74228e-09, 0.1, -4.37114e-09, 0, -1, 0)
@@ -54,6 +43,6 @@ loosingItemSound = Array[AudioStreamWAV]([ExtResource("11_5irbs"), ExtResource("
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AudioManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34946132, 0)
-volume_db = -45.049
+volume_db = -30.0
 emission_angle_enabled = true
 emission_angle_degrees = 72.0
