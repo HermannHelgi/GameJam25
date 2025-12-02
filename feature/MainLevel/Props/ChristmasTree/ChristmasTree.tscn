@@ -1,13 +1,14 @@
 [gd_scene load_steps=10 format=4 uid="uid://cflw8uael5veh"]
 
 [ext_resource type="Texture2D" uid="uid://c612bsbyy26l8" path="res://feature/MainLevel/Props/ChristmasTree/handpainted_pine_tree_0.png" id="1_w5n54"]
-[ext_resource type="PackedScene" uid="uid://duf6es12tabkv" path="res://Julia/itemModels/prefabs/blueLights.tscn" id="2_352oj"]
-[ext_resource type="PackedScene" uid="uid://dotqejuoammd2" path="res://Julia/itemModels/prefabs/yellowLights.tscn" id="3_h13x1"]
-[ext_resource type="PackedScene" uid="uid://gjg4iyxmwcq" path="res://Julia/itemModels/prefabs/redLights.tscn" id="4_q5ly4"]
-[ext_resource type="PackedScene" uid="uid://ckc8d3bwiirob" path="res://Julia/itemModels/prefabs/colorfulLights.tscn" id="5_fs7wi"]
+[ext_resource type="PackedScene" uid="uid://duf6es12tabkv" path="res://Julia/itemModels/prefabs/lightsPrefabs/blueLights.tscn" id="2_352oj"]
+[ext_resource type="PackedScene" uid="uid://dotqejuoammd2" path="res://Julia/itemModels/prefabs/lightsPrefabs/yellowLights.tscn" id="3_h13x1"]
+[ext_resource type="PackedScene" uid="uid://gjg4iyxmwcq" path="res://Julia/itemModels/prefabs/lightsPrefabs/redLights.tscn" id="4_q5ly4"]
+[ext_resource type="PackedScene" uid="uid://ckc8d3bwiirob" path="res://Julia/itemModels/prefabs/lightsPrefabs/colorfulLights.tscn" id="5_fs7wi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_guc2y"]
 resource_name = "PineTree_001"
+render_priority = 1
 transparency = 4
 cull_mode = 2
 albedo_texture = ExtResource("1_w5n54")
@@ -54,6 +55,7 @@ size = Vector3(1, 5.5429077, 1)
 
 [node name="PineTree_001_PineTree_001_0" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+layers = 15
 mesh = SubResource("ArrayMesh_5awvx")
 skeleton = NodePath("")
 
