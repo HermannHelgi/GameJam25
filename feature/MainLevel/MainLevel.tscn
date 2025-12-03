@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=4 uid="uid://d07n0wu8kgkfb"]
+[gd_scene load_steps=70 format=4 uid="uid://d07n0wu8kgkfb"]
 
 [ext_resource type="Texture2D" uid="uid://gemih5m6oead" path="res://feature/MainLevel/Props/Textures/Wood_19-128x128.png" id="1_3q08c"]
 [ext_resource type="Texture2D" uid="uid://rxvqqdxf18mi" path="res://feature/MainLevel/Wood_Pattern_02_Brown_2.png" id="1_uhivl"]
@@ -47,12 +47,14 @@
 [ext_resource type="PackedScene" uid="uid://dotqejuoammd2" path="res://Julia/itemModels/prefabs/lightsPrefabs/yellowLights.tscn" id="32_db3jw"]
 [ext_resource type="PackedScene" uid="uid://gjg4iyxmwcq" path="res://Julia/itemModels/prefabs/lightsPrefabs/redLights.tscn" id="33_yqv44"]
 [ext_resource type="PackedScene" uid="uid://ckc8d3bwiirob" path="res://Julia/itemModels/prefabs/lightsPrefabs/colorfulLights.tscn" id="34_dfxvt"]
-[ext_resource type="PackedScene" uid="uid://dkp3x6rih86x5" path="res://Julia/itemModels/prefabs/E_To_Interact/Skyr/Skyr.tscn" id="36_ov5nr"]
 [ext_resource type="PackedScene" uid="uid://dsy08tbo0mxyx" path="res://Julia/itemModels/models/misc/plates/smallplate.tscn" id="47_hr6l1"]
 [ext_resource type="PackedScene" uid="uid://c64x4ymwmwwe2" path="res://Julia/itemModels/models/misc/bags/sugar.tscn" id="48_b2ybh"]
 [ext_resource type="PackedScene" uid="uid://c2le4nq06hmbg" path="res://Julia/itemModels/models/misc/rug.tscn" id="49_if7is"]
 [ext_resource type="PackedScene" uid="uid://rkwscwxpmaoy" path="res://Julia/itemModels/prefabs/E_To_Interact/window/window.tscn" id="50_hcsmb"]
 [ext_resource type="PackedScene" uid="uid://l5u8c68810ni" path="res://Julia/itemModels/prefabs/lightsPrefabs/greenLights.tscn" id="52_sq5ec"]
+[ext_resource type="PackedScene" uid="uid://bccoxih8vsxj8" path="res://Dadi/door/newDoor.tscn" id="54_pmax4"]
+[ext_resource type="PackedScene" uid="uid://dihnovf4wbshq" path="res://Julia/itemModels/prefabs/E_To_Interact/animals/sheep.tscn" id="55_ptvr5"]
+[ext_resource type="PackedScene" uid="uid://8ydvixtqvp10" path="res://Julia/santaModel/SantaPrefab/Santa.tscn" id="56_nuy3a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cusdo"]
 albedo_texture = ExtResource("1_3q08c")
@@ -149,6 +151,18 @@ use_collision = true
 size = Vector3(1, 0.1328125, 1)
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="CSGBox3D40"]
+transform = Transform3D(2.833289e-13, 4.371139e-08, 0.99999976, 1, -4.371151e-08, -1.7877255e-11, 4.371139e-08, 0.99999976, -4.371139e-08, 0.18470764, 0, -0.055882905)
+material_override = SubResource("StandardMaterial3D_kkp3g")
+operation = 2
+size = Vector3(1, 1.2115936, 0.7024727)
+
+[node name="CSGBox3D42" type="CSGBox3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 19.922909, 0.073067814, 0)
+material_override = SubResource("StandardMaterial3D_cusdo")
+use_collision = true
+size = Vector3(1, 0.1328125, 1)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="CSGBox3D42"]
 transform = Transform3D(2.833289e-13, 4.371139e-08, 0.99999976, 1, -4.371151e-08, -1.7877255e-11, 4.371139e-08, 0.99999976, -4.371139e-08, 0.18470764, 0, -0.055882905)
 material_override = SubResource("StandardMaterial3D_kkp3g")
 operation = 2
@@ -380,7 +394,7 @@ use_collision = true
 size = Vector3(1.328125, 0.1328125, 0.6094971)
 
 [node name="CSGBox3D43" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.3711407e-07, -8.372209, 0, 10.000004, -3.6596086e-07, 0, 0, 0, 10, 17.567944, 3.3585916, -2.1573906)
+transform = Transform3D(-4.3711407e-07, -8.372209, 0, 10.000004, -3.6596086e-07, 0, 0, 0, 10, 17.567944, 2.7643948, -2.1573906)
 material_override = SubResource("StandardMaterial3D_kkp3g")
 use_collision = true
 size = Vector3(1.6571045, 0.1328125, 1.5482483)
@@ -422,7 +436,7 @@ use_collision = true
 size = Vector3(1, 0.1328125, 1)
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="."]
-transform = Transform3D(1.9106854e-14, 4.371139e-08, 10, 10, -4.371139e-08, 0, 4.371139e-07, 1, -4.371139e-07, -7.257475, 0.83966935, -8.225313)
+transform = Transform3D(1.9106854e-14, 4.371139e-08, 10, 10, -4.371139e-08, 0, 4.371139e-07, 1, -4.371139e-07, -7.257475, 0.56868744, -8.225313)
 material_override = SubResource("StandardMaterial3D_kkp3g")
 use_collision = true
 size = Vector3(1.1533203, 0.1328125, 0.56591797)
@@ -903,12 +917,6 @@ transform = Transform3D(1, 0, 0, 0, -8.939978e-08, -2.418867, 0, 2.0452285, -1.0
 [node name="Node3D82" parent="Armchair_08" instance=ExtResource("33_yqv44")]
 transform = Transform3D(1, 0, 0, 0, -8.939978e-08, -2.418867, 0, 2.0452285, -1.0573204e-07, -20.025513, 1.9594538, 3.8489604)
 
-[node name="Skyr" parent="Armchair_08" instance=ExtResource("36_ov5nr")]
-transform = Transform3D(0.6, 0, 0, 0, -2.6226834e-08, -0.6, 0, 0.6, -2.6226834e-08, 7.0600414, -2.5099256, -0.8220675)
-
-[node name="Skyr2" parent="Armchair_08" instance=ExtResource("36_ov5nr")]
-transform = Transform3D(0.6, 0, 0, 0, -2.6226834e-08, -0.6, 0, 0.6, -2.6226834e-08, -19.311882, 6.8364534, -0.827703)
-
 [node name="FirePlace" parent="." instance=ExtResource("9_cusdo")]
 transform = Transform3D(6.7835026, 0, 0, 0, 5.8455334, 0, 0, 0, 5.8673244, 10.55288, 0.034991503, -7.793619)
 
@@ -1060,10 +1068,10 @@ transform = Transform3D(2.942688, 0, 0, 0, 1.6487789, -2.106478, 0, 1.7945418, 1
 transform = Transform3D(8.844619, 0, 0, 0, 1.8673877, 0, 0, 0, 8.12538, 10.149508, -0.48155773, -3.9025412)
 
 [node name="Window" parent="." instance=ExtResource("50_hcsmb")]
-transform = Transform3D(-0.00074330467, 0, 0.08997572, 0, 0.027, 0, -0.031991366, 0, -0.0020905442, 17.697815, 1.5688255, -4.938773)
+transform = Transform3D(-0.00074330467, 0, 0.08997572, 0, 0.027, 0, -0.031991366, 0, -0.0020905442, 17.697815, 0.8653002, -4.938773)
 
 [node name="Window2" parent="." instance=ExtResource("50_hcsmb")]
-transform = Transform3D(-0.00074330467, 0, 0.08997572, 0, 0.027, 0, -0.031991366, 0, -0.0020905442, 17.794462, 1.5688255, -0.77910185)
+transform = Transform3D(-0.00074330467, 0, 0.08997572, 0, 0.027, 0, -0.031991366, 0, -0.0020905442, 17.794462, 0.8653002, -0.77910185)
 
 [node name="CSGBox3D39" type="CSGBox3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 8.024374, 0.35058203, 5.95, -5.2908773)
@@ -1165,3 +1173,27 @@ transform = Transform3D(0.46512014, 0, 0.23979007, 0, 0.5077858, 0, -0.8852475, 
 
 [node name="Node3D43" parent="." instance=ExtResource("34_dfxvt")]
 transform = Transform3D(0.46512014, 0, 0.23979007, 0, 0.5077858, 0, -0.8852475, 0, 0.12598869, -2.8444564, 2.620559, 5.830346)
+
+[node name="NewDoor" parent="." instance=ExtResource("54_pmax4")]
+transform = Transform3D(1.4386845, 0, 0, 0, 1.588745, 0, 0, 0, 1, -6.7636533, 1.739267, 14.118104)
+
+[node name="NewDoor2" parent="." instance=ExtResource("54_pmax4")]
+transform = Transform3D(1.4386845, 0, 0, 0, 1.588745, 0, 0, 0, 1, -6.8560762, 1.739267, -8.231707)
+
+[node name="snowwww" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="snowwww"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1239891, -0.94697595, 2.1332932)
+size = Vector3(108.897, 0.7817383, 92.2039)
+
+[node name="Sketchfab_Scene" parent="snowwww" instance=ExtResource("55_ptvr5")]
+transform = Transform3D(0.3244375, 0, -0.21676289, 0, 0.36356452, 0, 0.19006486, 0, 0.37001064, 23.992287, 0.17045134, -2.248569)
+
+[node name="Sketchfab_Scene2" parent="snowwww" instance=ExtResource("55_ptvr5")]
+transform = Transform3D(0.15568711, 0, 0.0809102, 0, 0.18332735, 0, -0.054560497, 0, 0.23087533, 24.07262, -0.13153523, -0.8277488)
+
+[node name="Sketchfab_Scene3" parent="snowwww" instance=ExtResource("55_ptvr5")]
+transform = Transform3D(0.15478103, 0, -0.084646836, 0, 0.18332735, 0, 0.057080265, 0, 0.22953166, 23.865381, -0.15817624, -3.4235387)
+
+[node name="Santa" parent="snowwww" instance=ExtResource("56_nuy3a")]
+transform = Transform3D(-0.07880737, 0, -0.12762994, 0, 0.15, 0, 0.12762994, 0, -0.07880737, 24.157429, 0.9608182, -2.1562788)

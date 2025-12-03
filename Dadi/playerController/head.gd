@@ -80,8 +80,10 @@ func _input(event: InputEvent) -> void:
 					door = node
 				if node is Cat and cat == null:
 					cat = node
-					
-				
+				if node is Skyr and skyr == null:
+					skyr = node
+				if node is WindowAn and window == null:
+					window = node
 				node = node.get_parent()
 			if radio:
 				radio.play_music()
