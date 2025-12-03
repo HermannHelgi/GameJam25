@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://be2djqkwewjwb"]
-
-[ext_resource type="PackedScene" uid="uid://b5vwjocqlrfpp" path="res://Julia/itemModels/models/window/window__wodden_med.glb" id="1_h1ite"]
-
-[node name="Node3D" type="Node3D"]
-
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_h1ite")]

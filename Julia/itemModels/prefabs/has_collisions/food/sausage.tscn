@@ -55,10 +55,10 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="Cylinder_003_0" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(-0.03, -3.925891e-09, -2.1120757e-16, 0, -1.1364961e-09, 0.032, -4.529874e-09, 0.026, 1.3987644e-09, -2.2669266e-10, -0.57558, 0.01871767)
+transform = Transform3D(-0.03, -3.9258916e-09, -2.112076e-16, -4.5298743e-09, 0.026, 0, 6.243328e-16, 0, -0.032000005, -2.2669266e-10, 0.068699606, 0.013910096)
 mesh = SubResource("ArrayMesh_hsvtq")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(0.17696537, 0, 0, 0, 0.6971345, 0, 0, 0, 0.20386446, 0, -0.58456945, 0.018091977)
+transform = Transform3D(0.17696537, 0, 0, 0, -3.0472716e-08, 0.20386446, 0, -0.69713455, -8.911199e-09, 0, 0.068073876, 0.02289955)
 shape = SubResource("BoxShape3D_v2e8n")
