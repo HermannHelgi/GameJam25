@@ -19,6 +19,10 @@ closed_mesh = NodePath("ClosedBarrel")
 [node name="ClosedBarrel" parent="." instance=ExtResource("2_nkkcx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.028602242, 1.3361684, 0.06799316)
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, -0.028602242, 1.3361683, 0.06799316)
 shape = SubResource("CylinderShape3D_d8cc2")
