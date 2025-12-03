@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://ci5bs5hr6q8ck"
-path="res://.godot/imported/purring-2.wav-bfd1cc9bf87fa762ac3bb7cff6224ad3.sample"
+uid="uid://det4d5uiki0mt"
+path="res://.godot/imported/BIGPURR.wav-220f40b2cfb0bc6aa8f6acb542ecf1ea.sample"
 
 [deps]
 
-source_file="res://Dadi/sounds/cat/purring-2.wav"
-dest_files=["res://.godot/imported/purring-2.wav-bfd1cc9bf87fa762ac3bb7cff6224ad3.sample"]
+source_file="res://Dadi/sounds/cat/BIGPURR.wav"
+dest_files=["res://.godot/imported/BIGPURR.wav-220f40b2cfb0bc6aa8f6acb542ecf1ea.sample"]
 
 [params]
 
