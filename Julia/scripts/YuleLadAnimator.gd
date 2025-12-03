@@ -5,7 +5,6 @@ class_name YuleLadAnimator
 
 var current_state: GlobalEnums.YuleState = GlobalEnums.YuleState.IDLE
 
-
 func play_state(state: GlobalEnums.YuleState) -> void:
 	if state == current_state:
 		return
