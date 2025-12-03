@@ -19,8 +19,8 @@ albedo_color = Color(0.622148, 0.21128, 0.190705, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_70xl8"]
 size = Vector3(1.9742737, 1, 1.9485626)
 
-[node name="YuleLad" type="CharacterBody3D"]
-collision_layer = 12
+[node name="YuleLad" type="CharacterBody3D" groups=["YuleLads"]]
+collision_layer = 8
 collision_mask = 8
 script = ExtResource("1_c0yye")
 Speed = 5.0

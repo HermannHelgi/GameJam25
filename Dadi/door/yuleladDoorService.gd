@@ -9,12 +9,12 @@ func _ready() -> void:
 	pass
 	
 func _on_area_3d_body_entered(body):
-	print(" ENTER " ,body , body.name)
-	if not door.isOpen and body is CollisionShape3D:
+	print("ENTER:", body, body.name)
+	if body.is_in_group("YuleLads") and not door.isOpen:
 		door.open_door()
 
 func _on_area_3d_body_exited(body):
-	if body is YuleLad:
+	if body.is_in_group("YuleLads"):
 		# Close only if there are no YuleLads left in the area
 		var has_yulelad := false
 		for b in get_overlapping_bodies():
