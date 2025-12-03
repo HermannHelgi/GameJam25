@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://4jsqrlrgmhif"]
+
+[ext_resource type="PackedScene" uid="uid://d07n0wu8kgkfb" path="res://feature/MainLevel/MainLevel.tscn" id="1_kiesc"]
+[ext_resource type="PackedScene" uid="uid://b3clqn762chmb" path="res://FinalScenes/LossScreenPanel.tscn" id="2_t1rwj"]
+
+[node name="LossScreenLevel" type="Node3D"]
+
+[node name="MainLevel" parent="." instance=ExtResource("1_kiesc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.106, 0, 0.083)
+
+[node name="LossScreen" parent="." instance=ExtResource("2_t1rwj")]
+offset_left = -1.0
+offset_right = -1.0
