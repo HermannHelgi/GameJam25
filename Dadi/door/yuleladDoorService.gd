@@ -12,10 +12,12 @@ func _ready() -> void:
 	body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
+	print(" ENTER " ,body , body.name)
 	if !door.isOpen and body is YuleLad:
 		door.open_door()
 
 func _on_body_exited(body):
+	
 	if body is YuleLad:
 		# Close only if there are no YuleLads left in the area
 		var has_yulelad := false
