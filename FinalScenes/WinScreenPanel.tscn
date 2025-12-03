@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3clqn762chmb"]
+[gd_scene load_steps=7 format=3 uid="uid://bukl8v3iddbni"]
 
-[ext_resource type="FontFile" uid="uid://c5joqn2djl5hb" path="res://feature/MainMenu/Amore Christmas.otf" id="1_mkhcn"]
-[ext_resource type="AudioStream" uid="uid://opl7g8ieojc" path="res://Dadi/sounds/vince-guaraldi-trio-christmas-time-is-here-instrumental.org.wav" id="2_fpt4t"]
+[ext_resource type="FontFile" uid="uid://c5joqn2djl5hb" path="res://feature/MainMenu/Amore Christmas.otf" id="1_bv3d5"]
+[ext_resource type="AudioStream" uid="uid://opl7g8ieojc" path="res://Dadi/sounds/vince-guaraldi-trio-christmas-time-is-here-instrumental.org.wav" id="2_2h3xh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dln52"]
 bg_color = Color(1, 1, 1, 1)
@@ -63,9 +63,9 @@ offset_right = 607.5
 offset_bottom = 386.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_mkhcn")
+theme_override_fonts/font = ExtResource("1_bv3d5")
 theme_override_font_sizes/font_size = 256
-text = "Yule Lost!"
+text = "Yule have won!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -95,7 +95,7 @@ offset_bottom = 137.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
-text = "Oh no! The Yule Lads have taken everything! Would you like to try to stop them again?"
+text = "Yippy ! Yule have successfully won the game. Thank you for playing"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -132,7 +132,7 @@ theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_mkhcn")
+theme_override_fonts/font = ExtResource("1_bv3d5")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_dln52")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_m2dye")
@@ -157,7 +157,7 @@ theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_mkhcn")
+theme_override_fonts/font = ExtResource("1_bv3d5")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_dln52")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_m2dye")
@@ -166,6 +166,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_qnaip")
 text = "QUIT"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainMenu"]
-stream = ExtResource("2_fpt4t")
+stream = ExtResource("2_2h3xh")
 autoplay = true
 bus = &"MenuMusic"
