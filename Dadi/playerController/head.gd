@@ -46,7 +46,7 @@ func _ready() -> void:
 	outline_material.shader = outline_shader
 	# Set more visible outline parameters
 	outline_material.set_shader_parameter("outline_color", Color.YELLOW)
-	outline_material.set_shader_parameter("outline_width", 8.0)
+	outline_material.set_shader_parameter("outline_width", 2.0)
 	
 
 func _input(event: InputEvent) -> void:
@@ -221,7 +221,8 @@ func check_for_pickable_objects():
 		
 		# Apply outline to new object
 		if target_object != null:
-			apply_outline(target_object)
+			if not holding:
+				apply_outline(target_object)
 		
 		currently_outlined_object = target_object
 
@@ -248,10 +249,8 @@ func is_grabbable_object(collider: Node) -> bool:
 	return false
 
 func get_mesh_root(collider: Node) -> Node3D:
-	# Traverse up to find the root object that contains meshes
 	var node = collider
 	while node:
-		# Check if this node or its children have MeshInstance3D
 		for child in node.get_children():
 			if child is MeshInstance3D:
 				return node as Node3D

@@ -24,6 +24,12 @@ var timer = 0.0;
 var idle_stop_count = 0
 var GM
 
+
+# Outline shader variables
+var outline_material: ShaderMaterial
+var currently_outlined_object: Node3D = null
+var original_materials: Dictionary = {}
+
 @onready var nav_agent = $NavigationAgent3D
 
 @export var MaxStrikes = 3;
@@ -46,7 +52,12 @@ func _ready() -> void:
 	_fetchRandomLoc(false);
 	timer = _randomTime()
 	idle_stop_count = _randomStop();
-	
+
+	# Outline Shader Variables
+	var outline_shader = preload("res://Dadi/shader/target_outline_shader.gdshader")
+	outline_material = ShaderMaterial.new()
+	outline_material.shader = outline_shader
+		
 func _process(delta: float) -> void:
 	if (current_state == GlobalEnums.YuleState.IDLE):
 		if animator != null:
@@ -100,11 +111,13 @@ func _process(delta: float) -> void:
 				audioManager.play_laughing_sound()
 	
 	elif (current_state == GlobalEnums.YuleState.DESTROYING):
+		apply_outline(GM.get_script_owner(target))
 		if animator != null:
 			animator.play_state(current_state)
 		if (timer >= 0):
 			timer -= delta
 			if (GM.get_script_owner(target).IsHeld):
+				remove_outline(GM.get_script_owner(target))
 				idle_stop_count = _randomStop();
 				audioManager.play_loosingItem_sound()
 				current_state = GlobalEnums.YuleState.IDLE	
@@ -154,3 +167,32 @@ func _fetchRandomLoc(goForObjectiveItem: bool) -> void:
 func _randomStop() -> int:
 	var thing = rng.randi_range(MinRandomIdleStops, MaxRandomIdleStops)
 	return thing
+
+
+# Lmao copy paste cause lazy
+func apply_outline(object: Node3D):
+	apply_outline_recursive(object)
+
+func apply_outline_recursive(node: Node):
+	if node is MeshInstance3D:
+		var mesh_instance = node as MeshInstance3D
+		
+		mesh_instance.material_overlay = outline_material
+	
+	for child in node.get_children():
+		apply_outline_recursive(child)
+
+func remove_outline(object: Node3D):
+	remove_outline_recursive(object)
+
+func remove_outline_recursive(node: Node):
+	if node is MeshInstance3D:
+		var mesh_instance = node as MeshInstance3D
+		mesh_instance.material_overlay = null
+		
+		if original_materials.has(mesh_instance):
+			mesh_instance.material_override = original_materials[mesh_instance]
+			original_materials.erase(mesh_instance)
+	
+	for child in node.get_children():
+		remove_outline_recursive(child)
