@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://byaocivcykw4x"]
+[gd_scene load_steps=23 format=3 uid="uid://byaocivcykw4x"]
 
 [ext_resource type="PackedScene" uid="uid://bbes37m77upxu" path="res://Dadi/background/psx_style_mountain_backgroud.glb" id="1_6rknu"]
 [ext_resource type="Script" uid="uid://gy1c8k2q20sk" path="res://feature/Managers/GameManager.gd" id="1_oh3eu"]
@@ -6,8 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cvkr3873xig8a" path="res://Julia/santaModel/SantaPrefab/yule_lad2.tscn" id="3_fbb5e"]
 [ext_resource type="Resource" uid="uid://cnj1e42d36y01" path="res://Resources/pan.tres" id="4_mgm26"]
 [ext_resource type="Resource" uid="uid://cf4h3i5wksm8w" path="res://Resources/sausages.tres" id="6_k6srh"]
-[ext_resource type="PackedScene" uid="uid://d07n0wu8kgkfb" path="res://feature/MainLevel/MainLevel.tscn" id="7_6rknu"]
-[ext_resource type="PackedScene" uid="uid://dj7a0istm6w3g" path="res://FinalScenes/Level1.tscn" id="7_d0ri5"]
+[ext_resource type="PackedScene" uid="uid://d07n0wu8kgkfb" path="res://feature/MainLevel/MainLevel.tscn" id="7_d0ri5"]
 [ext_resource type="PackedScene" uid="uid://c1le2ne1a30ea" path="res://Dadi/playerController/PlayerTest.tscn" id="8_o1k88"]
 [ext_resource type="Script" uid="uid://bofkgrsk5616g" path="res://feature/enemyAi/spawn_location.gd" id="9_bjg14"]
 [ext_resource type="Texture2D" uid="uid://bmri2401s5xcq" path="res://feature/MainMenu/heart.png" id="10_c2tbu"]
@@ -87,7 +86,6 @@ PopupNode = NodePath("../UI/Popup")
 NameLabel = NodePath("../UI/Popup/Label")
 HideSubtitle = NodePath("../UI/Popup/Label2")
 DisplayTimeName = 5
-StartScene = ExtResource("7_d0ri5")
 
 [node name="Node3D" parent="." instance=ExtResource("8_o1k88")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.933804, 1.8131257, -2.6552906)
@@ -95,7 +93,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.933804, 1.8131257, -2.6552
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." groups=["NavMesh"]]
 navigation_mesh = SubResource("NavigationMesh_k6srh")
 
-[node name="MainLevel" parent="NavigationRegion3D" instance=ExtResource("7_6rknu")]
+[node name="MainLevel" parent="NavigationRegion3D" instance=ExtResource("7_d0ri5")]
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7978144, 0, -8.489353)

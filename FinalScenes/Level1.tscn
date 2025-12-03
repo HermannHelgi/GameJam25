@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dj7a0istm6w3g"]
+[gd_scene load_steps=30 format=3 uid="uid://dj7a0istm6w3g"]
 
 [ext_resource type="PackedScene" uid="uid://bbes37m77upxu" path="res://Dadi/background/psx_style_mountain_backgroud.glb" id="1_8symm"]
 [ext_resource type="Script" uid="uid://gy1c8k2q20sk" path="res://feature/Managers/GameManager.gd" id="2_xa37k"]
@@ -10,7 +10,6 @@
 [ext_resource type="Resource" uid="uid://cf4h3i5wksm8w" path="res://Resources/sausages.tres" id="6_fxl5x"]
 [ext_resource type="PackedScene" uid="uid://c1le2ne1a30ea" path="res://Dadi/playerController/PlayerTest.tscn" id="7_257ic"]
 [ext_resource type="Resource" uid="uid://cwxbtqcekm275" path="res://Resources/candles.tres" id="7_h0me0"]
-[ext_resource type="PackedScene" uid="uid://cty0bakotwkws" path="res://FinalScenes/Level2.tscn" id="7_xa37k"]
 [ext_resource type="Resource" uid="uid://vy223jij10mk" path="res://Resources/meat.tres" id="8_fjqjq"]
 [ext_resource type="PackedScene" uid="uid://d07n0wu8kgkfb" path="res://feature/MainLevel/MainLevel.tscn" id="8_s5flw"]
 [ext_resource type="Resource" uid="uid://brl62l5q5djmt" path="res://Resources/milk.tres" id="9_jvtph"]
@@ -94,8 +93,8 @@ PopupNode = NodePath("../UI/Popup")
 NameLabel = NodePath("../UI/Popup/Label")
 HideSubtitle = NodePath("../UI/Popup/Label2")
 DisplayTimeName = 5
-NextScene = ExtResource("7_xa37k")
-StartScene = null
+NextScene = "res://FinalScenes/Level2.tscn"
+StartScene = "res://FinalScenes/Level1.tscn"
 
 [node name="Node3D" parent="." instance=ExtResource("7_257ic")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.933804, 1.8131257, -2.6552906)
@@ -1124,7 +1123,7 @@ offset_bottom = 450.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("11_h0me0")
 theme_override_font_sizes/font_size = 78
-text = "A Fyule Little Lads"
+text = "Yule be Sorry!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -1186,7 +1185,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_opxti")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_m4vv8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hkmik")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qn5me")
-text = "	START"
+text = "START"
 
 [node name="Button2" type="Button" parent="MainMenu/Panel/VBoxContainer"]
 layout_mode = 2

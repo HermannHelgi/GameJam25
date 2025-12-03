@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bo6dg36at1f50"]
+[gd_scene load_steps=30 format=3 uid="uid://bo6dg36at1f50"]
 
 [ext_resource type="PackedScene" uid="uid://bbes37m77upxu" path="res://Dadi/background/psx_style_mountain_backgroud.glb" id="1_b8nsa"]
 [ext_resource type="Script" uid="uid://gy1c8k2q20sk" path="res://feature/Managers/GameManager.gd" id="2_isgs6"]
@@ -8,7 +8,6 @@
 [ext_resource type="Resource" uid="uid://b0a2vxqu7dndo" path="res://Resources/bowl.tres" id="5_y1184"]
 [ext_resource type="Resource" uid="uid://cf4h3i5wksm8w" path="res://Resources/sausages.tres" id="6_lt74d"]
 [ext_resource type="Resource" uid="uid://dqb164ll0r500" path="res://Resources/bread.tres" id="6_pxj1y"]
-[ext_resource type="PackedScene" uid="uid://dj7a0istm6w3g" path="res://FinalScenes/Level1.tscn" id="7_8ay4t"]
 [ext_resource type="Resource" uid="uid://cwxbtqcekm275" path="res://Resources/candles.tres" id="7_ur1nk"]
 [ext_resource type="PackedScene" uid="uid://c1le2ne1a30ea" path="res://Dadi/playerController/PlayerTest.tscn" id="8_y1184"]
 [ext_resource type="Resource" uid="uid://vy223jij10mk" path="res://Resources/meat.tres" id="8_ymj5r"]
@@ -96,7 +95,6 @@ PopupNode = NodePath("../UI/Popup")
 NameLabel = NodePath("../UI/Popup/Label")
 HideSubtitle = NodePath("../UI/Popup/Label2")
 DisplayTimeName = 5
-StartScene = ExtResource("7_8ay4t")
 
 [node name="Node3D" parent="." instance=ExtResource("8_y1184")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.933804, 1.8131257, -2.6552906)
@@ -1125,7 +1123,7 @@ offset_bottom = 450.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("12_jkoyc")
 theme_override_font_sizes/font_size = 78
-text = "A Fyule Little Lads"
+text = "Yule be Sorry!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
