@@ -13,7 +13,7 @@
 [ext_resource type="Resource" uid="uid://vy223jij10mk" path="res://Resources/meat.tres" id="8_ymj5r"]
 [ext_resource type="Resource" uid="uid://brl62l5q5djmt" path="res://Resources/milk.tres" id="9_jkoyc"]
 [ext_resource type="PackedScene" uid="uid://d07n0wu8kgkfb" path="res://feature/MainLevel/MainLevel.tscn" id="9_pxj1y"]
-[ext_resource type="Script" uid="uid://bofkgrsk5616g" path="res://feature/enemyAi/spawn_location.gd" id="10_ur1nk"]
+[ext_resource type="Script" path="res://feature/enemyAi/spawn_location.gd" id="10_ur1nk"]
 [ext_resource type="Resource" uid="uid://bw8wpx4ghhfoo" path="res://Resources/pot.tres" id="11_oqqxx"]
 [ext_resource type="Texture2D" uid="uid://bmri2401s5xcq" path="res://feature/MainMenu/heart.png" id="11_ymj5r"]
 [ext_resource type="FontFile" uid="uid://c5joqn2djl5hb" path="res://feature/MainMenu/Amore Christmas.otf" id="12_jkoyc"]
@@ -95,7 +95,8 @@ PopupNode = NodePath("../UI/Popup")
 NameLabel = NodePath("../UI/Popup/Label")
 HideSubtitle = NodePath("../UI/Popup/Label2")
 DisplayTimeName = 5
-StartScene = "res://FinalScenes/Level1.tscn"
+NextScene = "res://FinalScenes/WinScreenLevel.tscn"
+StartScene = "res://FinalScenes/LossScreenLevel.tscn"
 
 [node name="Node3D" parent="." instance=ExtResource("8_y1184")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 15.737585, 1.8131257, -2.1480124)

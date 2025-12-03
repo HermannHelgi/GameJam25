@@ -17,6 +17,8 @@ const INTERACT_ACTION := "Interact"
 var radio: Radio = null
 var door: Door = null
 var cat : Cat = null
+var skyr : Skyr = null
+var window : WindowAn = null
 
 @onready var raycast:RayCast3D = $RayCast3D
 @onready var hold_position:Node3D = $holdposition
@@ -78,8 +80,10 @@ func _input(event: InputEvent) -> void:
 					door = node
 				if node is Cat and cat == null:
 					cat = node
-					
-				
+				if node is Skyr and skyr == null:
+					skyr = node
+				if node is WindowAn and window == null:
+					window = node
 				node = node.get_parent()
 			if radio:
 				radio.play_music()
@@ -94,6 +98,20 @@ func _input(event: InputEvent) -> void:
 				else:
 					door.close_door()
 					door = null
+			elif window:
+				if !window.isOpen:
+					window.open_window()
+					window = null
+				else:
+					window.close_window()
+					window = null
+			elif skyr:
+				if !skyr.isOpen:
+					skyr.open_barrel()
+					skyr = null
+				else:
+					skyr.close_barrel()
+					skyr = null
 				
 
 	
