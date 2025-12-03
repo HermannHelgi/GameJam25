@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=4 uid="uid://bccoxih8vsxj8"]
+[gd_scene load_steps=26 format=4 uid="uid://bccoxih8vsxj8"]
 
 [ext_resource type="Script" uid="uid://deaflowmhni65" path="res://Dadi/door/new_door.gd" id="1_hrey7"]
 [ext_resource type="Texture2D" uid="uid://bfgswmwav7mi3" path="res://Dadi/door/low_poly_psx_hinged_door_0.png" id="1_taac8"]
 [ext_resource type="Texture2D" uid="uid://0naielb15ed8" path="res://Dadi/door/low_poly_psx_hinged_door_1.png" id="2_hrey7"]
+[ext_resource type="Script" uid="uid://bffqfwmshetjv" path="res://Dadi/door/yuleladDoorService.gd" id="4_bea8n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gank4"]
 resource_name = "Material"
@@ -246,6 +247,9 @@ shadow_mesh = SubResource("ArrayMesh_d0h7e")
 [sub_resource type="BoxShape3D" id="BoxShape3D_taac8"]
 size = Vector3(80.002075, 35.973022, 28.166718)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hrey7"]
+size = Vector3(1, 1, 2.3516998)
+
 [sub_resource type="Animation" id="Animation_hrey7"]
 length = 0.001
 tracks/0/type = "value"
@@ -374,11 +378,26 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/Sketchfab_model/a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode/Cylinder/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, -4.2632564e-14, 0, 0, 0.99999976, 39.975777, -1.9710124, -10.121567)
+transform = Transform3D(1, 0, 0, 0, 1, 4.2632564e-14, 0, 0, 0.9999998, 39.975777, -1.9710124, -10.121567)
 shape = SubResource("BoxShape3D_taac8")
+
+[node name="Area3D" type="Area3D" parent="Sketchfab_Scene/Sketchfab_model/a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode" node_paths=PackedStringArray("door")]
+transform = Transform3D(100, 0, 0, 0, 100, 2.220446e-14, 0, -2.220446e-14, 100, 0, 0, 0)
+collision_layer = 8
+collision_mask = 8
+monitorable = false
+script = ExtResource("4_bea8n")
+door = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/Sketchfab_model/a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4354679, -0.20931244)
+shape = SubResource("BoxShape3D_hrey7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sketchfab_Scene/Sketchfab_model")
 libraries = {
 &"": SubResource("AnimationLibrary_hrey7")
 }
+
+[connection signal="body_entered" from="Sketchfab_Scene/Sketchfab_model/a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode/Area3D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Sketchfab_Scene/Sketchfab_model/a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode/Area3D" to="." method="_on_body_exited"]

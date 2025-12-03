@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="YuleObjectiveResource" load_steps=3 format=3 uid="uid://b0a2vxqu7dndo"]
 
 [ext_resource type="Script" uid="uid://1iqtrj8d41ny" path="res://Resources/YuleObjectiveResource.gd" id="1_1ytbc"]
-[ext_resource type="PackedScene" uid="uid://bxek46q3cw2wq" path="res://Julia/itemModels/prefabs/delete/bowl.tscn" id="1_j32wo"]
+[ext_resource type="PackedScene" uid="uid://mk7p87ydham1" path="res://Julia/itemModels/prefabs/has_collisions/kitchen/bowl.tscn" id="1_j32wo"]
 
 [resource]
 resource_name = "Bowl"

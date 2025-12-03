@@ -7,6 +7,7 @@ extends Node3D
 @export var YuleLad: PackedScene
 @export var YuleObjectiveAmount = 3;
 @export var YuleSpawnLocation : Node;
+@export var YuleSpawnNode: Node;
 
 var ItemSpawnLocations : Array[Node]
 var PathLocations : Array[Node]
@@ -22,7 +23,7 @@ var AllYuleLads : Array[Node];
 @export var PlayerNode : Node
 @export var MainMenu : Node
 @export var UI : Node
-var isActive = true; # NEEDS TO BE TRUE TO START
+@export var isActive = true; # NEEDS TO BE TRUE TO START
 
 var strikes = 0;
 @export var maximumStrikes = 3;
@@ -42,6 +43,7 @@ var nameTimer = -1;
 
 var AmountOfFreeYuleLads = 0;
 @export var NextScene : PackedScene
+@export var StartScene : PackedScene
 
 var controlTimer = 90
 const MENU_MUSIC_DB_LOUD := 0.0      # full volume in menus / paused
@@ -64,10 +66,9 @@ func _process(delta: float) -> void:
 			timer -= delta
 			UITimer.text = str(int(timer)) + " seconds"
 			if (timer <= 0 && AllYuleLads.size() != SpawnableYuleLads):
-				var yuleSpawn = PathLocations[rng.randi_range(0, PathLocations.size() - 1)];
 				var newYuleLad = YuleLad.instantiate()
 				YuleSpawnLocation.add_child(newYuleLad)         
-				newYuleLad.global_position = yuleSpawn.global_position
+				newYuleLad.global_position = YuleSpawnNode.global_position
 				AllYuleLads.append(newYuleLad)
 				timer = BetweenTimer;
 				var obj = SelectedYuleObjectives.pop_at(rng.randi_range(0, SelectedYuleObjectives.size() - 1))
@@ -141,7 +142,7 @@ func get_script_owner(node: Node) -> PhysicsObject:
 func onStrikeGained() -> void:
 	strikes += 1
 	if (strikes == maximumStrikes):
-		get_tree().reload_current_scene()
+		get_tree().change_scene_to_packed(StartScene)
 	
 	infoLabel[maximumStrikes - strikes].queue_free()
 
@@ -169,6 +170,6 @@ func _freeze_game() -> void:
 
 func displayNewYuleLad(name: String, objectName : String, objectNameEN : String) -> void:
 	NameLabel.text = name.to_upper()
-	HideSubtitle.text = "is coming!\nHide all your " + objectName + "!\n(That means " + objectNameEN + "!)"
+	HideSubtitle.text = "is coming!\nHide all your " + objectName + " (" + objectNameEN + ")!"
 	nameTimer = DisplayTimeName
 	PopupNode.visible = true

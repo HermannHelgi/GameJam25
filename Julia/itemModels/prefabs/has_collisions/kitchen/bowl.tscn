@@ -51,7 +51,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vq77q")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o6rlv"]
-size = Vector3(1.1610718, 0.34375, 1)
+size = Vector3(1.1610718, 0.38452148, 1)
 
 [node name="Bowl" type="Node3D" node_paths=PackedStringArray("MeshLocation")]
 script = ExtResource("1_wdudy")
@@ -62,10 +62,10 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="BowlA_Wood_0" type="MeshInstance3D" parent="RigidBody3D"]
-transform = Transform3D(4.319536, 0, 0, 0, -1.8937651e-07, 4.2545834, 0, -4.3324294, -1.8597376e-07, 0, 0, 0)
+transform = Transform3D(4, 0, 0, 0, -1.7532639e-07, 3.94, 0, -4.011, -1.7222287e-07, 0, 0, 0)
 mesh = SubResource("ArrayMesh_50tyj")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(0.9071536, 0, 0, 0, 0.8664859, 0, 0, 0, 1.0749911, 0.0045183823, 0.18222016, 0)
+transform = Transform3D(0.9071536, 0, 0, 0, 0.8664859, 0, 0, 0, 1.0749911, 0.0045183823, 0.1645562, 0)
 shape = SubResource("BoxShape3D_o6rlv")

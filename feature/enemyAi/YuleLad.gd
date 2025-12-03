@@ -1,3 +1,4 @@
+class_name YuleLad;
 extends CharacterBody3D
 @onready var audioManager : Node3D = $AudioManager
 @onready var animator : Node = $Animator
@@ -100,11 +101,11 @@ func _process(delta: float) -> void:
 			else:
 				check = true
 			
-			if (current_strikes >= MaxStrikes):
-				GM.AmountOfFreeYuleLads += 1
-				self.queue_free()
 			
-			if (check):
+			if (current_strikes >= MaxStrikes):
+				nav_agent.set_target_position(GM.YuleSpawnNode.global_position)
+				current_state = GlobalEnums.YuleState.LEAVING
+			elif (check):
 				timer = _randomTime()
 				current_state = GlobalEnums.YuleState.IDLE	
 				print("IDLE")
@@ -136,7 +137,7 @@ func _process(delta: float) -> void:
 func _physics_process(_delta: float) -> void:
 	velocity = Vector3.ZERO
 	
-	if (current_state == GlobalEnums.YuleState.WALKING):
+	if (current_state == GlobalEnums.YuleState.WALKING || current_state == GlobalEnums.YuleState.LEAVING):
 		var distance = 0 
 		var last_nav_point = nav_agent.get_final_position()
 		distance = global_position.distance_to(last_nav_point)
@@ -148,6 +149,11 @@ func _physics_process(_delta: float) -> void:
 			velocity *= distance / DistanceToSlowDown
 		
 		move_and_slide()
+		
+		if (current_state == GlobalEnums.YuleState.LEAVING && distance < DistanceToObject):
+			GM.AmountOfFreeYuleLads += 1
+			self.queue_free()
+			
 
 func _randomTime() -> float:
 	return rng.randf_range(MinIdleTime, MaxIdleTime)

@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=4 uid="uid://4yraktpu0q5u"]
 
-[ext_resource type="Texture2D" uid="uid://cglold4drcuo5" path="res://Julia/itemModels/models/milk/tf2_hd_mad_milk_0.png" id="1_2ooiu"]
-[ext_resource type="Texture2D" uid="uid://dunnt0gmsvtjo" path="res://Julia/itemModels/models/milk/tf2_hd_mad_milk_1.png" id="2_ci0g2"]
+[ext_resource type="Texture2D" uid="uid://c2nd1otn470fg" path="res://Julia/itemModels/models/milk/tf2_hd_mad_milk_0.png" id="1_2ooiu"]
+[ext_resource type="Texture2D" uid="uid://d0pjqrvtsplh5" path="res://Julia/itemModels/models/milk/tf2_hd_mad_milk_1.png" id="2_ci0g2"]
 [ext_resource type="Texture2D" uid="uid://gas6bxp5vofc" path="res://Julia/itemModels/models/milk/tf2_hd_mad_milk_2.png" id="3_qyt0v"]
-[ext_resource type="Texture2D" uid="uid://nmlhd2ssa27y" path="res://Julia/itemModels/models/milk/tf2_hd_mad_milk_4.jpg" id="4_7lcsc"]
+[ext_resource type="Texture2D" uid="uid://dgbpjyt6twhex" path="res://Julia/itemModels/models/milk/tf2_hd_mad_milk_4.jpg" id="4_7lcsc"]
 [ext_resource type="Texture2D" uid="uid://bafvyfqmogtle" path="res://Julia/itemModels/models/milk/tf2_hd_mad_milk_5.png" id="5_3xaa4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lcym2"]

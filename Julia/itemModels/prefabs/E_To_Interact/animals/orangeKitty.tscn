@@ -1,11 +1,12 @@
-[gd_scene load_steps=14 format=4 uid="uid://bwf0h3y1btfb1"]
+[gd_scene load_steps=15 format=4 uid="uid://bwf0h3y1btfb1"]
 
 [ext_resource type="Texture2D" uid="uid://bfrwul5clhps7" path="res://Julia/itemModels/models/kitty/no_im_not_a_human_-_cat_0.png" id="1_03i12"]
 [ext_resource type="Script" uid="uid://d1555o2p1d3a5" path="res://Julia/itemModels/prefabs/E_To_Interact/animals/cat.gd" id="1_aqrj4"]
-[ext_resource type="AudioStream" uid="uid://d0oevn700ny8s" path="res://Dadi/sounds/cat/meow.wav" id="2_83avo"]
-[ext_resource type="AudioStream" uid="uid://cn0nt1ofnbf25" path="res://Dadi/sounds/cat/meow-2.wav" id="3_1bmat"]
-[ext_resource type="AudioStream" uid="uid://di3heryf28m7a" path="res://Dadi/sounds/cat/purring.wav" id="4_j8m71"]
-[ext_resource type="AudioStream" uid="uid://ci5bs5hr6q8ck" path="res://Dadi/sounds/cat/purring-2.wav" id="5_t1s1y"]
+[ext_resource type="AudioStream" uid="uid://det4d5uiki0mt" path="res://Dadi/sounds/cat/BIGPURR.wav" id="2_1bmat"]
+[ext_resource type="AudioStream" uid="uid://osulm1e36aee" path="res://Dadi/sounds/cat/MRR.wav" id="3_j8m71"]
+[ext_resource type="AudioStream" uid="uid://cfh4hcy0um8ot" path="res://Dadi/sounds/cat/MRRAAAW.wav" id="4_t1s1y"]
+[ext_resource type="AudioStream" uid="uid://dpp7xuepkad47" path="res://Dadi/sounds/cat/MURREOW.wav" id="5_pjnb4"]
+[ext_resource type="AudioStream" uid="uid://dugws8seewgrf" path="res://Dadi/sounds/cat/SMALLPURR.wav" id="6_d673l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfkj6"]
 resource_name = "CatMat"
@@ -1154,14 +1155,13 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_83avo"]
-size = Vector3(22.52826, 54.636387, 68.31214)
+size = Vector3(88.74408, 77.85628, 73.10675)
 
 [node name="Sketchfab_Scene" type="Node3D" node_paths=PackedStringArray("animation", "audioPlayer")]
 script = ExtResource("1_aqrj4")
 animation = NodePath("AnimationPlayer")
 audioPlayer = NodePath("AudioStreamPlayer3D")
-meowSounds = Array[AudioStreamWAV]([ExtResource("2_83avo"), ExtResource("3_1bmat")])
-purrSounds = Array[AudioStreamWAV]([ExtResource("4_j8m71"), ExtResource("5_t1s1y")])
+purrSounds = Array[AudioStreamWAV]([ExtResource("2_1bmat"), ExtResource("3_j8m71"), ExtResource("4_t1s1y"), ExtResource("5_pjnb4"), ExtResource("6_d673l")])
 
 [node name="Sketchfab_model" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2.220446e-16, 1, 0, -1, 2.220446e-16, 0, 0, 0)
@@ -1541,14 +1541,14 @@ libraries = {
 speed_scale = 0.8
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(0.56790125, -0.03148207, -0.8224944, -0.8230968, -0.021721266, -0.5674858, -1.4362923e-09, 0.9992683, -0.038248327, 0, 0, 0)
-emission_angle_enabled = true
-emission_angle_degrees = 42.2
+transform = Transform3D(1, 0, 0, 0, -0.9955587, 0.09414316, 0, -0.09414316, -0.9955587, 0, 0, 0)
+volume_db = 10.787
+emission_angle_degrees = 72.2
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.490387, 26.818193, 1.9273958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.248497, 15.208247, -0.4699087)
 shape = SubResource("BoxShape3D_83avo")
