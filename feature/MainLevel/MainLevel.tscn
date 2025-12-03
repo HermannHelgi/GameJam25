@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://d07n0wu8kgkfb"]
+[gd_scene load_steps=66 format=4 uid="uid://d07n0wu8kgkfb"]
 
 [ext_resource type="Texture2D" uid="uid://gemih5m6oead" path="res://feature/MainLevel/Props/Textures/Wood_19-128x128.png" id="1_3q08c"]
 [ext_resource type="Texture2D" uid="uid://rxvqqdxf18mi" path="res://feature/MainLevel/Wood_Pattern_02_Brown_2.png" id="1_uhivl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bg8wr4pyga8or" path="res://feature/MainLevel/Props/Island.tscn" id="4_av175"]
 [ext_resource type="PackedScene" uid="uid://ghcai01cv1aw" path="res://feature/MainLevel/Props/KitchenElements/Stove.tscn" id="5_rxcrv"]
 [ext_resource type="Texture2D" uid="uid://bbdqkqu0m1q2n" path="res://feature/MainLevel/Props/HouseAssets/AssetPack/objects_interiorvillage_alpha_67.png" id="7_3q08c"]
+[ext_resource type="Texture2D" uid="uid://dqve34llltde0" path="res://feature/MainLevel/Props/Textures/Metal_17-128x128.png" id="7_prni0"]
 [ext_resource type="PackedScene" uid="uid://doqsghlay2tmk" path="res://feature/MainLevel/Props/Lights/CeilingLight/CeilingLight.tscn" id="7_s82up"]
 [ext_resource type="PackedScene" uid="uid://bl60hlpw08uiu" path="res://Julia/itemModels/models/misc/bigpepper.tscn" id="8_pyr1j"]
 [ext_resource type="PackedScene" uid="uid://b2mx0yt008p4b" path="res://feature/MainLevel/Props/FirePlace/Asset/FirePlace/FirePlace.tscn" id="9_cusdo"]
@@ -54,6 +55,11 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cusdo"]
 albedo_texture = ExtResource("1_3q08c")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkp3g"]
+albedo_color = Color(1.6339176, 2.6005867, 3.2368753, 1)
+albedo_texture = ExtResource("1_uhivl")
+metallic_specular = 0.35
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lrs84"]
 albedo_texture = ExtResource("1_3q08c")
 
@@ -66,11 +72,6 @@ albedo_texture = ExtResource("1_3q08c")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6yykd"]
 albedo_texture = ExtResource("1_3q08c")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkp3g"]
-albedo_color = Color(1.6339176, 2.6005867, 3.2368753, 1)
-albedo_texture = ExtResource("1_uhivl")
-metallic_specular = 0.35
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b8alq"]
 albedo_texture = ExtResource("1_3q08c")
 
@@ -79,6 +80,9 @@ albedo_texture = ExtResource("1_3q08c")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ifqw"]
 albedo_texture = ExtResource("1_3q08c")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sq5ec"]
+albedo_texture = ExtResource("7_prni0")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ipwig"]
 resource_name = "Chest_drawers_01_64"
@@ -142,6 +146,12 @@ material_override = SubResource("StandardMaterial3D_cusdo")
 use_collision = true
 size = Vector3(1, 0.1328125, 1)
 
+[node name="CSGBox3D14" type="CSGBox3D" parent="CSGBox3D40"]
+transform = Transform3D(2.833289e-13, 4.371139e-08, 0.99999976, 1, -4.371151e-08, -1.7877255e-11, 4.371139e-08, 0.99999976, -4.371139e-08, 0.18470764, 0, -0.055882905)
+material_override = SubResource("StandardMaterial3D_kkp3g")
+operation = 2
+size = Vector3(1, 1.2115936, 0.7024727)
+
 [node name="CSGBox3D32" type="CSGBox3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 9.922908, 0.073067814, -10)
 material_override = SubResource("StandardMaterial3D_cusdo")
@@ -153,6 +163,12 @@ transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 19.922909, 0.073067814, -10
 material_override = SubResource("StandardMaterial3D_cusdo")
 use_collision = true
 size = Vector3(1, 0.1328125, 1)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="CSGBox3D41"]
+transform = Transform3D(2.833289e-13, 4.371139e-08, 0.99999976, 1, -4.371151e-08, -1.7877255e-11, 4.371139e-08, 0.99999976, -4.371139e-08, 0.18470764, 0, -0.055882905)
+material_override = SubResource("StandardMaterial3D_kkp3g")
+operation = 2
+size = Vector3(1, 1.2115936, 0.7024727)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0.073067814, -10)
@@ -210,18 +226,13 @@ transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0.35256863, 5.954103, 0)
 material_override = SubResource("StandardMaterial3D_kkp3g")
 size = Vector3(1, 0.1328125, 1)
 
-[node name="CSGBox3D39" type="CSGBox3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 8.024374, 0.33057594, 5.954103, -5.203732)
-material_override = SubResource("StandardMaterial3D_kkp3g")
-size = Vector3(1, 0.1328125, 0.8236084)
-
 [node name="CSGBox3D37" type="CSGBox3D" parent="."]
-transform = Transform3D(11.912278, 0, 0, 0, 1, 0, 0, 0, 10, 11.514672, 5.9538646, 0)
+transform = Transform3D(11.912278, 0, 0, 0, 1, 0, 0, 0, 10, 11.451214, 5.9538646, 0)
 material_override = SubResource("StandardMaterial3D_kkp3g")
 size = Vector3(1.0244141, 0.1328125, 1)
 
 [node name="CSGBox3D38" type="CSGBox3D" parent="."]
-transform = Transform3D(11.912278, 0, 0, 0, 1, 0, 0, 0, 6.7863464, 11.514672, 5.9538646, -5.394149)
+transform = Transform3D(11.912278, 0, 0, 0, 1, 0, 0, 0, 6.7863464, 11.451542, 5.95, -5.394)
 material_override = SubResource("StandardMaterial3D_kkp3g")
 size = Vector3(1.0244141, 0.1328125, 1)
 
@@ -494,14 +505,53 @@ transform = Transform3D(-1.06862515e-07, 0, 2.800928, 0, 1.705595, 0, -2.4447293
 [node name="CeilingLight" parent="." instance=ExtResource("7_s82up")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, -11.943686, 5.140853, -0.10810375)
 
-[node name="CeilingLight6" parent="." instance=ExtResource("7_s82up")]
-transform = Transform3D(1.9633615, 0, 0, 0, -1.2574404, 5.343365e-07, 0, -3.2978676e-07, -2.0373657, 2.4935417, 5.8895397, -4.794922)
+[node name="CeilingLight2" parent="." instance=ExtResource("7_s82up")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0.31837368, 5.140853, -0.10810375)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CeilingLight2"]
+transform = Transform3D(0.00450689, 0, 0, 0, 1, 0, 0, 0, 0.01827975, 0, -0.5574565, 0)
+material_override = SubResource("StandardMaterial3D_sq5ec")
+size = Vector3(1, 1.1363525, 1)
 
 [node name="CeilingLight5" parent="." instance=ExtResource("7_s82up")]
-transform = Transform3D(1.9633615, 0, 0, 0, -1.2574404, 1.7811216e-07, 0, -1.0992893e-07, -2.0373657, 2.5124755, 5.9273586, 1.1242008)
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0.31837368, 5.1408534, -5.073924)
 
-[node name="CeilingLight2" parent="." instance=ExtResource("7_s82up")]
-transform = Transform3D(1.9633615, 0, 0, 0, -1.2574404, 1.7811216e-07, 0, -1.0992893e-07, -2.0373657, 10.2781315, 5.968931, -4.0895863)
+[node name="CSGBox3D2" type="CSGBox3D" parent="CeilingLight5"]
+transform = Transform3D(0.00450689, 0, 0, 0, 1, 0, 0, 0, 0.01827975, 0, -0.5574565, 0)
+material_override = SubResource("StandardMaterial3D_sq5ec")
+size = Vector3(1, 1.1363525, 1)
+
+[node name="CeilingLight6" parent="." instance=ExtResource("7_s82up")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 6.2640915, 5.140853, -0.10810375)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CeilingLight6"]
+transform = Transform3D(0.00450689, 0, 0, 0, 1, 0, 0, 0, 0.01827975, 0, -0.5574565, 0)
+material_override = SubResource("StandardMaterial3D_sq5ec")
+size = Vector3(1, 1.1363525, 1)
+
+[node name="CeilingLight12" parent="." instance=ExtResource("7_s82up")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 6.2640915, 5.1408534, -5.073924)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CeilingLight12"]
+transform = Transform3D(0.00450689, 0, 0, 0, 1, 0, 0, 0, 0.01827975, 0, -0.5574565, 0)
+material_override = SubResource("StandardMaterial3D_sq5ec")
+size = Vector3(1, 1.1363525, 1)
+
+[node name="CeilingLight13" parent="." instance=ExtResource("7_s82up")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 12.226367, 5.140853, -0.10810375)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CeilingLight13"]
+transform = Transform3D(0.00450689, 0, 0, 0, 1, 0, 0, 0, 0.01827975, 0, -0.5574565, 0)
+material_override = SubResource("StandardMaterial3D_sq5ec")
+size = Vector3(1, 1.1363525, 1)
+
+[node name="CeilingLight14" parent="." instance=ExtResource("7_s82up")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 12.226367, 5.1408534, -5.073924)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CeilingLight14"]
+transform = Transform3D(0.00450689, 0, 0, 0, 1, 0, 0, 0, 0.01827975, 0, -0.5574565, 0)
+material_override = SubResource("StandardMaterial3D_sq5ec")
+size = Vector3(1, 1.1363525, 1)
 
 [node name="CeilingLight4" parent="." instance=ExtResource("7_s82up")]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, -11.943686, 5.140853, 5.2433395)
@@ -943,3 +993,8 @@ transform = Transform3D(-0.00074330467, 0, 0.08997572, 0, 0.027, 0, -0.031991366
 
 [node name="Window2" parent="." instance=ExtResource("50_hcsmb")]
 transform = Transform3D(-0.00074330467, 0, 0.08997572, 0, 0.027, 0, -0.031991366, 0, -0.0020905442, 17.794462, 1.5688255, -0.77910185)
+
+[node name="CSGBox3D39" type="CSGBox3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 8.024374, 0.35058203, 5.95, -5.2908773)
+material_override = SubResource("StandardMaterial3D_kkp3g")
+size = Vector3(1, 0.1328125, 0.8236084)
