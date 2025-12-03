@@ -1,3 +1,4 @@
+class_name YuleLad;
 extends CharacterBody3D
 @onready var audioManager : Node3D = $AudioManager
 @onready var animator : Node = $Animator
