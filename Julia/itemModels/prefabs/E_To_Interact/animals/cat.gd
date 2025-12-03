@@ -9,7 +9,6 @@ var recentlyPetted : bool = false
 var recentlyPettedTimer : float = 0.0
 var playSoundTimer : float = 0.0
 @export var audioPlayer : AudioStreamPlayer3D
-@export var meowSounds : Array[AudioStreamWAV]
 @export var purrSounds : Array[AudioStreamWAV]
 var recentlyChangedAnimation : bool = false
 
@@ -25,6 +24,7 @@ func changeAnimation() -> void:
 	if (currentAnimation == "Sit"):
 		animation.play("Lay")
 		currentAnimation = "Lay"
+		recentlyChangedAnimation = true
 	elif (playSoundTimer > 20 )and recentlyChangedAnimation:
 		animation.play("Sit")
 		recentlyChangedAnimation = false
@@ -35,24 +35,21 @@ func play_random_purr() -> void:
 		audioPlayer.play()
 	
 	
-func play_random_meow() -> void:
-	audioPlayer.stream = meowSounds[randi_range(0, meowSounds.size() - 1)]
-	audioPlayer.play()
 	
 func _process(delta: float) -> void:
-	
 	if(recentlyPetted):
 		playSoundTimer = 0.0
 		recentlyPettedTimer += delta
-		if (recentlyPettedTimer > 5):
+		if (recentlyPettedTimer > 3):
 			recentlyPetted = false
 			playSoundTimer = recentlyPettedTimer
-	elif(playSoundTimer > 45.0):
+	elif(playSoundTimer < 10.0):
 		playSoundTimer += delta
-	else:
-		play_random_meow()
+		print(playSoundTimer)
+	elif(playSoundTimer > 10.0):
+		play_random_purr()
 	var playerDistance = check_player_distance()
-	if(playerDistance > 5.0 ) and playSoundTimer > 45:
+	if(playerDistance > 5.0 ) and playSoundTimer > 10:
 		changeAnimation()
 		
 	

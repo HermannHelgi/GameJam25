@@ -1154,14 +1154,13 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_83avo"]
-size = Vector3(22.52826, 54.636387, 68.31214)
+size = Vector3(55.40612, 54.636387, 68.31214)
 
 [node name="Sketchfab_Scene" type="Node3D" node_paths=PackedStringArray("animation", "audioPlayer")]
 script = ExtResource("1_aqrj4")
 animation = NodePath("AnimationPlayer")
 audioPlayer = NodePath("AudioStreamPlayer3D")
-meowSounds = Array[AudioStreamWAV]([ExtResource("2_83avo"), ExtResource("3_1bmat")])
-purrSounds = Array[AudioStreamWAV]([ExtResource("4_j8m71"), ExtResource("5_t1s1y")])
+purrSounds = Array[AudioStreamWAV]([ExtResource("2_83avo"), ExtResource("3_1bmat"), ExtResource("4_j8m71"), ExtResource("5_t1s1y")])
 
 [node name="Sketchfab_model" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2.220446e-16, 1, 0, -1, 2.220446e-16, 0, 0, 0)
@@ -1542,6 +1541,7 @@ speed_scale = 0.8
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.9955587, 0.09414316, 0, -0.09414316, -0.9955587, 0, 0, 0)
+volume_db = 10.787
 emission_angle_degrees = 72.2
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -1549,5 +1549,5 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.490387, 26.818193, 1.9273958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42048264, 26.818193, 1.9273958)
 shape = SubResource("BoxShape3D_83avo")
