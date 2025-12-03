@@ -83,7 +83,6 @@ func _input(event: InputEvent) -> void:
 					door = null
 				
 
-
 	
 func try_grab_object() -> void:
 	#Make sure raycast is hitting something
