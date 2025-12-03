@@ -1154,7 +1154,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_83avo"]
-size = Vector3(55.40612, 54.636387, 68.31214)
+size = Vector3(88.74408, 77.85628, 73.10675)
 
 [node name="Sketchfab_Scene" type="Node3D" node_paths=PackedStringArray("animation", "audioPlayer")]
 script = ExtResource("1_aqrj4")
@@ -1549,5 +1549,5 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42048264, 26.818193, 1.9273958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.248497, 15.208247, -0.4699087)
 shape = SubResource("BoxShape3D_83avo")

@@ -1114,7 +1114,7 @@ bus = &"MenuMusic"
 transform = Transform3D(-0.4998705, 0, 0.011378573, 0, 0.5, 0, -0.011378573, 0, -0.4998705, -3.4747725, 1.3978416, 13.290945)
 
 [node name="cat" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_fbb5e")]
-transform = Transform3D(-0.004864269, 0, 0.008737213, 0, 0.01, 0, -0.008737213, 0, -0.004864269, 7.590827, 1.0411975, -4.3959017)
+transform = Transform3D(-0.004864269, 0, 0.008737213, 0, 0.01, 0, -0.008737213, 0, -0.004864269, 7.0908437, 1.0411975, -5.717592)
 player = NodePath("../Node3D")
 catPosition = Vector3(7.4989448, 0.88890636, -4.1945753)
 
