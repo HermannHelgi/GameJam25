@@ -116,6 +116,7 @@ func _process(delta: float) -> void:
 					idle_stop_count = _randomStop();
 					current_strikes += 1;
 					current_state = GlobalEnums.YuleState.ANGRY
+					timer = _randomTime()
 					
 				else:
 					# No, annihilate
