@@ -20,11 +20,13 @@ func close_door() -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body is YuleLad and not isOpen:
+	print("ENTER:", body, body.name)
+	if body.is_in_group("YuleLads") and not isOpen:
 		open_door()
 	#pass # Replace with function body.
 
 
 func _on_body_exited(body: Node3D) -> void:
-	if body is YuleLad and isOpen:
+	print("ENTER:", body, body.name)
+	if body.is_in_group("YuleLads") and isOpen:
 		close_door()

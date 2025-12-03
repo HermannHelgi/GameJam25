@@ -247,6 +247,9 @@ shadow_mesh = SubResource("ArrayMesh_d0h7e")
 [sub_resource type="BoxShape3D" id="BoxShape3D_taac8"]
 size = Vector3(80.002075, 35.973022, 28.166718)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hrey7"]
+size = Vector3(1, 1, 2.3516998)
+
 [sub_resource type="Animation" id="Animation_hrey7"]
 length = 0.001
 tracks/0/type = "value"
@@ -306,9 +309,6 @@ _data = {
 &"RESET": SubResource("Animation_hrey7"),
 &"open_door": SubResource("Animation_taac8")
 }
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hrey7"]
-size = Vector3(1, 1, 2.3516998)
 
 [node name="NewDoor" type="Node3D"]
 script = ExtResource("1_hrey7")
@@ -381,22 +381,23 @@ collision_mask = 7
 transform = Transform3D(1, 0, 0, 0, 1, 4.2632564e-14, 0, 0, 0.9999998, 39.975777, -1.9710124, -10.121567)
 shape = SubResource("BoxShape3D_taac8")
 
+[node name="Area3D" type="Area3D" parent="Sketchfab_Scene/Sketchfab_model/a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode" node_paths=PackedStringArray("door")]
+transform = Transform3D(100, 0, 0, 0, 100, 2.220446e-14, 0, -2.220446e-14, 100, 0, 0, 0)
+collision_layer = 8
+collision_mask = 8
+monitorable = false
+script = ExtResource("4_bea8n")
+door = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/Sketchfab_model/a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4354679, -0.20931244)
+shape = SubResource("BoxShape3D_hrey7")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sketchfab_Scene/Sketchfab_model")
 libraries = {
 &"": SubResource("AnimationLibrary_hrey7")
 }
 
-[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("door")]
-collision_layer = 8
-collision_mask = 8
-monitorable = false
-script = ExtResource("4_bea8n")
-door = NodePath("..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4354679, -0.20931244)
-shape = SubResource("BoxShape3D_hrey7")
-
-[connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_body_exited"]
+[connection signal="body_entered" from="Sketchfab_Scene/Sketchfab_model/a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode/Area3D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Sketchfab_Scene/Sketchfab_model/a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode/Area3D" to="." method="_on_body_exited"]
