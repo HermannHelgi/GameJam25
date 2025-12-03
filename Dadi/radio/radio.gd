@@ -1,7 +1,7 @@
 extends Node3D
 class_name Radio
 
-@onready var audioEmitter:AudioStreamPlayer3D = $Sketchfab_model2/SonyRadio_obj_cleaner_materialmerger_gles/Object_2/RadioAudio
+@export var audioEmitter:AudioStreamPlayer3D 
 @export var songs : Array[AudioStreamWAV]
 
 var currentSong :AudioStreamWAV = null

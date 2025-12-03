@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=4 uid="uid://wskcwc4p8k4n"]
+
+[ext_resource type="Texture2D" uid="uid://dhsaqhv3mi76n" path="res://Julia/itemModels/models/kitchenStuffPack/food_equipment__Image_17.jpg" id="1_uq0ws"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d8ceb"]
+resource_name = "TiinsTiinsTiinsr44555_17"
+cull_mode = 2
+albedo_texture = ExtResource("1_uq0ws")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_r8io0"]
+_surfaces = [{
+"aabb": AABB(0.5071118, 0.042568207, -0.47389942, 0.14731264, 0.12845236, 0.07873607),
+"format": 34896613377,
+"index_count": 132,
+"index_data": PackedByteArray("AgAQAAsAEQAQAAIACwAQABIAEQATABAAEAATABQAEAAUABIAFQATABEAEwAMABQAEwAVAAwAEgAUABYAFgAUAAwACgAMABUAFQARAAoAFgAKABEACgAXAAwAFgAMABcAFgAXAAoABwAWABEAEgAWAAcABwARAAIACwASAA0ADQASAAcADgALAA0ADgANAA8ACQAPAA0ADwAOAAkACQANAAcACAALAA4ACQAIAA4AAgALAAgACQAHAAUACAAJAAUABgAHAAIABwAGAAUAAgAIAAAACAAFAAAABgACAAEAAAABAAIABAAFAAYABAAGAAEABQADAAAABQAEAAMAAwABAAAABAABAAMA"),
+"lods": [0.14497119, PackedByteArray("AAABAAIAAwABAAAABAABAAMABQADAAAABQAEAAMABAAGAAEABAAFAAYABgACAAEABwAGAAUABgAHAAIACAAFAAAAAgAIAAAACAAJAAUACQAHAAUABwAKAAIAAgALAAgACgALAAIABwAMAAoACwAKAAwADQAMAAcACwAMAA0ACQANAAcACAALAA4ACQAIAA4ADgALAA0ACQAPAA0ADgANAA8ADwAOAAkA")],
+"name": "TiinsTiinsTiinsr44555_17",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("+NeI+/yrAACL3t3qjMgAAB3lMtod5QAAdPn//8LEAAB0+f//fkMAAPjXiPsCVAAAi97d6nI3AAAd5TLa4RoAAAYoiPv8qwAABiiI+wJUAAAJ9wAACfcAAHMh3eqMyAAA9QgAAPUIAABzId3qcjcAAIoG/v+AvAAAigb+/zw7AADhGjLaHeUAAP//VSH//wAA4Roy2uEaAAAAAFUh//8AAAAAVSEAAAAA9QgAAAn3AAD//1UhAAAAAAn3AAD1CAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_78hac"]
+resource_name = "food_equipment__blend_free_low_poly_Object_94"
+_surfaces = [{
+"aabb": AABB(0.5071118, 0.042568207, -0.47389942, 0.14731264, 0.12845236, 0.07873607),
+"attribute_data": PackedByteArray("vcuG2ZjJu9Plx0PNVthAzaTWuNOB1ITZ//862VbYQM3i/XvTMfxfn+fHOJ/lx0PNpNa405jJu9NMon7TyJNfn3mVe9MtoDzZvcuG2aTcFdcf0j3VL9RdzqTcFdcv1F3OH9I91dmaPdVUkBXXyJhdztmaPdXImF3OVJAV13mvkcuHvJHL+74vw8urL8N5r533h7yd9zXA//8Frf//Sa162Z/CJ9EEwnrZW6sn0bHAetlbqyfR9qt62Z/CJ9H7oxrNypMYzciT9aLox8yi/6Pzov6jXZ9R2M6iU9g6nzH89aIz/BjNgdSE2fu+L8N5r5HLB5oEueqKh58Hmoef6ooEuQ=="),
+"format": 34896613399,
+"index_count": 132,
+"index_data": PackedByteArray("CwAvAA4ACwAOABEACwARABIADgAvADAADgAwABAALwAxADAADAALAA0ADAAHAAsAMgAvAAsABwAyAAsALwAzADEAMgAzAC8AMwAPADEAMwA0AA8ANAAzADIANAAyAAoANQAKADIABwA1ADIANQA2AAoANQAJADYANQA3AAkAOAA3ADUAOAA1AAcACAA4AAcABgAIAAcABgAHAAUAAAABAAIAAwAEADkAEwAUABUAFgAXABgAGQAaABsAHAAdAB4AHwAgADoAIAAfACMAIAAjACQAIwAlACQAIwAmACUAIgAhADsAPAA9AD4APAA/AD0AJwAoACkAJwAqACgAKwAsAC0AKwAuACwA"),
+"lods": [0.14497119, PackedByteArray("AAABAAIAAwAEAAUABgAHAAUABgAIAAcACAAJAAcABwAJAAoABwAKAAsADAAHAAsADAALAA0ACgAOAAsADgAKAA8ADgAPABAACwAOABEACwARABIAEwAUABUAFgAXABgAGQAaABsAHAAdAB4AHwAgACEAIgAhAB8AIAAfACMAIAAjACQAIwAlACQAIwAmACUAJwAoACkAJwAqACgAKwAsAC0AKwAuACwA")],
+"material": SubResource("StandardMaterial3D_d8ceb"),
+"name": "TiinsTiinsTiinsr44555_17",
+"primitive": 3,
+"uv_scale": Vector4(2.4518242, 1.8638505, 0, 0),
+"vertex_count": 64,
+"vertex_data": PackedByteArray("+NeI+/yrdc2L3t3qjMhd3R3lMtod5c3GHeUy2uEaKOiL3t3qcjcRt/jXiPsCVBYDBiiI+wJUMQMd5TLa4RozHXMh3epyNwwU9QgAAPUIXhIJ9wAACfcQVR3lMtod5S5di97d6nI3oFKL3t3qjMjSIXMh3eqMyEda9QgAAPUI6CNzId3qcjcZIAYoiPv8qwZP+NeI+/yrjU50+f//fkPZ5fjXiPsCVIDQi97d6nI38ld0+f//wsTAUIve3eqMyF3y+NeI+/yrzUwGKIj7AlTe24oG/v88O+M3cyHd6nI3at8GKIj7/KsGTnMh3eqMyHRVigb+/4C8SroGKIj7AlScGAYoiPv8q/Uvigb+/4C8oriKBv7/PDsw0/jXiPsCVCQj+NeI+/yrtjV0+f//wsQWDnT5//9+Q1sHdPn//35Do/iL3t3qjMjc+HT5///CxOjxi97d6nI3XuyKBv7/gLxcR3Mh3epyN+Pfigb+/zw7zixzId3qjMijseEaMtod5Shd4Roy2uEahSAAAFUhAAAzIf//VSH//71eAABVIf//vV71CAAACfcDVf//VSEAACEhCfcAAPUI5RsAAFUhAAAJIeEaMtrhGoMZ+NeI+wJURiSKBv7/gLyiuAYoiPsCVJ0YCfcAAAn33t31CAAA9QgW3PUIAAAJ95G3CfcAAPUIou0y88yMeVQLKg21DjUMtQ011HvkPe99zcqnVHUBOp7gB/t2I9axsDD2fUrxS/u4HioUbCM53mqvHsizL7moRgDb06L4zJvzJHgs90mOoMdLZrPyOGPwS4ww0qjLVA0BPqbz0UWYu+IhkOokuKaL4zSsQet0WVfj+cLuQHWWabUOsPuljKJ/PtTl+Tjy2PitirLyoyqolae6h93JSo7dyUqOoBBXs5WnuodpC2DXfz7U5dei9sz6OPLYQ5hJtfGp8sbdm6rXN3iU+gt3eAw/c0z3DTS5ymx+rAVWcksuyofU/eN229sS2Cg5fz7U5Wm1D7AMFLfZp0b82qsz7eRWIELC")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_r8io0")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Object_192" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5367241, 0, 0.4779907)
+mesh = SubResource("ArrayMesh_78hac")
+skeleton = NodePath("")

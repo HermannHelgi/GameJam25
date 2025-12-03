@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="YuleObjectiveResource" load_steps=3 format=3 uid="uid://cnj1e42d36y01"]
 
 [ext_resource type="Script" uid="uid://1iqtrj8d41ny" path="res://Resources/YuleObjectiveResource.gd" id="1_53dem"]
-[ext_resource type="PackedScene" uid="uid://mg0qvpyakbdj" path="res://Dadi/playerController/testObject.tscn" id="1_jryqj"]
+[ext_resource type="PackedScene" uid="uid://b0pxo2oin0emx" path="res://Julia/itemModels/prefabs/has_collisions/kitchen/pan.tscn" id="1_jryqj"]
 
 [resource]
 script = ExtResource("1_53dem")

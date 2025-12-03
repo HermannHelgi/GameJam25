@@ -26,26 +26,32 @@ albedo_texture = ExtResource("1_fp0nd")
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1.6558185, 0, 0, 0, 0.066804886, 0, 0, 0, 0.474717, 0, 0.30680752, 0)
 material_override = SubResource("StandardMaterial3D_wgrtm")
+use_collision = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1.6558185, 0, 0, 0, 0.066804886, 0, 0, 0, 0.474717, 0, 1.3068075, 0)
 material_override = SubResource("StandardMaterial3D_lc7b3")
+use_collision = true
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
 transform = Transform3D(-1.115851e-07, -0.066804886, 0, 2.5527697, -2.9201341e-09, 0, 0, 0, 0.474717, 0.8517797, 1.3386127, 0)
 material_override = SubResource("StandardMaterial3D_yat2x")
+use_collision = true
 size = Vector3(1.0274658, 1, 1)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="."]
 transform = Transform3D(-1.115851e-07, -0.066804886, 0, 2.5527697, -2.9201341e-09, 0, 0, 0, 0.474717, -0.8366054, 1.3386127, 0)
 material_override = SubResource("StandardMaterial3D_l64nf")
+use_collision = true
 size = Vector3(1.0274658, 1, 1)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="."]
 transform = Transform3D(1.3946799e-14, 2.920134e-09, -1.5786792, 2.55277, -2.9201344e-09, 0, -1.1158511e-07, -0.06680487, -6.900626e-08, 0.005291857, 1.2940124, -0.20429027)
 material_override = SubResource("StandardMaterial3D_vsm4a")
+use_collision = true
 size = Vector3(0.92263794, 1, 1.1000977)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
 transform = Transform3D(1.6558185, 0, 0, 0, 0.066804886, 0, 0, 0, 0.474717, 0, 2.3068075, 0)
 material_override = SubResource("StandardMaterial3D_1dgsi")
+use_collision = true

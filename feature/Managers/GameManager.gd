@@ -44,7 +44,9 @@ var AmountOfFreeYuleLads = 0;
 @export var NextScene : PackedScene
 
 var controlTimer = 90
-
+const MENU_MUSIC_DB_LOUD := 0.0      # full volume in menus / paused
+const MENU_MUSIC_DB_MUTED := -80.0   # effectively silent during gameplay
+#@export var menuMusic : AudioStreamPlayer2D 
 
 func _ready() -> void:
 	PathLocations = get_tree().get_nodes_in_group("PathNode")
@@ -52,18 +54,20 @@ func _ready() -> void:
 	_generateObjects()
 	timer = StartingTimer;
 	_freeze_game()
+
 	# 	GM = get_tree().get_first_node_in_group("GameManager")
 
 func _process(delta: float) -> void:
 	if (isActive):
+
 		if (timer >= 0):
 			timer -= delta
 			UITimer.text = str(int(timer)) + " seconds"
 			if (timer <= 0 && AllYuleLads.size() != SpawnableYuleLads):
 				var yuleSpawn = PathLocations[rng.randi_range(0, PathLocations.size() - 1)];
 				var newYuleLad = YuleLad.instantiate()
+				YuleSpawnLocation.add_child(newYuleLad)         
 				newYuleLad.global_position = yuleSpawn.global_position
-				YuleSpawnLocation.add_child(newYuleLad)
 				AllYuleLads.append(newYuleLad)
 				timer = BetweenTimer;
 				var obj = SelectedYuleObjectives.pop_at(rng.randi_range(0, SelectedYuleObjectives.size() - 1))
@@ -88,6 +92,19 @@ func _process(delta: float) -> void:
 	
 	if (SpawnableYuleLads == AmountOfFreeYuleLads):
 		get_tree().change_scene_to_packed(NextScene)
+
+func _set_menu_music_volume_db(to_db: float, duration: float = 10) -> void:
+	var bus_index = AudioServer.get_bus_index("MenuMusic")
+	var from_db = AudioServer.get_bus_volume_db(bus_index)
+
+	var tween = get_tree().create_tween()
+	tween.tween_method(
+		func(v):
+			AudioServer.set_bus_volume_db(bus_index, v),
+		from_db,
+		to_db,
+		duration
+	)
 
 func _generateObjects() -> void:
 	var count = 0
@@ -139,11 +156,16 @@ func _on_quit() -> void:
 
 func _freeze_game() -> void:
 	get_tree().paused = isActive
+	_set_menu_music_volume_db(0.0)
 	MainMenu.set_visible(isActive)	
 	UI.set_visible(!isActive)	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if isActive else Input.MOUSE_MODE_CAPTURED)
 	PlayerNode.CameraScriptNode.isActive = !isActive
 	isActive = !isActive
+	if isActive:
+		_set_menu_music_volume_db(MENU_MUSIC_DB_MUTED)
+	else:
+		_set_menu_music_volume_db(MENU_MUSIC_DB_LOUD)
 
 func displayNewYuleLad(name: String, objectName : String, objectNameEN : String) -> void:
 	NameLabel.text = name.to_upper()

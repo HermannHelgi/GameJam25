@@ -1,7 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://yxrpgd3tbthu"]
+[gd_scene load_steps=15 format=3 uid="uid://yxrpgd3tbthu"]
 
 [ext_resource type="Script" uid="uid://c78s6hdm0076s" path="res://feature/enemyAi/YuleLad.gd" id="1_c0yye"]
 [ext_resource type="ArrayMesh" uid="uid://cs4muo3texymj" path="res://feature/enemyAi/13184_PudgyGnome_v1_NEW.obj" id="2_mvrur"]
+[ext_resource type="Script" uid="uid://nfwajgtqy1y4" path="res://feature/enemyAi/yuleladSoundmanager.gd" id="3_y2wi4"]
+[ext_resource type="AudioStream" uid="uid://d0gc337rr10iv" path="res://Dadi/sounds/YuleLads/walking around 1.wav" id="4_70xl8"]
+[ext_resource type="AudioStream" uid="uid://cwlib76ofcal3" path="res://Dadi/sounds/YuleLads/walking around 2.wav" id="5_ffsix"]
+[ext_resource type="AudioStream" uid="uid://c4tgykd0mkh67" path="res://Dadi/sounds/YuleLads/walking around 3.wav" id="6_pnfqq"]
+[ext_resource type="AudioStream" uid="uid://d3gyme0ut3wbh" path="res://Dadi/sounds/YuleLads/destroying item.wav" id="7_55sxk"]
+[ext_resource type="AudioStream" uid="uid://dq0e5sb51gwht" path="res://Dadi/sounds/YuleLads/destroying item 2.wav" id="8_8fuun"]
+[ext_resource type="AudioStream" uid="uid://ctftokkla8b0n" path="res://Dadi/sounds/YuleLads/laughing.wav" id="9_vw476"]
+[ext_resource type="AudioStream" uid="uid://clqodu0ck5mhy" path="res://Dadi/sounds/YuleLads/laughing 2.wav" id="10_oxwm2"]
+[ext_resource type="AudioStream" uid="uid://cpq635glw7g72" path="res://Dadi/sounds/YuleLads/annoyed.wav" id="11_5irbs"]
+[ext_resource type="AudioStream" uid="uid://2lt2gp5nmsnr" path="res://Dadi/sounds/YuleLads/loosing sight of item to destroy.wav" id="12_p1632"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yg8tk"]
 albedo_color = Color(0.622148, 0.21128, 0.190705, 1)
@@ -9,7 +19,6 @@ albedo_color = Color(0.622148, 0.21128, 0.190705, 1)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bf7ca"]
 
 [node name="YuleLad" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 collision_layer = 4
 collision_mask = 8
 script = ExtResource("1_c0yye")
@@ -24,3 +33,16 @@ surface_material_override/0 = SubResource("StandardMaterial3D_yg8tk")
 shape = SubResource("CapsuleShape3D_bf7ca")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="AudioManager" type="Node3D" parent="."]
+script = ExtResource("3_y2wi4")
+walkingSounds = Array[AudioStreamWAV]([ExtResource("4_70xl8"), ExtResource("5_ffsix"), ExtResource("6_pnfqq")])
+destroyingSounds = Array[AudioStreamWAV]([ExtResource("7_55sxk"), ExtResource("8_8fuun")])
+laughingSounds = Array[AudioStreamWAV]([ExtResource("9_vw476"), ExtResource("10_oxwm2")])
+loosingItemSound = Array[AudioStreamWAV]([ExtResource("11_5irbs"), ExtResource("12_p1632")])
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AudioManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34946132, 0)
+volume_db = -30.0
+emission_angle_enabled = true
+emission_angle_degrees = 72.0

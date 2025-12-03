@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://cenru63a5pf20"]
+[gd_scene load_steps=7 format=4 uid="uid://cenru63a5pf20"]
 
 [ext_resource type="Texture2D" uid="uid://1hj8lrowpy32" path="res://feature/MainLevel/Props/HouseAssets/AssetPack/objects_interiorvillage_alpha_33.png" id="1_j61q5"]
+[ext_resource type="Script" uid="uid://6v3jdrnd6xr4" path="res://Resources/DemoObjects/PhysicsObject.gd" id="1_n6vtb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2ex7"]
 resource_name = "Chest_drawers_01_30"
@@ -41,7 +42,9 @@ shadow_mesh = SubResource("ArrayMesh_j61q5")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j61q5"]
 
-[node name="AlarmClock" type="Node3D"]
+[node name="AlarmClock" type="Node3D" node_paths=PackedStringArray("MeshLocation")]
+script = ExtResource("1_n6vtb")
+MeshLocation = NodePath("RigidBody3D/Alarm_clock_Alarm_clock_0")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 collision_layer = 3

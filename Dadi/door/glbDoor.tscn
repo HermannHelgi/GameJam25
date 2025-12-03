@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhxfayb7wupu8"]
+
+[ext_resource type="PackedScene" uid="uid://hu63yopvwn66" path="res://Dadi/door/low_poly_psx_hinged_door.glb" id="1_fck8i"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_fck8i")]

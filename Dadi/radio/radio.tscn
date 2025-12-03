@@ -48,12 +48,15 @@ shadow_mesh = SubResource("ArrayMesh_jplb7")
 [sub_resource type="BoxShape3D" id="BoxShape3D_w8jj4"]
 size = Vector3(2.7336426, 1, 1.654541)
 
-[node name="Radio" type="Node3D"]
+[node name="Radio" type="Node3D" node_paths=PackedStringArray("audioEmitter")]
 script = ExtResource("2_y2x2i")
+audioEmitter = NodePath("Sketchfab_model2/SonyRadio_obj_cleaner_materialmerger_gles/Object_2/RadioAudio")
 songs = Array[AudioStreamWAV]([ExtResource("2_w8jj4"), ExtResource("3_fjtt2")])
 
 [node name="Sketchfab_model2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 80.163025, 0, 0)
+script = ExtResource("2_y2x2i")
+songs = Array[AudioStreamWAV]([ExtResource("2_w8jj4"), ExtResource("3_fjtt2")])
 
 [node name="SonyRadio_obj_cleaner_materialmerger_gles" type="Node3D" parent="Sketchfab_model2"]
 
@@ -66,9 +69,9 @@ skeleton = NodePath("")
 [node name="RadioAudio" type="AudioStreamPlayer3D" parent="Sketchfab_model2/SonyRadio_obj_cleaner_materialmerger_gles/Object_2"]
 transform = Transform3D(0.99824846, 0.045614827, 0.037673835, 0.04561481, -0.1879266, -0.98112327, -0.037673853, 0.9811233, -0.18967816, -80.206314, -1.6678723, 0.8051446)
 attenuation_model = 2
-volume_db = -60.583
+volume_db = -50.0
 emission_angle_enabled = true
-emission_angle_degrees = 39.8
+emission_angle_degrees = 65.0
 doppler_tracking = 1
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]

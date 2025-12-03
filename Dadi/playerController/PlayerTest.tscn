@@ -1,49 +1,45 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1le2ne1a30ea"]
+[gd_scene load_steps=10 format=3 uid="uid://c1le2ne1a30ea"]
 
 [ext_resource type="Script" uid="uid://p3po1jtg8lip" path="res://Dadi/playerController/PlayerController.gd" id="1_ld0y6"]
 [ext_resource type="Script" uid="uid://l6hvc3a7lwo1" path="res://Dadi/playerController/head.gd" id="2_lvkh7"]
 [ext_resource type="Shader" uid="uid://bespngqwl5lj0" path="res://Dadi/shader/psx_camera_shader.gdshader" id="3_vej58"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vej58"]
-render_priority = 0
+render_priority = -1
 shader = ExtResource("3_vej58")
-shader_parameter/enable_fog = true
+shader_parameter/enable_fog = false
 shader_parameter/fog_color = Color(0, 0, 0, 1)
 shader_parameter/noise_color = Color(0, 0, 0, 1)
 shader_parameter/fog_distance = 100.0
 shader_parameter/fog_fade_range = 50.0
-shader_parameter/enable_noise = true
+shader_parameter/enable_noise = false
 shader_parameter/noise_time_fac = 4.0
-shader_parameter/enable_color_limitation = true
+shader_parameter/enable_color_limitation = false
 shader_parameter/color_levels = 32
 shader_parameter/enable_dithering = true
-shader_parameter/dither_strength = 0.3
+shader_parameter/dither_strength = 1.50000007125
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fpwub"]
-render_priority = 0
-next_pass = SubResource("ShaderMaterial_vej58")
-shader = ExtResource("3_vej58")
-shader_parameter/enable_fog = false
-shader_parameter/fog_color = Color(0.9779369, 0.97793704, 0.9779369, 1)
-shader_parameter/noise_color = Color(0, 0, 0, 1)
-shader_parameter/fog_distance = 1.0
-shader_parameter/fog_fade_range = 1.0
-shader_parameter/enable_noise = false
-shader_parameter/noise_time_fac = 0.10000000149012
-shader_parameter/enable_color_limitation = false
-shader_parameter/color_levels = 256
-shader_parameter/enable_dithering = true
-shader_parameter/dither_strength = 1.0000000475
+[sub_resource type="QuadMesh" id="QuadMesh_el46f"]
+material = SubResource("ShaderMaterial_vej58")
+size = Vector2(2, 2)
 
-[sub_resource type="BoxMesh" id="BoxMesh_el46f"]
-material = SubResource("ShaderMaterial_fpwub")
-size = Vector3(10, 10, 10)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vej58"]
+render_priority = 1
+no_depth_test = true
+shading_mode = 0
+albedo_color = Color(0.51350516, 0.51173717, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_el46f"]
+material = SubResource("StandardMaterial3D_vej58")
+is_hemisphere = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vej58"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_pjdli"]
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("CameraScriptNode")]
+axis_lock_linear_y = true
+axis_lock_angular_y = true
 script = ExtResource("1_ld0y6")
 CameraScriptNode = NodePath("head")
 
@@ -54,14 +50,22 @@ script = ExtResource("2_lvkh7")
 [node name="Camera3D" type="Camera3D" parent="head"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="head/Camera3D"]
-visible = false
-mesh = SubResource("BoxMesh_el46f")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026454687, -0.27625334)
+mesh = SubResource("QuadMesh_el46f")
 
 [node name="holdposition" type="Node3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="head/holdposition"]
+transform = Transform3D(0.02, 0, 0, 0, -0.00016685142, 0.019999303, 0, -0.019999303, -0.00016685142, 0, 0, 0)
+layers = 7
+gi_mode = 0
+gi_lightmap_texel_scale = 0.01
+mesh = SubResource("SphereMesh_el46f")
+
 [node name="RayCast3D" type="RayCast3D" parent="head"]
 transform = Transform3D(2, 0, 0, 0, -8.742278e-08, -2, 0, 2, -8.742278e-08, 0, 0, -0.1600132)
+target_position = Vector3(0, -1.7, 0)
 collision_mask = 2
 debug_shape_custom_color = Color(0.62716395, 0.0063544987, 0.09895905, 1)
 debug_shape_thickness = 4
