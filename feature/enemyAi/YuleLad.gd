@@ -62,6 +62,27 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (current_state == GlobalEnums.YuleState.IDLE):
 		if animator != null:
+			var ranf = rng.randf_range(0, 1)
+			if (ranf < 0.5):
+				animator.play_state(current_state)
+			else:
+				animator.play_state(GlobalEnums.YuleState.LOOKING)
+		else:
+			printerr("Animator is null!")
+		if (timer >= 0):
+			timer -= delta
+			if (timer < 0):
+				print("WALK")
+				audioManager.play_walking_sound()
+				current_state = GlobalEnums.YuleState.WALKING
+				idle_stop_count -= 1
+				if (idle_stop_count == 0 && GM.EnumToObjectDict[ObjectiveType].size() != 0):
+					_fetchRandomLoc(true)
+				else:
+					_fetchRandomLoc(false)
+	
+	elif (current_state == GlobalEnums.YuleState.ANGRY):
+		if animator != null:
 			animator.play_state(current_state)
 		else:
 			printerr("Animator is null!")
@@ -89,8 +110,9 @@ func _process(delta: float) -> void:
 				if (GM.get_script_owner(target).IsHeld || targetDistance > Reach):
 					# Yes, i'm going to go somewhere else then.
 					idle_stop_count = _randomStop();
-					check = true
 					current_strikes += 1;
+					current_state = GlobalEnums.YuleState.ANGRY
+					
 				else:
 					# No, annihilate
 					current_state = GlobalEnums.YuleState.DESTROYING
@@ -100,7 +122,6 @@ func _process(delta: float) -> void:
 					audioManager.play_destroying_sound()
 			else:
 				check = true
-			
 			
 			if (current_strikes >= MaxStrikes):
 				nav_agent.set_target_position(GM.YuleSpawnNode.global_position)
