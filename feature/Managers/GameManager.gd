@@ -147,6 +147,6 @@ func _freeze_game() -> void:
 
 func displayNewYuleLad(name: String, objectName : String, objectNameEN : String) -> void:
 	NameLabel.text = name.to_upper()
-	HideSubtitle.text = "is coming!\nHide all your " + objectName + "!\n(That means " + objectNameEN + "!)"
+	HideSubtitle.text = "is coming!\nHide all your " + objectName + " (" + objectNameEN + ")!"
 	nameTimer = DisplayTimeName
 	PopupNode.visible = true
