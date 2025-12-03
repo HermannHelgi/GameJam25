@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=4 uid="uid://bccoxih8vsxj8"]
+[gd_scene load_steps=26 format=4 uid="uid://bccoxih8vsxj8"]
 
 [ext_resource type="Script" uid="uid://deaflowmhni65" path="res://Dadi/door/new_door.gd" id="1_hrey7"]
 [ext_resource type="Texture2D" uid="uid://bfgswmwav7mi3" path="res://Dadi/door/low_poly_psx_hinged_door_0.png" id="1_taac8"]
 [ext_resource type="Texture2D" uid="uid://0naielb15ed8" path="res://Dadi/door/low_poly_psx_hinged_door_1.png" id="2_hrey7"]
+[ext_resource type="Script" uid="uid://bffqfwmshetjv" path="res://Dadi/door/yuleladDoorService.gd" id="4_bea8n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gank4"]
 resource_name = "Material"
@@ -306,6 +307,9 @@ _data = {
 &"open_door": SubResource("Animation_taac8")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hrey7"]
+size = Vector3(1, 1, 2.1352844)
+
 [node name="NewDoor" type="Node3D"]
 script = ExtResource("1_hrey7")
 
@@ -374,7 +378,7 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/Sketchfab_model/a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode/Cylinder/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, -4.2632564e-14, 0, 0, 0.99999976, 39.975777, -1.9710124, -10.121567)
+transform = Transform3D(1, 0, 0, 0, 1, 4.2632564e-14, 0, 0, 0.9999998, 39.975777, -1.9710124, -10.121567)
 shape = SubResource("BoxShape3D_taac8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -382,3 +386,13 @@ root_node = NodePath("../Sketchfab_Scene/Sketchfab_model")
 libraries = {
 &"": SubResource("AnimationLibrary_hrey7")
 }
+
+[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("door")]
+collision_layer = 9
+collision_mask = 9
+script = ExtResource("4_bea8n")
+door = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.31752014)
+shape = SubResource("BoxShape3D_hrey7")
