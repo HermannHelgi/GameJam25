@@ -42,8 +42,8 @@ var nameTimer = -1;
 @export var DisplayTimeName = 0;
 
 var AmountOfFreeYuleLads = 0;
-@export var NextScene : PackedScene
-@export var StartScene : PackedScene
+@export var NextScene : String
+@export var StartScene : String
 
 var controlTimer = 90
 const MENU_MUSIC_DB_LOUD := 0.0      # full volume in menus / paused
@@ -92,7 +92,9 @@ func _process(delta: float) -> void:
 		_freeze_game()
 	
 	if (SpawnableYuleLads == AmountOfFreeYuleLads):
-		get_tree().change_scene_to_packed(NextScene)
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
+		get_tree().change_scene_to_file("res://FinalScenes/Level2.tscn")
 
 func _set_menu_music_volume_db(to_db: float, duration: float = 10) -> void:
 	var bus_index = AudioServer.get_bus_index("MenuMusic")
@@ -142,7 +144,7 @@ func get_script_owner(node: Node) -> PhysicsObject:
 func onStrikeGained() -> void:
 	strikes += 1
 	if (strikes == maximumStrikes):
-		get_tree().change_scene_to_packed(StartScene)
+		get_tree().change_scene_to_file(StartScene)
 	
 	infoLabel[maximumStrikes - strikes].queue_free()
 
