@@ -97,7 +97,7 @@ func _process(delta: float) -> void:
 		load_check = true
 		TransitionScreen.transition()
 		await TransitionScreen.on_transition_finished
-		get_tree().change_scene_to_file("res://FinalScenes/Level2.tscn")
+		get_tree().change_scene_to_file(NextScene)
 
 func _set_menu_music_volume_db(to_db: float, duration: float = 10) -> void:
 	var bus_index = AudioServer.get_bus_index("MenuMusic")
