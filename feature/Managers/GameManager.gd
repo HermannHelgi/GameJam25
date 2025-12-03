@@ -7,6 +7,7 @@ extends Node3D
 @export var YuleLad: PackedScene
 @export var YuleObjectiveAmount = 3;
 @export var YuleSpawnLocation : Node;
+@export var YuleSpawnNode: Node;
 
 var ItemSpawnLocations : Array[Node]
 var PathLocations : Array[Node]
@@ -64,10 +65,9 @@ func _process(delta: float) -> void:
 			timer -= delta
 			UITimer.text = str(int(timer)) + " seconds"
 			if (timer <= 0 && AllYuleLads.size() != SpawnableYuleLads):
-				var yuleSpawn = PathLocations[rng.randi_range(0, PathLocations.size() - 1)];
 				var newYuleLad = YuleLad.instantiate()
 				YuleSpawnLocation.add_child(newYuleLad)         
-				newYuleLad.global_position = yuleSpawn.global_position
+				newYuleLad.global_position = YuleSpawnNode.global_position
 				AllYuleLads.append(newYuleLad)
 				timer = BetweenTimer;
 				var obj = SelectedYuleObjectives.pop_at(rng.randi_range(0, SelectedYuleObjectives.size() - 1))
