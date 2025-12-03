@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=3 uid="uid://c2le4nq06hmbg"]
+
+[ext_resource type="Texture2D" uid="uid://dx1365slipndk" path="res://feature/MainLevel/Horror_Wall_06-128x128.png" id="1_iw7ux"]
+[ext_resource type="Texture2D" uid="uid://rxvqqdxf18mi" path="res://feature/MainLevel/Wood_Pattern_02_Brown_2.png" id="2_h2lnu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pe7sf"]
+albedo_texture = ExtResource("1_iw7ux")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yqdfb"]
+albedo_color = Color(0.39303607, 0.3664862, 0.28026688, 1)
+metallic_specular = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sqnuk"]
+albedo_texture = ExtResource("2_h2lnu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cnae4"]
+albedo_texture = ExtResource("2_h2lnu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uxave"]
+albedo_texture = ExtResource("1_iw7ux")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mnlel"]
+albedo_texture = ExtResource("1_iw7ux")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sw640"]
+albedo_texture = ExtResource("1_iw7ux")
+
+[node name="Sofatable" type="Node3D"]
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.055722788, 0, 0, 0, 0.17421652, 0, 0, 0, 0.05504988, -0.47232577, 0.23865998, 0.47572204)
+material_override = SubResource("StandardMaterial3D_pe7sf")
+use_collision = true
+size = Vector3(1, 1.2633362, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D3"]
+transform = Transform3D(0.9482184, 0, 0, 0, 0.9999857, 0, 0, 0, 0.9857844, 0.06487751, 0.83103585, -0.07894039)
+operation = 2
+size = Vector3(1.1368408, 0.64941406, 1.1601563)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.02540471, 0, 0, 0, 1, 0, 0.33574533, 0)
+material_override = SubResource("StandardMaterial3D_yqdfb")
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(0.9482184, 0, 0, 0, 0.99998575, 0, 0, 0, 0.9857841, 0, 0.6557455, 0)
+operation = 2
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.02540471, 0, 0, 0, 1, 0, 0.18108818, 0)
+material_override = SubResource("StandardMaterial3D_sqnuk")
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D6"]
+transform = Transform3D(0.9482184, 0, 0, 0, 0.99998575, 0, 0, 0, 0.9857841, 0, 0.6557455, 0)
+material_override = SubResource("StandardMaterial3D_cnae4")
+operation = 2
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.05572279, 0, 0, 0, 0.17421652, 0, 0, 0, 0.055049885, 0.4737413, 0.23904009, 0.47572207)
+material_override = SubResource("StandardMaterial3D_uxave")
+use_collision = true
+size = Vector3(1, 1.2677002, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D2"]
+transform = Transform3D(0.9482184, 0, 0, 0, 0.9999857, 0, 0, 0, 0.98578316, -0.23863868, 0.83103573, -0.15558746)
+operation = 2
+size = Vector3(1.4614868, 0.64941406, 1.1601563)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(0.05572279, 0, 0, 0, 0.17421652, 0, 0, 0, 0.055049885, -0.4723507, 0.23811702, -0.4728582)
+material_override = SubResource("StandardMaterial3D_mnlel")
+use_collision = true
+size = Vector3(1, 1.2599182, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D4"]
+transform = Transform3D(0.9482184, 0, 0, 0, 0.9999857, 0, 0, 0, 0.98578215, 0.17957115, 0.831036, 0.2602682)
+operation = 2
+size = Vector3(1.2297668, 0.64941406, 1.3622437)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(0.05572279, 0, 0, 0, 0.17421652, 0, 0, 0, 0.055049885, 0.47231674, 0.23842008, -0.4732101)
+material_override = SubResource("StandardMaterial3D_sw640")
+use_collision = true
+size = Vector3(1, 1.2633972, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D5"]
+transform = Transform3D(0.9482184, 0, 0, 0, 0.9999857, 0, 0, 0, 0.9857828, -0.16428667, 0.83103585, 0.19598712)
+operation = 2
+size = Vector3(1.2852173, 0.64941406, 1.3116455)

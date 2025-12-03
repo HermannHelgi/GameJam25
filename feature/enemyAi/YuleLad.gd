@@ -1,5 +1,6 @@
 extends CharacterBody3D
 @onready var audioManager : Node3D = $AudioManager
+@onready var animator : Node = $Animator
 @export var Speed = 4.0
 @export var Reach = 2.0
 @export var DistanceToObject = 1.0
@@ -29,11 +30,18 @@ var GM
 var current_strikes = 0;
 
 func _ready() -> void:
+	
 	NavMesh = get_tree().get_nodes_in_group("NavMesh")[0];
 
 	GM = get_tree().get_first_node_in_group("GameManager")
 	if (GM == null):
 		printerr("NO GAMEMANAGER FOUND IN SCENE.")
+	
+	# Debug animator
+	print("Animator node: ", animator)
+	if animator != null:
+		print("Animator script: ", animator.get_script())
+		print("Has play_state method: ", animator.has_method("play_state"))
 		
 	_fetchRandomLoc(false);
 	timer = _randomTime()
@@ -41,6 +49,10 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if (current_state == GlobalEnums.YuleState.IDLE):
+		if animator != null:
+			animator.play_state(current_state)
+		else:
+			printerr("Animator is null!")
 		if (timer >= 0):
 			timer -= delta
 			if (timer < 0):
@@ -54,6 +66,8 @@ func _process(delta: float) -> void:
 					_fetchRandomLoc(false)
 	
 	elif (current_state == GlobalEnums.YuleState.WALKING):
+		if animator != null:
+			animator.play_state(current_state)
 		if (nav_agent.is_navigation_finished()):
 			var check = false
 			# Am I trying to destroy this object?
@@ -86,6 +100,8 @@ func _process(delta: float) -> void:
 				audioManager.play_laughing_sound()
 	
 	elif (current_state == GlobalEnums.YuleState.DESTROYING):
+		if animator != null:
+			animator.play_state(current_state)
 		if (timer >= 0):
 			timer -= delta
 			if (GM.get_script_owner(target).IsHeld):
