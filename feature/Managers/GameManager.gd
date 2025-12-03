@@ -23,7 +23,7 @@ var AllYuleLads : Array[Node];
 @export var PlayerNode : Node
 @export var MainMenu : Node
 @export var UI : Node
-var isActive = true; # NEEDS TO BE TRUE TO START
+@export var isActive = true; # NEEDS TO BE TRUE TO START
 
 var strikes = 0;
 @export var maximumStrikes = 3;
@@ -43,6 +43,7 @@ var nameTimer = -1;
 
 var AmountOfFreeYuleLads = 0;
 @export var NextScene : PackedScene
+@export var StartScene : PackedScene
 
 var controlTimer = 90
 const MENU_MUSIC_DB_LOUD := 0.0      # full volume in menus / paused
@@ -141,7 +142,7 @@ func get_script_owner(node: Node) -> PhysicsObject:
 func onStrikeGained() -> void:
 	strikes += 1
 	if (strikes == maximumStrikes):
-		get_tree().reload_current_scene()
+		get_tree().change_scene_to_packed(StartScene)
 	
 	infoLabel[maximumStrikes - strikes].queue_free()
 
