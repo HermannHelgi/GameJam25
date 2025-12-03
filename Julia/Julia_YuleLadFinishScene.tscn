@@ -1,28 +1,19 @@
-[gd_scene load_steps=32 format=3 uid="uid://bk3866lft4y51"]
+[gd_scene load_steps=23 format=3 uid="uid://bk3866lft4y51"]
 
-[ext_resource type="Script" uid="uid://gy1c8k2q20sk" path="res://feature/Managers/GameManager.gd" id="1_o7ssq"]
-[ext_resource type="PackedScene" uid="uid://yxrpgd3tbthu" path="res://feature/enemyAi/yule_lad.tscn" id="2_ksjyw"]
-[ext_resource type="Script" uid="uid://1iqtrj8d41ny" path="res://Resources/YuleObjectiveResource.gd" id="3_28nc0"]
-[ext_resource type="Resource" uid="uid://cnj1e42d36y01" path="res://Resources/pan.tres" id="4_tobnl"]
-[ext_resource type="Resource" uid="uid://b7nqmuo8w0r21" path="res://Resources/spoon.tres" id="5_iebgl"]
-[ext_resource type="Resource" uid="uid://bw8wpx4ghhfoo" path="res://Resources/pot.tres" id="6_f7bj8"]
-[ext_resource type="PackedScene" uid="uid://c1le2ne1a30ea" path="res://Dadi/playerController/PlayerTest.tscn" id="7_136xc"]
-[ext_resource type="PackedScene" uid="uid://d07n0wu8kgkfb" path="res://feature/MainLevel/MainLevel.tscn" id="8_kbmy4"]
-[ext_resource type="Script" path="res://feature/enemyAi/spawn_location.gd" id="9_8lfal"]
-[ext_resource type="Texture2D" uid="uid://bmri2401s5xcq" path="res://feature/MainMenu/heart.png" id="10_y30cf"]
-[ext_resource type="FontFile" uid="uid://c5joqn2djl5hb" path="res://feature/MainMenu/Amore Christmas.otf" id="11_wklpr"]
-[ext_resource type="PackedScene" uid="uid://r3l716615kww" path="res://Julia/itemModels/prefabs/has_collisions/candles.tscn" id="12_mcj8g"]
-[ext_resource type="PackedScene" uid="uid://5icjhl8ff2h5" path="res://Julia/itemModels/prefabs/has_collisions/spoon.tscn" id="13_brnie"]
-[ext_resource type="PackedScene" uid="uid://mk7p87ydham1" path="res://Julia/itemModels/prefabs/has_collisions/kitchen/bowl.tscn" id="14_swii6"]
-[ext_resource type="PackedScene" uid="uid://b0pxo2oin0emx" path="res://Julia/itemModels/prefabs/has_collisions/kitchen/pan.tscn" id="15_v112v"]
-[ext_resource type="PackedScene" uid="uid://83cdl7konros" path="res://Julia/itemModels/prefabs/has_collisions/kitchen/pot.tscn" id="16_fh6br"]
-[ext_resource type="PackedScene" uid="uid://d15pbkgng67co" path="res://Julia/itemModels/prefabs/has_collisions/food/bread.tscn" id="17_ycbol"]
-[ext_resource type="PackedScene" uid="uid://jwr7qic40ndd" path="res://Julia/itemModels/prefabs/has_collisions/food/meat.tscn" id="18_1d8eo"]
-[ext_resource type="PackedScene" uid="uid://chr2s2jwwxbi3" path="res://Julia/itemModels/prefabs/has_collisions/food/milk1.tscn" id="19_e37bn"]
-[ext_resource type="PackedScene" uid="uid://jhifsurwgyfh" path="res://Julia/itemModels/prefabs/has_collisions/food/sausage.tscn" id="20_8bsdx"]
-[ext_resource type="PackedScene" uid="uid://bs4caw47cdc56" path="res://Julia/itemModels/prefabs/E_To_Interact/closed_barrel.tscn" id="21_v112v"]
-[ext_resource type="PackedScene" uid="uid://dkp3x6rih86x5" path="res://Julia/itemModels/prefabs/E_To_Interact/Skyr.tscn" id="22_fh6br"]
-[ext_resource type="PackedScene" uid="uid://dihnovf4wbshq" path="res://Julia/itemModels/prefabs/E_To_Interact/animals/sheep.tscn" id="23_ycbol"]
+[ext_resource type="PackedScene" uid="uid://bbes37m77upxu" path="res://Dadi/background/psx_style_mountain_backgroud.glb" id="1_tobnl"]
+[ext_resource type="Script" uid="uid://gy1c8k2q20sk" path="res://feature/Managers/GameManager.gd" id="2_iebgl"]
+[ext_resource type="PackedScene" uid="uid://cvkr3873xig8a" path="res://Julia/santaModel/SantaPrefab/yule_lad2.tscn" id="3_lrdv7"]
+[ext_resource type="Script" uid="uid://1iqtrj8d41ny" path="res://Resources/YuleObjectiveResource.gd" id="4_136xc"]
+[ext_resource type="Resource" uid="uid://cnj1e42d36y01" path="res://Resources/pan.tres" id="5_kbmy4"]
+[ext_resource type="Resource" uid="uid://cf4h3i5wksm8w" path="res://Resources/sausages.tres" id="6_8lfal"]
+[ext_resource type="PackedScene" uid="uid://c1le2ne1a30ea" path="res://Dadi/playerController/PlayerTest.tscn" id="7_y30cf"]
+[ext_resource type="PackedScene" uid="uid://d07n0wu8kgkfb" path="res://feature/MainLevel/MainLevel.tscn" id="8_wklpr"]
+[ext_resource type="Script" uid="uid://bofkgrsk5616g" path="res://feature/enemyAi/spawn_location.gd" id="9_2oep2"]
+[ext_resource type="Texture2D" uid="uid://bmri2401s5xcq" path="res://feature/MainMenu/heart.png" id="10_u0a0d"]
+[ext_resource type="FontFile" uid="uid://c5joqn2djl5hb" path="res://feature/MainMenu/Amore Christmas.otf" id="11_l5ay0"]
+[ext_resource type="AudioStream" uid="uid://opl7g8ieojc" path="res://Dadi/sounds/vince-guaraldi-trio-christmas-time-is-here-instrumental.org.wav" id="12_2fjio"]
+[ext_resource type="PackedScene" uid="uid://c3uvv2fpc2f6u" path="res://Dadi/radio/radio.tscn" id="13_00414"]
+[ext_resource type="PackedScene" uid="uid://bwf0h3y1btfb1" path="res://Julia/itemModels/prefabs/E_To_Interact/animals/orangeKitty.tscn" id="14_45sab"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_k6srh"]
 vertices = PackedVector3Array(-8.679218, 6.0730658, -4.799999, -8.379218, 6.0730658, -3.8999996, -6.2792177, 6.0730658, -3.8999996, -6.2792177, 6.0730658, -7.4999995, -10.479218, 6.0730658, -7.4999995, -14.679218, 6.0730658, -4.799999, -10.779219, 6.0730658, -8.7, -14.679218, 6.0730658, -14.4, -5.9792175, 6.0730658, -9.9, -5.079218, 6.0730658, -10.2, -5.079218, 6.0730658, -14.4, -6.2792177, 6.0730658, -9, -5.6792183, 1.0730658, -10.2, -3.2792177, 1.0730658, -10.2, -3.2792177, 1.0730658, -14.4, -14.079218, 1.0730658, -9, -6.2792177, 1.0730658, -9, -14.079218, 1.0730658, -14.4, 16.820782, 1.0730658, -10.5, 17.120785, 1.0730658, -14.4, 21.020782, 1.0730658, 3.3000011, 21.320782, 1.0730658, 4.5, 24.320782, 1.0730658, 4.5, 24.320782, 1.0730658, -14.4, 18.920784, 1.0730658, -10.2, 18.920784, 1.0730658, 3.3000011, 9.920782, 9.073066, -8.1, 11.120783, 9.073066, -8.1, 11.420782, 9.073066, -8.7, 9.620783, 9.073066, -9, -2.079218, 1.0730658, -6.8999996, -1.1792183, 1.0730658, -7.2, -1.1792183, 1.0730658, -7.7999997, -3.579218, 1.0730658, -7.7999997, -2.9792175, 1.0730658, -5.3999996, -2.079218, 1.0730658, -5.7, -3.579218, 1.0730658, 2.1000004, -3.2792177, 1.0730658, 3.3000011, 0.02078247, 1.0730658, 3.3000011, 0.02078247, 1.0730658, 9.536743e-07, -1.7792177, 1.0730658, -0.5999994, -2.079218, 1.0730658, -1.7999992, -2.9792175, 1.0730658, -2.0999994, -3.579218, 1.0730658, -2.3999996, -5.6792183, 1.0730658, -2.0999994, -7.4792175, 1.0730658, -1.7999992, -5.6792183, 1.0730658, 2.1000004, -7.4792175, 1.0730658, 2.1000004, 1.2207832, 1.0730658, -7.7999997, 1.5207825, 1.0730658, -5.7, 2.420782, 1.0730658, -5.3999996, 6.0207825, 1.0730658, -5.7, 8.420782, 1.0730658, -6.5999994, 8.120783, 1.0730658, -7.7999997, 0.62078285, 1.0730658, 9.536743e-07, 8.420782, 1.0730658, 0.9000006, 8.120783, 1.0730658, -1.1999998, 6.0207825, 1.0730658, -1.499999, 12.920782, 1.0730658, -6, 12.920782, 1.0730658, -6.5999994, 14.720783, 1.0730658, -4.5, 13.220783, 1.0730658, -5.3999996, 12.920782, 1.0730658, 0.9000006, 16.220783, 1.0730658, -4.799999, 16.220783, 1.0730658, 3.3000011, 2.420782, 1.0730658, -2.3999996, -1.1792183, 1.0730658, 12.300001, 2.420782, 1.0730658, 12.300001, -0.27921677, 1.0730658, 11.700001, -1.4792175, 1.0730658, 11.400002, -6.2792177, 1.0730658, -2.3999996, -7.7792177, 1.0730658, -2.3999996, -6.2792177, 1.0730658, -7.2, -7.4792175, 1.0730658, -7.2, -7.7792177, 1.0730658, -3.2999992, -11.679218, 1.0730658, -4.5, -11.079218, 1.0730658, -4.799999, -11.079218, 1.0730658, -6.5999994, -13.479218, 1.0730658, -6.5999994, -13.479218, 1.0730658, -4.799999, -12.279219, 1.0730658, -4.5, -11.079218, 1.0730658, -2.0999994, -11.379218, 1.0730658, -3.2999992, -5.6792183, 1.0730658, 10.800001, -3.579218, 1.0730658, 9.6, -5.9792175, 1.0730658, 9.300001, -11.679218, 1.0730658, 5.4000015, -11.079218, 1.0730658, 3.9000015, -0.27921677, 1.0730658, 7.5, 2.420782, 1.0730658, 7.200001, 2.420782, 1.0730658, 6.6000004, -3.2792177, 1.0730658, 6.6000004, -7.7792177, 1.0730658, 4.200001, -7.7792177, 1.0730658, 5.1000004, -7.4792175, 1.0730658, 13.200001, -5.9792175, 1.0730658, 13.200001, -12.279219, 1.0730658, 8.1, -0.87921715, 2.0730658, -1.7999992, 0.3207817, 2.0730658, -1.499999, 0.3207817, 2.0730658, -6, -0.87921715, 2.0730658, -6, 9.920782, 1.5730658, -4.799999, 9.920782, 1.5730658, -2.3999996, 12.020782, 1.5730658, -2.3999996, 12.020782, 1.5730658, -4.799999, -8.679218, 6.0730658, -3.2999992, -6.2792177, 6.0730658, -2.3999996, -5.9792175, 6.0730658, 2.4000015, -14.679218, 6.0730658, -3.2999992, -14.679218, 6.0730658, 24.300003, -5.379218, 6.0730658, 24.300003, -5.079218, 6.0730658, -2.0999994, -9.879218, 2.0730658, -1.1999998, -9.879218, 2.0730658, 3, -8.679218, 2.0730658, 3, -8.679218, 2.0730658, -1.1999998, -0.87921715, 6.0730658, 5.700001, -3.2792177, 6.0730658, 5.700001, -3.2792177, 6.0730658, 14.400002, 4.5207825, 6.0730658, 14.400002, 5.120783, 6.0730658, 15.6, 5.420782, 6.0730658, 4.800001, 16.220783, 6.0730658, 4.800001, 16.220783, 6.0730658, 4.200001, -0.5792179, 6.0730658, 4.200001, 18.920784, 6.0730658, 4.200001, 18.920784, 6.0730658, 4.800001, 20.120785, 6.0730658, 4.800001, 20.120785, 6.0730658, 4.200001, 0.9207821, 2.0730658, 8.400002, 0.9207821, 2.0730658, 10.500002, 3.3207817, 2.0730658, 10.500002, 3.3207817, 2.0730658, 8.400002, -9.279218, 1.0730658, 24.300003, -9.579218, 1.0730658, 16.800001, -10.179218, 1.0730658, 16.500002, -10.179218, 1.0730658, 9.6, -14.079218, 1.0730658, 9.6, -14.079218, 1.0730658, 24.300003, -6.2792177, 1.0730658, 15.000002, -7.4792175, 1.0730658, 15.300001, -7.7792177, 1.0730658, 16.800001, 4.5207825, 1.0730658, 24.300003, 4.5207825, 1.0730658, 16.800001, 3.6207829, 1.0730658, 16.500002, 3.6207829, 1.0730658, 15.000002)
@@ -71,15 +62,18 @@ shadow_offset = Vector2(0, 4)
 
 [node name="YuleLadFinishScene" type="Node3D"]
 
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_tobnl")]
+transform = Transform3D(2.24, 0, 0, 0, 2.24, 0, 0, 0, 2.24, -109.85501, -18.354858, -15.47155)
+
 [node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("YuleSpawnLocation", "PlayerNode", "MainMenu", "UI", "infoLabel", "UITimer", "TimerControlNode", "ControlsNode", "PopupNode", "NameLabel", "HideSubtitle") groups=["GameManager"]]
 process_mode = 3
-script = ExtResource("1_o7ssq")
-SpawnableYuleLads = 3
+script = ExtResource("2_iebgl")
+SpawnableYuleLads = 2
 StartingTimer = 5.0
 BetweenTimer = 10.0
-YuleLad = ExtResource("2_ksjyw")
+YuleLad = ExtResource("3_lrdv7")
 YuleSpawnLocation = NodePath("../NavigationRegion3D")
-YuleObjectives = Array[ExtResource("3_28nc0")]([ExtResource("4_tobnl"), ExtResource("5_iebgl"), ExtResource("6_f7bj8")])
+YuleObjectives = Array[ExtResource("4_136xc")]([ExtResource("5_kbmy4"), ExtResource("6_8lfal")])
 PlayerNode = NodePath("../Node3D")
 MainMenu = NodePath("../MainMenu")
 UI = NodePath("../UI")
@@ -92,13 +86,13 @@ NameLabel = NodePath("../UI/Popup/Label")
 HideSubtitle = NodePath("../UI/Popup/Label2")
 DisplayTimeName = 5
 
-[node name="Node3D" parent="." instance=ExtResource("7_136xc")]
+[node name="Node3D" parent="." instance=ExtResource("7_y30cf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.933804, 1.8131257, -2.6552906)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." groups=["NavMesh"]]
 navigation_mesh = SubResource("NavigationMesh_k6srh")
 
-[node name="MainLevel" parent="NavigationRegion3D" instance=ExtResource("8_kbmy4")]
+[node name="MainLevel" parent="NavigationRegion3D" instance=ExtResource("8_wklpr")]
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7978144, 0, -8.489353)
@@ -503,7 +497,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_fbb5e")
 
 [node name="SpawnNode" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2182292, 1.9921253, -1.7525098)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode"]
 visible = false
@@ -513,7 +507,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode2" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0886364, 1.9921253, -3.026291)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode2"]
 visible = false
@@ -523,7 +517,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode3" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.68454146, 1.9921253, -5.4351735)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode3"]
 visible = false
@@ -533,7 +527,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode4" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.559473, 1.824177, -3.2480192)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode4"]
 visible = false
@@ -543,7 +537,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode5" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.390282, 1.3802521, -2.7120063)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode5"]
 visible = false
@@ -553,7 +547,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode6" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6221695, 1.3802521, -4.0514717)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode6"]
 visible = false
@@ -563,7 +557,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode7" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.785058, 1.3802521, -0.446275)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode7"]
 visible = false
@@ -573,7 +567,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode8" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.873569, 1.9117863, 0.85202503)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode8"]
 visible = false
@@ -583,7 +577,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode9" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.913746, 1.9117863, -0.9730694)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode9"]
 visible = false
@@ -593,7 +587,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode10" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.969768, 1.9117863, -1.0499537)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode10"]
 visible = false
@@ -603,7 +597,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode11" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.725268, 1.9117863, 0.071172595)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode11"]
 visible = false
@@ -613,7 +607,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode12" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.758789, 1.9117863, 2.6059356)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode12"]
 visible = false
@@ -623,7 +617,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode13" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.867261, 1.9117863, 2.5658612)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode13"]
 visible = false
@@ -633,7 +627,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode14" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.996785, 1.9117863, -2.5616422)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode14"]
 visible = false
@@ -643,7 +637,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode15" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.823461, 1.9117863, -0.45463252)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode15"]
 visible = false
@@ -653,7 +647,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode16" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.163909, 1.9117862, 1.8737721)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode16"]
 visible = false
@@ -663,7 +657,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode17" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.686449, 1.9117862, 3.375181)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode17"]
 visible = false
@@ -673,7 +667,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode18" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.277392, 1.9117862, 5.4685245)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode18"]
 visible = false
@@ -683,7 +677,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode19" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.856955, 1.9117862, 8.034594)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode19"]
 visible = false
@@ -693,7 +687,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode20" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.538493, 1.9117862, 7.7227945)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode20"]
 visible = false
@@ -703,7 +697,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode21" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603022, 1.0071112, 4.798348)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode21"]
 visible = false
@@ -713,7 +707,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode22" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.545839, 1.0071112, 0.9393611)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode22"]
 visible = false
@@ -723,7 +717,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode23" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8873096, 1.0071112, 6.998383)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode23"]
 visible = false
@@ -733,7 +727,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode34" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5412736, 1.0071112, 10.302504)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode34"]
 visible = false
@@ -743,7 +737,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode35" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66110134, 1.007111, 7.1395965)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode35"]
 visible = false
@@ -753,7 +747,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode36" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9976854, 1.007111, 11.429594)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode36"]
 visible = false
@@ -763,7 +757,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode24" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7964296, 1.0071112, -5.077113)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode24"]
 visible = false
@@ -773,7 +767,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode25" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.995468, 1.007111, -2.6645439)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode25"]
 visible = false
@@ -783,7 +777,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode26" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.023161, 1.007111, -5.725318)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode26"]
 visible = false
@@ -793,7 +787,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode27" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2261043, 1.007111, 1.6148527)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode27"]
 visible = false
@@ -803,7 +797,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode28" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.285494, 1.007111, -5.599334)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode28"]
 visible = false
@@ -813,7 +807,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode29" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.42255, 1.007111, 0.50835705)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode29"]
 visible = false
@@ -823,7 +817,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode30" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9634569, 1.007111, -4.236987)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode30"]
 visible = false
@@ -833,7 +827,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode31" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.240387, 1.007111, -6.3643627)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode31"]
 visible = false
@@ -843,7 +837,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode32" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.26679, 1.0071105, 1.4873471)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode32"]
 visible = false
@@ -853,7 +847,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d0ri5")
 
 [node name="SpawnNode33" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.548334, 1.0071105, 2.8540692)
-script = ExtResource("9_8lfal")
+script = ExtResource("9_2oep2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawns/SpawnNode33"]
 visible = false
@@ -875,7 +869,7 @@ layout_mode = 1
 offset_right = 64.0
 offset_bottom = 64.0
 scale = Vector2(5, 5)
-texture = ExtResource("10_y30cf")
+texture = ExtResource("10_u0a0d")
 
 [node name="TextureRect2" type="TextureRect" parent="UI"]
 texture_filter = 1
@@ -884,7 +878,7 @@ offset_left = 114.99999
 offset_right = 179.0
 offset_bottom = 64.0
 scale = Vector2(5, 5)
-texture = ExtResource("10_y30cf")
+texture = ExtResource("10_u0a0d")
 
 [node name="TextureRect3" type="TextureRect" parent="UI"]
 texture_filter = 1
@@ -893,7 +887,7 @@ offset_left = 230.0
 offset_right = 294.0
 offset_bottom = 64.0
 scale = Vector2(5, 5)
-texture = ExtResource("10_y30cf")
+texture = ExtResource("10_u0a0d")
 
 [node name="Label" type="Label" parent="UI"]
 layout_mode = 1
@@ -1020,7 +1014,7 @@ offset_top = 150.0
 offset_right = 150.0
 offset_bottom = 450.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("11_wklpr")
+theme_override_fonts/font = ExtResource("11_l5ay0")
 theme_override_font_sizes/font_size = 78
 text = "A Fyule Little Lads"
 horizontal_alignment = 1
@@ -1078,7 +1072,7 @@ theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_wklpr")
+theme_override_fonts/font = ExtResource("11_l5ay0")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_opxti")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_m4vv8")
@@ -1103,7 +1097,7 @@ theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("11_wklpr")
+theme_override_fonts/font = ExtResource("11_l5ay0")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_opxti")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_m4vv8")
@@ -1111,44 +1105,18 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_hkmik")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qn5me")
 text = "QUIT"
 
-[node name="Candles" parent="." instance=ExtResource("12_mcj8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.891674, 1.2881205, -2.0208845)
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainMenu"]
+stream = ExtResource("12_2fjio")
+autoplay = true
+bus = &"MenuMusic"
 
-[node name="Spoon" parent="." instance=ExtResource("13_brnie")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26664054, 1.2994109, -3.414084)
+[node name="Radio" parent="." instance=ExtResource("13_00414")]
+transform = Transform3D(-0.4998705, 0, 0.011378573, 0, 0.5, 0, -0.011378573, 0, -0.4998705, -3.4747725, 1.3978416, 13.290945)
 
-[node name="Bowl" parent="." instance=ExtResource("14_swii6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.577485, 1.2656046, -2.698989)
-
-[node name="Pan" parent="." instance=ExtResource("15_v112v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.260263, 1.2656047, -5.3032565)
-
-[node name="Pot" parent="." instance=ExtResource("16_fh6br")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68681735, 1.2656049, -3.8180873)
-
-[node name="Bread" parent="." instance=ExtResource("17_ycbol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.60563046, 1.2954379, -5.144664)
-
-[node name="Meat" parent="." instance=ExtResource("18_1d8eo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5253929, 1.2656047, -2.1982405)
-
-[node name="Sausage" parent="." instance=ExtResource("20_8bsdx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79228723, 1.233922, -1.9989301)
-
-[node name="Sausage2" parent="." instance=ExtResource("20_8bsdx")]
-transform = Transform3D(-0.052213714, 0, 0.99863595, 0, 1, 0, -0.99863595, 0, -0.052213714, 0.8337147, 1.2144046, -2.1669607)
-
-[node name="Milk" parent="." instance=ExtResource("19_e37bn")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.14918454, 1.2689679, -1.7902696)
-
-[node name="ClosedBarrel" parent="." instance=ExtResource("21_v112v")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -2.0402002, 0.15075973, 2.7696352)
-
-[node name="Skyr" parent="." instance=ExtResource("22_fh6br")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.023133755, 0.15475526, 2.8090959)
-
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("23_ycbol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.110025, 2.0648177, -0.9470272)
+[node name="cat" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_45sab")]
+transform = Transform3D(-0.004864269, 0, 0.008737213, 0, 0.01, 0, -0.008737213, 0, -0.004864269, 7.4989448, 0.88890636, -4.1945753)
+player = NodePath("../Node3D")
+catPosition = Vector3(7.4989448, 0.88890636, -4.1945753)
 
 [connection signal="pressed" from="MainMenu/Panel/VBoxContainer/Button" to="GameManager" method="_on_start_pressed"]
 [connection signal="pressed" from="MainMenu/Panel/VBoxContainer/Button2" to="GameManager" method="_on_quit"]
