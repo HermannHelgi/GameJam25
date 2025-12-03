@@ -31,11 +31,24 @@ var rootScriptObject : PhysicsObject
 
 var isActive: bool = true
 
+# Outline shader variables
+var outline_material: ShaderMaterial
+var currently_outlined_object: Node3D = null
+var original_materials: Dictionary = {}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GM = get_tree().get_first_node_in_group("GameManager")
 	if (GM == null):
 		printerr("NO GAMEMANAGER FOUND IN SCENE.")
+	
+	# Create outline shader material
+	var outline_shader = preload("res://Dadi/shader/outline_shader.gdshader")
+	outline_material = ShaderMaterial.new()
+	outline_material.shader = outline_shader
+	# Set more visible outline parameters
+	outline_material.set_shader_parameter("outline_color", Color.YELLOW)
+	outline_material.set_shader_parameter("outline_width", 2.0)
 	
 
 func _input(event: InputEvent) -> void:
@@ -195,7 +208,108 @@ func _update_held_body_physics(delta:float) -> void:
 
 	rb.apply_central_force(spring_force + damping_force)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#pass
-	#
+func _process(delta: float) -> void:
+	if not isActive:
+		return
+	
+	# Check for pickable objects to outline
+	check_for_pickable_objects()
+
+func check_for_pickable_objects():
+	var target_object: Node3D = null
+	
+	# Check if raycast is hitting something
+	if raycast.is_colliding():
+		var collider = raycast.get_collider()
+		if collider != null:
+			# Check if it's a grabbable object
+			var is_grabbable = is_grabbable_object(collider)
+			if is_grabbable:
+				# Get the root object that has the mesh
+				target_object = get_mesh_root(collider)
+	
+	# Apply or remove outline based on target
+	if target_object != currently_outlined_object:
+		# Remove outline from previous object
+		if currently_outlined_object != null:
+			remove_outline(currently_outlined_object)
+		
+		# Apply outline to new object
+		if target_object != null:
+			if not holding:
+				apply_outline(target_object)
+		
+		currently_outlined_object = target_object
+
+func is_grabbable_object(collider: Node) -> bool:
+	# Check if it's a RigidBody3D or has CollisionShape3D with grab layer
+	if collider is RigidBody3D:
+		return true
+	
+	if collider is CollisionShape3D:
+		var co = collider as CollisionShape3D
+		return (co.collision_layer & GRAB_LAYER) != 0
+	
+	# Check parent nodes for grabbable components
+	var node = collider
+	while node:
+		if node is RigidBody3D:
+			return true
+		if node is CollisionShape3D:
+			var co = node as CollisionShape3D
+			if (co.collision_layer & GRAB_LAYER) != 0:
+				return true
+		node = node.get_parent()
+	
+	return false
+
+func get_mesh_root(collider: Node) -> Node3D:
+	var node = collider
+	while node:
+		for child in node.get_children():
+			if child is MeshInstance3D:
+				return node as Node3D
+		# Check if the node itself is a MeshInstance3D
+		if node is MeshInstance3D:
+			return node as Node3D
+		node = node.get_parent()
+	
+	# Fallback: return the collider as Node3D if it's a MeshInstance3D
+	if collider is MeshInstance3D:
+		return collider as Node3D
+	
+	return null
+
+func apply_outline(object: Node3D):
+	# Store original materials and apply outline to all MeshInstance3D children
+	apply_outline_recursive(object)
+
+func apply_outline_recursive(node: Node):
+	if node is MeshInstance3D:
+		var mesh_instance = node as MeshInstance3D
+		
+		# Apply outline material as overlay
+		mesh_instance.material_overlay = outline_material
+	
+	# Recursively apply to children
+	for child in node.get_children():
+		apply_outline_recursive(child)
+
+func remove_outline(object: Node3D):
+	# Restore original materials for all MeshInstance3D children
+	remove_outline_recursive(object)
+
+func remove_outline_recursive(node: Node):
+	if node is MeshInstance3D:
+		var mesh_instance = node as MeshInstance3D
+		# Remove outline overlay
+		mesh_instance.material_overlay = null
+		
+		# Restore original material if it was stored
+		if original_materials.has(mesh_instance):
+			mesh_instance.material_override = original_materials[mesh_instance]
+			original_materials.erase(mesh_instance)
+	
+	# Recursively remove from children
+	for child in node.get_children():
+		remove_outline_recursive(child)
