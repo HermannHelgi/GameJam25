@@ -128,5 +128,5 @@ mesh = SubResource("ArrayMesh_ylmtw")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(0.000730694, 0, 0, 0, 0.00084189884, 0, 0, 0, 0.0007365399, -0.02154798, 0.4935587, -0.00919709)
+transform = Transform3D(3, 0, 0, 0, 3.5, 0, 0, 0, 3, 0, 0.38473397, 0)
 shape = SubResource("BoxShape3D_21707")
