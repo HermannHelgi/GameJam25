@@ -510,6 +510,7 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_nrm65")
 
 [node name="Spawns" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="SpawnNode" type="Node3D" parent="Spawns" groups=["SpawnNode"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2182292, 1.9921253, -1.7525098)
@@ -1230,3 +1231,6 @@ player = NodePath("../Node3D")
 catPosition = Vector3(7.4989448, 0.88890636, -4.1945753)
 
 [node name="Level10" type="Node3D" parent="."]
+
+[connection signal="pressed" from="MainMenu/Panel/HBoxContainer/Button" to="GameManager" method="_on_start_pressed"]
+[connection signal="pressed" from="MainMenu/Panel/HBoxContainer/Button2" to="GameManager" method="_on_quit"]
