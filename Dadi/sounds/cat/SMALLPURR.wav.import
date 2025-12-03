@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cn0nt1ofnbf25"
-path="res://.godot/imported/meow-2.wav-9c8a6a6b614383c67e34a68079159397.sample"
+uid="uid://dugws8seewgrf"
+path="res://.godot/imported/SMALLPURR.wav-dc3504922645b7a80cd37de82e5acb74.sample"
 
 [deps]
 
-source_file="res://Dadi/sounds/cat/meow-2.wav"
-dest_files=["res://.godot/imported/meow-2.wav-9c8a6a6b614383c67e34a68079159397.sample"]
+source_file="res://Dadi/sounds/cat/SMALLPURR.wav"
+dest_files=["res://.godot/imported/SMALLPURR.wav-dc3504922645b7a80cd37de82e5acb74.sample"]
 
 [params]
 

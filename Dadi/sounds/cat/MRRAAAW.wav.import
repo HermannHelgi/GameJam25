@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://di3heryf28m7a"
-path="res://.godot/imported/purring.wav-d048486fddb7ba25c39dddb82a56716d.sample"
+uid="uid://cfh4hcy0um8ot"
+path="res://.godot/imported/MRRAAAW.wav-81f8f7dc86ce78265a448237f2c47281.sample"
 
 [deps]
 
-source_file="res://Dadi/sounds/cat/purring.wav"
-dest_files=["res://.godot/imported/purring.wav-d048486fddb7ba25c39dddb82a56716d.sample"]
+source_file="res://Dadi/sounds/cat/MRRAAAW.wav"
+dest_files=["res://.godot/imported/MRRAAAW.wav-81f8f7dc86ce78265a448237f2c47281.sample"]
 
 [params]
 
