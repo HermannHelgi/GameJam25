@@ -83,7 +83,11 @@ func _process(delta: float) -> void:
 	
 	elif (current_state == GlobalEnums.YuleState.ANGRY):
 		if animator != null:
-			animator.play_state(current_state)
+			var ranf = rng.randf_range(0, 1)
+			if (ranf < 0.5):
+				animator.play_state(current_state)
+			else:
+				animator.play_state(GlobalEnums.YuleState.SHUCKS)
 		else:
 			printerr("Animator is null!")
 		if (timer >= 0):
