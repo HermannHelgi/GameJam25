@@ -50,6 +50,8 @@ const MENU_MUSIC_DB_LOUD := 0.0      # full volume in menus / paused
 const MENU_MUSIC_DB_MUTED := -80.0   # effectively silent during gameplay
 #@export var menuMusic : AudioStreamPlayer2D 
 
+var load_check : bool = false
+
 func _ready() -> void:
 	PathLocations = get_tree().get_nodes_in_group("PathNode")
 	ItemSpawnLocations = get_tree().get_nodes_in_group("SpawnNode")
@@ -91,7 +93,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Pause"):
 		_freeze_game()
 	
-	if (SpawnableYuleLads == AmountOfFreeYuleLads):
+	if (SpawnableYuleLads == AmountOfFreeYuleLads && !load_check):
+		load_check = true
 		TransitionScreen.transition()
 		await TransitionScreen.on_transition_finished
 		get_tree().change_scene_to_file("res://FinalScenes/Level2.tscn")
