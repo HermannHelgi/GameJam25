@@ -4,7 +4,7 @@ class_name Door
 @export var isOpen:bool = false
 
 @onready var animator:AnimationPlayer = $AnimationPlayer
-@onready var openArea : Area3D = $Area3D
+#@onready var openArea : Area3D = $Area3D
 
 func _ready() -> void:
 	pass
@@ -17,3 +17,14 @@ func close_door() -> void:
 	animator.play_backwards("open_door")
 	isOpen = false
 	
+
+
+func _on_body_entered(body: Node3D) -> void:
+	if body is YuleLad and not isOpen:
+		open_door()
+	#pass # Replace with function body.
+
+
+func _on_body_exited(body: Node3D) -> void:
+	if body is YuleLad and isOpen:
+		close_door()
