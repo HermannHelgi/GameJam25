@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkp3x6rih86x5"]
+
+[ext_resource type="Script" uid="uid://cnnj4w757i7o8" path="res://Julia/scripts/Skyr.gd" id="1_ea4b5"]
+[ext_resource type="PackedScene" uid="uid://dgyit2uv67x1o" path="res://Julia/itemModels/models/skyr/barrelofSkyr.glb" id="1_ph4fm"]
+[ext_resource type="PackedScene" uid="uid://bs4caw47cdc56" path="res://Julia/itemModels/prefabs/E_To_Interact/Skyr/closed_barrel.tscn" id="2_nkkcx"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_d8cc2"]
+height = 2.6732178
+radius = 0.94921875
+
+[node name="Skyr" type="Node3D"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+script = ExtResource("1_ea4b5")
+open_mesh = NodePath("OpenBarrel")
+closed_mesh = NodePath("ClosedBarrel")
+
+[node name="OpenBarrel" parent="." instance=ExtResource("1_ph4fm")]
+
+[node name="ClosedBarrel" parent="." instance=ExtResource("2_nkkcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.028602242, 1.3361684, 0.06799316)
+shape = SubResource("CylinderShape3D_d8cc2")

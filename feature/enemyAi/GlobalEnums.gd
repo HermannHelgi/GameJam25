@@ -1,5 +1,5 @@
 extends Node
 
-enum YuleObjects {POT, PAN, MILK, SPOON, CANDLE, BOWL, BREAD, SAUSAGES, MEAT, SKYR}
+enum YuleObjects {POT, PAN, MILK, SPOON, CANDLE, BOWL, BREAD, SAUSAGES, MEAT}
 
 enum YuleState {IDLE, WALKING, DESTROYING}
