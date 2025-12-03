@@ -24,7 +24,7 @@ var rng = RandomNumberGenerator.new()
 var timer = 0.0;
 var idle_stop_count = 0
 var GM
-
+var random : float = 0;
 
 # Outline shader variables
 var outline_material: ShaderMaterial
@@ -62,8 +62,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (current_state == GlobalEnums.YuleState.IDLE):
 		if animator != null:
-			var ranf = rng.randf_range(0, 1)
-			if (ranf < 0.5):
+			if (random < 0.5):
 				animator.play_state(current_state)
 			else:
 				animator.play_state(GlobalEnums.YuleState.LOOKING)
@@ -83,8 +82,7 @@ func _process(delta: float) -> void:
 	
 	elif (current_state == GlobalEnums.YuleState.ANGRY):
 		if animator != null:
-			var ranf = rng.randf_range(0, 1)
-			if (ranf < 0.5):
+			if (random < 0.5):
 				animator.play_state(current_state)
 			else:
 				animator.play_state(GlobalEnums.YuleState.SHUCKS)
@@ -117,6 +115,7 @@ func _process(delta: float) -> void:
 					current_strikes += 1;
 					current_state = GlobalEnums.YuleState.ANGRY
 					timer = _randomTime()
+					random = rng.randf_range(0, 1)
 					
 				else:
 					# No, annihilate
@@ -135,6 +134,7 @@ func _process(delta: float) -> void:
 				timer = _randomTime()
 				current_state = GlobalEnums.YuleState.IDLE	
 				print("IDLE")
+				random = rng.randf_range(0, 1)
 				audioManager.play_laughing_sound()
 	
 	elif (current_state == GlobalEnums.YuleState.DESTROYING):
