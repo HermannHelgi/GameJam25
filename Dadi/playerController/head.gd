@@ -60,7 +60,7 @@ func _input(event: InputEvent) -> void:
 			#rotate_x(-event.relative.y * sensetivity)
 			#pitch up/down
 			pitch -= event.relative.y * sensetivity
-			pitch = clamp(pitch, deg_to_rad(-60), deg_to_rad(60))
+			pitch = clamp(pitch, deg_to_rad(-80), deg_to_rad(60))
 			rotation.x = pitch
 			#rotation.x * clamp(rotation.x, deg_to_rad(-90), deg_to_rad(90))
 			#rotation.x = clamp(rotation.x, deg_to_rad(-40), deg_to_rad(60))
