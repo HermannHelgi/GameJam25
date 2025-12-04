@@ -30,7 +30,7 @@ func check_player_distance() -> float:
 	
 
 func changeAnimation() -> void:
-	changePosition = false
+	changePosition = true
 	var currentAnimation = animation.current_animation
 	if (currentAnimation == "Sit") : 
 		animation.play("Lay")
@@ -51,6 +51,7 @@ func pet() -> void:
 		return
 	else:
 		recentlyPetted = true
+		changePosition = false
 		play_random_purr()
 	
 func _process(delta: float) -> void:
@@ -59,14 +60,13 @@ func _process(delta: float) -> void:
 		recentlyPettedTimer += delta
 		if (recentlyPettedTimer > 3):
 			recentlyPetted = false
-			changePosition = true
 			playSoundTimer = recentlyPettedTimer
 	elif(playSoundTimer < 15.0):
 		playSoundTimer += delta
 	elif(playSoundTimer > 15.0):
 		play_random_purr()
 	var playerDistance = check_player_distance()
-	if(playerDistance > 10.0 ) and playSoundTimer > 15 and changePosition:
+	if(playerDistance > 10.0 ) and not changePosition:
 		changeAnimation()
 		
 	
