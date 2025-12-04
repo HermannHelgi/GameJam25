@@ -22,6 +22,7 @@ var AllYuleLads : Array[Node];
 
 @export var PlayerNode : Node
 @export var MainMenu : Node
+@export var PauseMenu : Node
 @export var UI : Node
 @export var isActive = true; # NEEDS TO BE TRUE TO START
 
@@ -92,7 +93,7 @@ func _process(delta: float) -> void:
 				PopupNode.visible = false
 
 	if Input.is_action_just_pressed("Pause"):
-		_freeze_game()
+		_pause_game()
 	
 	if (SpawnableYuleLads == AmountOfFreeYuleLads && !load_check):
 		load_check = true
@@ -155,11 +156,24 @@ func onStrikeGained() -> void:
 
 func _on_start_pressed() -> void:
 	_freeze_game()
-
+func _on_resume_pressed() -> void:
+	_pause_game()
 
 func _on_quit() -> void:
 	get_tree().quit()
 
+func _pause_game() -> void:
+	get_tree().paused = isActive
+	_set_menu_music_volume_db(0.0)
+	PauseMenu.set_visible(isActive)	
+	UI.set_visible(!isActive)	
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if isActive else Input.MOUSE_MODE_CAPTURED)
+	PlayerNode.CameraScriptNode.isActive = !isActive
+	isActive = !isActive
+	if isActive:
+		_set_menu_music_volume_db(MENU_MUSIC_DB_MUTED)
+	else:
+		_set_menu_music_volume_db(MENU_MUSIC_DB_LOUD)
 
 func _freeze_game() -> void:
 	get_tree().paused = isActive
