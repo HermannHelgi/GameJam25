@@ -17,6 +17,7 @@ extends CharacterBody3D
 
 var NavMesh : NavigationRegion3D
 var ObjectiveType: GlobalEnums.YuleObjects;
+var yule_lad_name: String = ""
 
 var current_state : GlobalEnums.YuleState =	GlobalEnums.YuleState.IDLE
 var target : Node = null
@@ -24,7 +25,7 @@ var rng = RandomNumberGenerator.new()
 var timer = 0.0;
 var idle_stop_count = 0
 var GM
-
+var random : float = 0;
 
 # Outline shader variables
 var outline_material: ShaderMaterial
@@ -62,7 +63,30 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (current_state == GlobalEnums.YuleState.IDLE):
 		if animator != null:
-			animator.play_state(current_state)
+			if (random < 0.5):
+				animator.play_state(current_state)
+			else:
+				animator.play_state(GlobalEnums.YuleState.LOOKING)
+		else:
+			printerr("Animator is null!")
+		if (timer >= 0):
+			timer -= delta
+			if (timer < 0):
+				print("WALK")
+				audioManager.play_walking_sound()
+				current_state = GlobalEnums.YuleState.WALKING
+				idle_stop_count -= 1
+				if (idle_stop_count == 0 && GM.EnumToObjectDict[ObjectiveType].size() != 0):
+					_fetchRandomLoc(true)
+				else:
+					_fetchRandomLoc(false)
+	
+	elif (current_state == GlobalEnums.YuleState.ANGRY):
+		if animator != null:
+			if (random < 0.5):
+				animator.play_state(current_state)
+			else:
+				animator.play_state(GlobalEnums.YuleState.SHUCKS)
 		else:
 			printerr("Animator is null!")
 		if (timer >= 0):
@@ -89,8 +113,11 @@ func _process(delta: float) -> void:
 				if (GM.get_script_owner(target).IsHeld || targetDistance > Reach ):
 					# Yes, i'm going to go somewhere else then.
 					idle_stop_count = _randomStop();
-					check = true
 					current_strikes += 1;
+					current_state = GlobalEnums.YuleState.ANGRY
+					timer = _randomTime()
+					random = rng.randf_range(0, 1)
+					
 				else:
 					# No, annihilate
 					current_state = GlobalEnums.YuleState.DESTROYING
@@ -101,7 +128,6 @@ func _process(delta: float) -> void:
 			else:
 				check = true
 			
-			
 			if (current_strikes >= MaxStrikes):
 				nav_agent.set_target_position(GM.YuleSpawnNode.global_position)
 				current_state = GlobalEnums.YuleState.LEAVING
@@ -109,6 +135,7 @@ func _process(delta: float) -> void:
 				timer = _randomTime()
 				current_state = GlobalEnums.YuleState.IDLE	
 				print("IDLE")
+				random = rng.randf_range(0, 1)
 				audioManager.play_laughing_sound()
 	
 	elif (current_state == GlobalEnums.YuleState.DESTROYING):

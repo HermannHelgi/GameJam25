@@ -94,7 +94,7 @@ NameLabel = NodePath("../UI/Popup/Label")
 HideSubtitle = NodePath("../UI/Popup/Label2")
 DisplayTimeName = 5
 NextScene = "res://FinalScenes/Level2.tscn"
-StartScene = "res://FinalScenes/Level1.tscn"
+StartScene = "res://FinalScenes/LossScreenLevel.tscn"
 
 [node name="Node3D" parent="." instance=ExtResource("7_257ic")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 15.737585, 1.8131257, -2.1480124)
