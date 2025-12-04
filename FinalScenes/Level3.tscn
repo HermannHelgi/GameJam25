@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dctwnkn7dv1ne"]
+[gd_scene load_steps=34 format=3 uid="uid://dctwnkn7dv1ne"]
 
 [ext_resource type="PackedScene" uid="uid://bbes37m77upxu" path="res://Dadi/background/psx_style_mountain_backgroud.glb" id="1_vcnuo"]
 [ext_resource type="Script" uid="uid://gy1c8k2q20sk" path="res://feature/Managers/GameManager.gd" id="2_wvu40"]
@@ -14,7 +14,7 @@
 [ext_resource type="Resource" uid="uid://brl62l5q5djmt" path="res://Resources/milk.tres" id="9_40net"]
 [ext_resource type="PackedScene" uid="uid://d07n0wu8kgkfb" path="res://feature/MainLevel/MainLevel.tscn" id="10_x2s3a"]
 [ext_resource type="Resource" uid="uid://bw8wpx4ghhfoo" path="res://Resources/pot.tres" id="11_k02fw"]
-[ext_resource type="Script" path="res://feature/enemyAi/spawn_location.gd" id="11_lmnk4"]
+[ext_resource type="Script" uid="uid://bofkgrsk5616g" path="res://feature/enemyAi/spawn_location.gd" id="11_lmnk4"]
 [ext_resource type="Texture2D" uid="uid://bmri2401s5xcq" path="res://feature/MainMenu/heart.png" id="12_40net"]
 [ext_resource type="Resource" uid="uid://b7nqmuo8w0r21" path="res://Resources/spoon.tres" id="13_fvmur"]
 [ext_resource type="FontFile" uid="uid://c5joqn2djl5hb" path="res://feature/MainMenu/Amore Christmas.otf" id="13_k02fw"]
@@ -67,12 +67,41 @@ shadow_offset = Vector2(0, 4)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2l8nd"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2l8nd"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2s3a"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmnk4"]
+bg_color = Color(0.8819366, 0.8819366, 0.88193655, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_40net"]
+
 [node name="Level3" type="Node3D"]
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_vcnuo")]
 transform = Transform3D(2.24, 0, 0, 0, 2.24, 0, 0, 0, 2.24, -109.85501, -22.648197, -15.47155)
 
-[node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("YuleSpawnLocation", "YuleSpawnNode", "PlayerNode", "MainMenu", "UI", "infoLabel", "UITimer", "TimerControlNode", "ControlsNode", "PopupNode", "NameLabel", "HideSubtitle") groups=["GameManager"]]
+[node name="GameManager" type="Node3D" parent="." node_paths=PackedStringArray("YuleSpawnLocation", "YuleSpawnNode", "PlayerNode", "MainMenu", "PauseMenu", "UI", "infoLabel", "UITimer", "TimerControlNode", "ControlsNode", "PopupNode", "NameLabel", "HideSubtitle") groups=["GameManager"]]
 process_mode = 3
 script = ExtResource("2_wvu40")
 SpawnableYuleLads = 2
@@ -85,6 +114,7 @@ YuleSpawnNode = NodePath("../Paths/SPAWNNODE")
 YuleObjectives = Array[ExtResource("4_a2udo")]([ExtResource("5_kb2te"), ExtResource("6_2l8nd"), ExtResource("7_x2s3a"), ExtResource("8_lmnk4"), ExtResource("9_40net"), ExtResource("5_m2nph"), ExtResource("11_k02fw"), ExtResource("6_dv360"), ExtResource("13_fvmur")])
 PlayerNode = NodePath("../Node3D")
 MainMenu = NodePath("../MainMenu")
+PauseMenu = NodePath("../PauseMenu")
 UI = NodePath("../UI")
 isActive = false
 infoLabel = [NodePath("../UI/TextureRect"), NodePath("../UI/TextureRect2"), NodePath("../UI/TextureRect3")]
@@ -1223,6 +1253,137 @@ stream = ExtResource("14_fvmur")
 autoplay = true
 bus = &"MenuMusic"
 
+[node name="PauseMenu" type="Control" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -607.5
+offset_top = -586.0
+offset_right = 607.5
+offset_bottom = 386.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("13_k02fw")
+theme_override_font_sizes/font_size = 256
+text = "Yule on hold!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Panel" type="Panel" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -294.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label2" type="Label" parent="PauseMenu/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -405.5
+offset_top = -280.0
+offset_right = 405.5
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Oh no! The Yule Lads are coming! Quick, put away the things they want to steal!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = 9.0
+offset_right = 312.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Button" type="Button" parent="PauseMenu/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_k02fw")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_2l8nd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x2s3a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lmnk4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_40net")
+text = "Continue"
+
+[node name="Button2" type="Button" parent="PauseMenu/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_k02fw")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_2l8nd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x2s3a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lmnk4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_40net")
+text = "QUIT"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PauseMenu"]
+stream = ExtResource("14_fvmur")
+autoplay = true
+bus = &"MenuMusic"
+
 [node name="Radio" parent="." instance=ExtResource("15_qhyvb")]
 transform = Transform3D(-0.4998705, 0, 0.011378573, 0, 0.5, 0, -0.011378573, 0, -0.4998705, -3.4747725, 1.3978416, 13.290945)
 
@@ -1235,3 +1396,5 @@ catPosition = Vector3(7.4989448, 0.88890636, -4.1945753)
 
 [connection signal="pressed" from="MainMenu/Panel/HBoxContainer/Button" to="GameManager" method="_on_start_pressed"]
 [connection signal="pressed" from="MainMenu/Panel/HBoxContainer/Button2" to="GameManager" method="_on_quit"]
+[connection signal="pressed" from="PauseMenu/Panel/HBoxContainer/Button" to="GameManager" method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/Panel/HBoxContainer/Button2" to="GameManager" method="_on_quit"]
