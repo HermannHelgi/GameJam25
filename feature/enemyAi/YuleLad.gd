@@ -12,7 +12,7 @@ extends CharacterBody3D
 @export var MinRandomIdleStops = 1
 @export var MaxRandomIdleStops = 3
 
-@export var DestroyTime = 3.0
+@export var DestroyTime = 2.0
 @export var DistanceMinimumForNextNode = 3.0
 
 var NavMesh : NavigationRegion3D
@@ -110,7 +110,7 @@ func _process(delta: float) -> void:
 			if (idle_stop_count == 0 && GM.EnumToObjectDict[ObjectiveType].size() != 0):
 				# ...yes, is it being held or is it too far away?
 				var targetDistance = global_position.distance_to(GM.get_script_owner(target).MeshLocation.global_position)
-				if (GM.get_script_owner(target).IsHeld || targetDistance > Reach):
+				if (GM.get_script_owner(target).IsHeld || targetDistance > Reach ):
 					# Yes, i'm going to go somewhere else then.
 					remove_outline(GM.get_script_owner(target)) 
 					idle_stop_count = _randomStop();

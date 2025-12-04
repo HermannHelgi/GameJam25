@@ -1,12 +1,10 @@
-[gd_scene load_steps=15 format=4 uid="uid://bwf0h3y1btfb1"]
+[gd_scene load_steps=13 format=4 uid="uid://bwf0h3y1btfb1"]
 
 [ext_resource type="Texture2D" uid="uid://bfrwul5clhps7" path="res://Julia/itemModels/models/kitty/no_im_not_a_human_-_cat_0.png" id="1_03i12"]
 [ext_resource type="Script" uid="uid://d1555o2p1d3a5" path="res://Julia/itemModels/prefabs/E_To_Interact/animals/cat.gd" id="1_aqrj4"]
-[ext_resource type="AudioStream" uid="uid://det4d5uiki0mt" path="res://Dadi/sounds/cat/BIGPURR.wav" id="2_1bmat"]
 [ext_resource type="AudioStream" uid="uid://osulm1e36aee" path="res://Dadi/sounds/cat/MRR.wav" id="3_j8m71"]
 [ext_resource type="AudioStream" uid="uid://cfh4hcy0um8ot" path="res://Dadi/sounds/cat/MRRAAAW.wav" id="4_t1s1y"]
 [ext_resource type="AudioStream" uid="uid://dpp7xuepkad47" path="res://Dadi/sounds/cat/MURREOW.wav" id="5_pjnb4"]
-[ext_resource type="AudioStream" uid="uid://dugws8seewgrf" path="res://Dadi/sounds/cat/SMALLPURR.wav" id="6_d673l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfkj6"]
 resource_name = "CatMat"
@@ -1161,7 +1159,7 @@ size = Vector3(88.74408, 77.85628, 73.10675)
 script = ExtResource("1_aqrj4")
 animation = NodePath("AnimationPlayer")
 audioPlayer = NodePath("AudioStreamPlayer3D")
-purrSounds = Array[AudioStreamWAV]([ExtResource("2_1bmat"), ExtResource("3_j8m71"), ExtResource("4_t1s1y"), ExtResource("5_pjnb4"), ExtResource("6_d673l")])
+purrSounds = Array[AudioStreamWAV]([ExtResource("3_j8m71"), ExtResource("4_t1s1y"), ExtResource("5_pjnb4")])
 
 [node name="Sketchfab_model" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2.220446e-16, 1, 0, -1, 2.220446e-16, 0, 0, 0)
@@ -1541,9 +1539,10 @@ libraries = {
 speed_scale = 0.8
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.9955587, 0.09414316, 0, -0.09414316, -0.9955587, 0, 0, 0)
-volume_db = 10.787
+transform = Transform3D(-0.25530556, 0.43533084, -0.8633112, 0.70663947, -0.52541625, -0.4739182, -0.6599089, -0.7310437, -0.17348026, -2.2537746, 0, -37.151665)
+max_distance = 15.0
 emission_angle_degrees = 72.2
+emission_angle_filter_attenuation_db = -50.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 7

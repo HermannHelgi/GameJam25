@@ -244,11 +244,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_d0h7e")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_taac8"]
-size = Vector3(80.002075, 35.973022, 28.166718)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_hrey7"]
 size = Vector3(1, 1, 2.3516998)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_taac8"]
+size = Vector3(80.002075, 55.671936, 28.166718)
 
 [sub_resource type="Animation" id="Animation_hrey7"]
 length = 0.001
@@ -372,15 +372,6 @@ skeleton = NodePath("")
 mesh = SubResource("ArrayMesh_bh882")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene/Sketchfab_model/a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode/Cylinder"]
-transform = Transform3D(1, 0, 0, 0, 1, -1.4210855e-14, 0, 0, 0.9999998, 0, 0, 0.12443447)
-collision_layer = 7
-collision_mask = 7
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/Sketchfab_model/a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode/Cylinder/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 4.2632564e-14, 0, 0, 0.9999998, 39.975777, -1.9710124, -10.121567)
-shape = SubResource("BoxShape3D_taac8")
-
 [node name="Area3D" type="Area3D" parent="Sketchfab_Scene/Sketchfab_model/a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode" node_paths=PackedStringArray("door")]
 transform = Transform3D(100, 0, 0, 0, 100, 2.220446e-14, 0, -2.220446e-14, 100, 0, 0, 0)
 collision_layer = 8
@@ -392,6 +383,15 @@ door = NodePath("../../../../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/Sketchfab_model/a47618a8d55e4a65b7f7521697670ebc_fbx/RootNode/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4354679, -0.20931244)
 shape = SubResource("BoxShape3D_hrey7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene"]
+transform = Transform3D(0.012991307, 0, 0, 0, -5.678681e-10, 0.065881275, 0, -0.012991307, -2.879762e-09, -0.5116233, 0.71482295, -0.046840746)
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 4.2632564e-14, 0, 0, 0.9999998, 39.975777, 24.432356, -10.121567)
+shape = SubResource("BoxShape3D_taac8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sketchfab_Scene/Sketchfab_model")

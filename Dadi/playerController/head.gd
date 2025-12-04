@@ -60,7 +60,7 @@ func _input(event: InputEvent) -> void:
 			#rotate_x(-event.relative.y * sensetivity)
 			#pitch up/down
 			pitch -= event.relative.y * sensetivity
-			pitch = clamp(pitch, deg_to_rad(-60), deg_to_rad(60))
+			pitch = clamp(pitch, deg_to_rad(-80), deg_to_rad(60))
 			rotation.x = pitch
 			#rotation.x * clamp(rotation.x, deg_to_rad(-90), deg_to_rad(90))
 			#rotation.x = clamp(rotation.x, deg_to_rad(-40), deg_to_rad(60))
@@ -76,8 +76,6 @@ func _input(event: InputEvent) -> void:
 			while node:
 				if node is Radio and radio == null:
 					radio = node
-				if node is Door and door == null:
-					door = node
 				if node is Cat and cat == null:
 					cat = node
 				if node is Skyr and skyr == null:
@@ -91,13 +89,6 @@ func _input(event: InputEvent) -> void:
 			elif cat:
 				cat.pet()
 				cat = null
-			elif door:
-				if !door.isOpen:
-					door.open_door()
-					door = null
-				else:
-					door.close_door()
-					door = null
 			elif window:
 				if !window.isOpen:
 					window.open_window()

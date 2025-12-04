@@ -68,10 +68,12 @@ skeleton = NodePath("")
 
 [node name="RadioAudio" type="AudioStreamPlayer3D" parent="Sketchfab_model2/SonyRadio_obj_cleaner_materialmerger_gles/Object_2"]
 transform = Transform3D(0.99824846, 0.045614827, 0.037673835, 0.04561481, -0.1879266, -0.98112327, -0.037673853, 0.9811233, -0.18967816, -80.206314, -1.6678723, 0.8051446)
-attenuation_model = 2
+attenuation_model = 1
 volume_db = -50.0
+max_db = 0.0
 emission_angle_enabled = true
 emission_angle_degrees = 65.0
+emission_angle_filter_attenuation_db = -20.0
 doppler_tracking = 1
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
