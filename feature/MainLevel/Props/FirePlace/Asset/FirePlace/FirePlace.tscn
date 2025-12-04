@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=4 uid="uid://b2mx0yt008p4b"]
+[gd_scene load_steps=17 format=4 uid="uid://b2mx0yt008p4b"]
 
 [ext_resource type="PackedScene" uid="uid://dae7ehjseh58r" path="res://feature/MainLevel/Props/FirePlace/Asset/FirePlace/fireplace_low_poly.glb" id="1_akxlu"]
 [ext_resource type="Texture2D" uid="uid://cernixkvkgxm4" path="res://feature/MainLevel/Props/FirePlace/Asset/FirePlace/Horror_Brick_11-128x128.png" id="1_hufnn"]
 [ext_resource type="Texture2D" uid="uid://bos5qret3cupw" path="res://addons/kenney_particle_pack/fire_01.png" id="3_2fp0e"]
 [ext_resource type="Texture2D" uid="uid://3yi6otwoujyb" path="res://feature/MainLevel/Props/FirePlace/Asset/Logs/podvarak_firewood_0.png" id="3_oo6em"]
 [ext_resource type="Texture2D" uid="uid://c2otpho4ecowb" path="res://addons/kenney_particle_pack/flame_05.png" id="4_5gij4"]
+[ext_resource type="AudioStream" uid="uid://bpr04rgop4p26" path="res://Dadi/sounds/fire-crackling-sound-effect.wav" id="5_5gij4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pnbb0"]
 albedo_texture = ExtResource("1_hufnn")
@@ -130,6 +131,16 @@ process_material = SubResource("ParticleProcessMaterial_24ywu")
 draw_passes = 2
 draw_pass_1 = SubResource("QuadMesh_lr65t")
 draw_pass_2 = SubResource("QuadMesh_g7f41")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="OmniLight3D"]
+transform = Transform3D(-0.99873084, 0, 0.050366312, -0.014305648, 0.9588148, -0.2836716, -0.048291966, -0.28403208, -0.9575979, 0, 0, 0)
+stream = ExtResource("5_5gij4")
+attenuation_model = 2
+volume_db = 10.0
+autoplay = true
+max_distance = 8.0
+emission_angle_degrees = 37.4
+emission_angle_filter_attenuation_db = -62.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

@@ -1540,10 +1540,7 @@ speed_scale = 0.8
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(-0.25530556, 0.43533084, -0.8633112, 0.70663947, -0.52541625, -0.4739182, -0.6599089, -0.7310437, -0.17348026, -2.2537746, 0, -37.151665)
-volume_db = -10.0
-unit_size = 1.0
 max_distance = 15.0
-emission_angle_enabled = true
 emission_angle_degrees = 72.2
 emission_angle_filter_attenuation_db = -50.0
 
