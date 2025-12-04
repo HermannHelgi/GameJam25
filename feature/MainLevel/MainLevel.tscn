@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=4 uid="uid://d07n0wu8kgkfb"]
+[gd_scene load_steps=77 format=4 uid="uid://d07n0wu8kgkfb"]
 
 [ext_resource type="Texture2D" uid="uid://gemih5m6oead" path="res://feature/MainLevel/Props/Textures/Wood_19-128x128.png" id="1_3q08c"]
 [ext_resource type="Texture2D" uid="uid://rxvqqdxf18mi" path="res://feature/MainLevel/Wood_Pattern_02_Brown_2.png" id="1_uhivl"]
@@ -55,6 +55,7 @@
 [ext_resource type="PackedScene" uid="uid://bccoxih8vsxj8" path="res://Dadi/door/newDoor.tscn" id="54_pmax4"]
 [ext_resource type="PackedScene" uid="uid://dihnovf4wbshq" path="res://Julia/itemModels/prefabs/E_To_Interact/animals/sheep.tscn" id="55_ptvr5"]
 [ext_resource type="PackedScene" uid="uid://8ydvixtqvp10" path="res://Julia/santaModel/SantaPrefab/Santa.tscn" id="56_nuy3a"]
+[ext_resource type="Texture2D" uid="uid://2o5ym0b0q5rd" path="res://addons/kenney_particle_pack/smoke_01.png" id="56_pmax4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cusdo"]
 albedo_texture = ExtResource("1_3q08c")
@@ -129,6 +130,50 @@ shadow_mesh = SubResource("ArrayMesh_8rx3e")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6yykd"]
 size = Vector3(2.800171, 1.1390381, 0.5005493)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pmax4"]
+
+[sub_resource type="Sky" id="Sky_lodul"]
+sky_material = SubResource("ProceduralSkyMaterial_pmax4")
+
+[sub_resource type="Environment" id="Environment_lodul"]
+background_mode = 2
+background_energy_multiplier = 0.1
+sky = SubResource("Sky_lodul")
+ambient_light_source = 3
+ambient_light_color = Color(0.24085954, 0.18900365, 0.106596686, 1)
+ambient_light_sky_contribution = 0.51
+ambient_light_energy = 2.5
+reflected_light_source = 2
+fog_mode = 1
+fog_light_color = Color(1, 1, 1, 1)
+fog_light_energy = 0.07
+fog_sun_scatter = 0.01
+fog_density = 0.1474
+fog_aerial_perspective = 0.821
+fog_sky_affect = 0.0
+fog_depth_begin = 0.0
+fog_depth_end = 3326.3
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ptvr5"]
+particle_flag_align_y = true
+emission_shape = 3
+emission_box_extents = Vector3(10, 10, 20)
+gravity = Vector3(0, -1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nuy3a"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("56_pmax4")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_p1bik"]
+material = SubResource("StandardMaterial3D_nuy3a")
+size = Vector2(0.4, 0.4)
 
 [node name="MainLevel" type="Node3D"]
 
@@ -1020,7 +1065,7 @@ transform = Transform3D(-1.5815495, 0, -3.917977e-07, 0, 1.5206087, 0, 4.1012896
 transform = Transform3D(0.8468576, 0, 1.255505, 0, 3.1721313, 0, -1.4463247, 0, 0.73512805, -3.2023277, 1.8547969, -7.130922)
 
 [node name="Drawer" parent="." instance=ExtResource("18_pc7qp")]
-transform = Transform3D(-1.3022978, 0, -1.532779e-07, 0, 2.5509093, 0, 1.1385049e-07, 0, -1.7532948, -2.441367, 1.6990916, 12.500624)
+transform = Transform3D(-1.3022978, 0, -1.532779e-07, 0, 1.2832502, 0, 1.1385049e-07, 0, -1.7532948, -2.8119922, 0.93770444, 12.500624)
 
 [node name="Wardrobe" parent="." instance=ExtResource("19_iji2w")]
 transform = Transform3D(1.6816078, 0, 0, 0, 1.7665809, 0, 0, 0, 1.1828651, 2.4104857, 0.9359342, 5.479377)
@@ -1178,7 +1223,7 @@ transform = Transform3D(0.46512014, 0, 0.23979007, 0, 0.5077858, 0, -0.8852475, 
 transform = Transform3D(1.4386845, 0, 0, 0, 1.588745, 0, 0, 0, 1, -6.7636533, 1.739267, 14.118104)
 
 [node name="NewDoor2" parent="." instance=ExtResource("54_pmax4")]
-transform = Transform3D(1.4386845, 0, 0, 0, 1.588745, 0, 0, 0, 1, -6.8560762, 1.739267, -8.231707)
+transform = Transform3D(-1.4504697, 0, -0.052639615, 0, 1.5887451, 0, 0.07639683, 0, -0.999416, -6.8560762, 1.739267, -8.20257)
 
 [node name="snowwww" type="Node3D" parent="."]
 
@@ -1197,3 +1242,18 @@ transform = Transform3D(0.15478103, 0, -0.084646836, 0, 0.18332735, 0, 0.0570802
 
 [node name="Santa" parent="snowwww" instance=ExtResource("56_nuy3a")]
 transform = Transform3D(-0.07880737, 0, -0.12762994, 0, 0.15, 0, 0.12762994, 0, -0.07880737, 24.157429, 0.9608182, -2.1562788)
+
+[node name="Santa2" parent="snowwww" instance=ExtResource("56_nuy3a")]
+transform = Transform3D(0.05302362, 0, -0.0901513, 0, 0.29271716, 0, 0.06656435, 0, 0.07181242, 19.239954, -0.5997422, -6.3469305)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lodul")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 40.108124, 7.9562645, 0)
+amount = 1000
+visibility_aabb = AABB(-0.42, -4, -4.91, 8, 8, 9.45)
+process_material = SubResource("ParticleProcessMaterial_ptvr5")
+draw_pass_1 = SubResource("QuadMesh_p1bik")
+
+[editable path="snowwww/Santa"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=196 format=4 uid="uid://rkwscwxpmaoy"]
+[gd_scene load_steps=197 format=4 uid="uid://rkwscwxpmaoy"]
 
 [ext_resource type="Script" uid="uid://bboc0uud3xuny" path="res://Julia/scripts/window.gd" id="1_xu4qw"]
 [ext_resource type="Texture2D" uid="uid://6gmvqf0tj18o" path="res://Julia/itemModels/models/window/window__wodden_med_2.png" id="2_uo7qu"]
@@ -7,7 +7,9 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wd8tr"]
 resource_name = "Glass"
-transparency = 4
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 cull_mode = 2
 albedo_color = Color(0.79999983, 0.79999983, 0.79999983, 0.25)
 metallic_texture = ExtResource("2_uo7qu")
@@ -3108,6 +3110,9 @@ _data = {
 &"openwindow": SubResource("Animation_i7d83")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_e1k03"]
+size = Vector3(64.164795, 116.97189, 15.559206)
+
 [node name="Window" type="Node3D"]
 script = ExtResource("1_xu4qw")
 
@@ -3783,3 +3788,11 @@ skeleton = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_p1a6x")
 }
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5008545, 77.21223, -5.4767303)
+shape = SubResource("BoxShape3D_e1k03")
