@@ -9,8 +9,8 @@ extends CharacterBody3D
 
 @export var MinIdleTime = 2.0
 @export var MaxIdleTime = 6.0
-@export var MinRandomIdleStops = 2
-@export var MaxRandomIdleStops = 4
+@export var MinRandomIdleStops = 1
+@export var MaxRandomIdleStops = 3
 
 @export var DestroyTime = 3.0
 @export var DistanceMinimumForNextNode = 3.0
@@ -112,6 +112,7 @@ func _process(delta: float) -> void:
 				var targetDistance = global_position.distance_to(GM.get_script_owner(target).MeshLocation.global_position)
 				if (GM.get_script_owner(target).IsHeld || targetDistance > Reach):
 					# Yes, i'm going to go somewhere else then.
+					remove_outline(GM.get_script_owner(target)) 
 					idle_stop_count = _randomStop();
 					current_strikes += 1;
 					current_state = GlobalEnums.YuleState.ANGRY
@@ -145,7 +146,7 @@ func _process(delta: float) -> void:
 		if (timer >= 0):
 			timer -= delta
 			if (GM.get_script_owner(target).IsHeld):
-				remove_outline(GM.get_script_owner(target))
+				remove_outline(GM.get_script_owner(target))  
 				idle_stop_count = _randomStop();
 				audioManager.play_loosingItem_sound()
 				current_state = GlobalEnums.YuleState.IDLE	
@@ -153,6 +154,7 @@ func _process(delta: float) -> void:
 			if (timer < 0):
 				print("WALK FROM DESTRUCTION")
 				audioManager.play_laughing_sound()
+				remove_outline(GM.get_script_owner(target))  
 				GM.EnumToObjectDict[ObjectiveType].pop_at(0);
 				target.queue_free()
 				idle_stop_count = _randomStop();
@@ -189,8 +191,9 @@ func _fetchRandomLoc(goForObjectiveItem: bool) -> void:
 	var old_target = target
 	if (goForObjectiveItem):
 		while (old_target == target):
-			target = GM.EnumToObjectDict[ObjectiveType][0];
+			target = GM.EnumToObjectDict[ObjectiveType][rng.randi_range(0, GM.EnumToObjectDict[ObjectiveType].size() - 1)];
 			nav_agent.set_target_position(GM.get_script_owner(target).MeshLocation.global_position)
+			apply_outline(GM.get_script_owner(target))
 	else:
 		while (old_target == target):
 			target = GM.PathLocations[rng.randi_range(0, GM.PathLocations.size() - 1)];
