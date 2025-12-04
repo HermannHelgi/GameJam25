@@ -17,6 +17,7 @@ extends CharacterBody3D
 
 var NavMesh : NavigationRegion3D
 var ObjectiveType: GlobalEnums.YuleObjects;
+var yule_lad_name: String = ""
 
 var current_state : GlobalEnums.YuleState =	GlobalEnums.YuleState.IDLE
 var target : Node = null

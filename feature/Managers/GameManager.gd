@@ -75,6 +75,7 @@ func _process(delta: float) -> void:
 				timer = BetweenTimer;
 				var obj = SelectedYuleObjectives.pop_at(rng.randi_range(0, SelectedYuleObjectives.size() - 1))
 				newYuleLad.ObjectiveType = obj.Type
+				newYuleLad.yule_lad_name = obj.NameOfYuleLad
 				displayNewYuleLad(obj.NameOfYuleLad, obj.NameOfItem, obj.NameOfItemEN);
 				
 				if (AllYuleLads.size() == SpawnableYuleLads):
